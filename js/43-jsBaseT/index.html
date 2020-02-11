@@ -1,0 +1,1535 @@
+<!DOCTYPE html>
+
+
+
+  
+
+
+<html class="theme-next gemini use-motion" lang="zh-Hans">
+<head><meta name="generator" content="Hexo 3.9.0">
+  <meta charset="UTF-8">
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+<meta name="theme-color" content="#222">
+
+
+
+  
+  
+    
+    
+  <script src="/lib/pace/pace.min.js?v=1.0.2"></script>
+  <link href="/lib/pace/pace-theme-minimal.min.css?v=1.0.2" rel="stylesheet">
+
+
+
+
+
+
+
+<meta http-equiv="Cache-Control" content="no-transform">
+<meta http-equiv="Cache-Control" content="no-siteapp">
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+  
+  
+  <link href="/lib/fancybox/source/jquery.fancybox.css?v=2.1.5" rel="stylesheet" type="text/css">
+
+
+
+
+
+
+
+<link href="/lib/font-awesome/css/font-awesome.min.css?v=4.6.2" rel="stylesheet" type="text/css">
+
+<link href="/css/main.css?v=5.1.4" rel="stylesheet" type="text/css">
+
+
+  <link rel="apple-touch-icon" sizes="180x180" href="/images/apple-touch-icon-next.png?v=5.1.4">
+
+
+  <link rel="icon" type="image/png" sizes="32x32" href="/images/favicon-32x32-next.png?v=5.1.4">
+
+
+  <link rel="icon" type="image/png" sizes="16x16" href="/images/favicon-16x16-next.png?v=5.1.4">
+
+
+  <link rel="mask-icon" href="/images/logo.svg?v=5.1.4" color="#222">
+
+
+
+
+
+  <meta name="keywords" content="js,">
+
+
+
+
+
+  <link rel="alternate" href="/atom.xml" title="Gzy's Blog" type="application/atom+xml">
+
+
+
+
+
+
+<meta name="description" content="下面代码的输出是什么？function sayHi() {console.log(name);console.log(age);var name = “Lydia”;let age = 21;}  A: Lydia 和 undefinedB: Lydia 和 ReferenceErrorC: ReferenceError 和 21D: undefined 和 ReferenceError答案:">
+<meta name="keywords" content="js">
+<meta property="og:type" content="article">
+<meta property="og:title" content="43道检验基础的JavaScript面试题">
+<meta property="og:url" content="http://glooo.fun/js/43-jsBaseT/index.html">
+<meta property="og:site_name" content="Gzy&#39;s Blog">
+<meta property="og:description" content="下面代码的输出是什么？function sayHi() {console.log(name);console.log(age);var name = “Lydia”;let age = 21;}  A: Lydia 和 undefinedB: Lydia 和 ReferenceErrorC: ReferenceError 和 21D: undefined 和 ReferenceError答案:">
+<meta property="og:locale" content="zh-Hans">
+<meta property="og:updated_time" content="2019-09-19T08:26:36.000Z">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="43道检验基础的JavaScript面试题">
+<meta name="twitter:description" content="下面代码的输出是什么？function sayHi() {console.log(name);console.log(age);var name = “Lydia”;let age = 21;}  A: Lydia 和 undefinedB: Lydia 和 ReferenceErrorC: ReferenceError 和 21D: undefined 和 ReferenceError答案:">
+
+
+
+<script type="text/javascript" id="hexo.configurations">
+  (function(){
+        if(''){
+            if (prompt('请输入密码') !== ''){
+                alert('密码错误');
+                history.back();
+            }
+        }
+    })();
+  var NexT = window.NexT || {};
+  var CONFIG = {
+    root: '/',
+    scheme: 'Gemini',
+    version: '5.1.4',
+    sidebar: {"position":"left","display":"post","offset":12,"b2t":true,"scrollpercent":true,"onmobile":false},
+    fancybox: true,
+    tabs: true,
+    motion: {"enable":true,"async":false,"transition":{"post_block":"fadeIn","post_header":"slideDownIn","post_body":"slideDownIn","coll_header":"slideLeftIn","sidebar":"slideUpIn"}},
+    duoshuo: {
+      userId: '0',
+      author: '博主'
+    },
+    algolia: {
+      applicationID: '',
+      apiKey: '',
+      indexName: '',
+      hits: {"per_page":10},
+      labels: {"input_placeholder":"Search for Posts","hits_empty":"We didn't find any results for the search: ${query}","hits_stats":"${hits} results found in ${time} ms"}
+    }
+  };
+</script>
+
+
+
+  <link rel="canonical" href="http://glooo.fun/js/43-jsBaseT/">
+
+
+
+
+
+  <title>43道检验基础的JavaScript面试题 | Gzy's Blog</title>
+  
+
+
+
+
+<script>
+  (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+            (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+          m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+  })(window,document,'script','https://www.google-analytics.com/analytics.js','ga');
+  ga('create', 'f8389f9478a18364bdfcfd56e68b3a9e', 'auto');
+  ga('send', 'pageview');
+</script>
+
+
+  <script type="text/javascript">
+    var _hmt = _hmt || [];
+    (function() {
+      var hm = document.createElement("script");
+      hm.src = "https://hm.baidu.com/hm.js?f8389f9478a18364bdfcfd56e68b3a9e";
+      var s = document.getElementsByTagName("script")[0];
+      s.parentNode.insertBefore(hm, s);
+    })();
+  </script>
+
+
+
+
+</head>
+
+<body itemscope itemtype="http://schema.org/WebPage" lang="zh-Hans">
+
+  
+  
+    
+  
+
+  <div class="container sidebar-position-left page-post-detail">
+    <div class="headband"></div>
+
+    <header id="header" class="header" itemscope itemtype="http://schema.org/WPHeader">
+      <div class="header-inner"><div class="site-brand-wrapper">
+  <div class="site-meta ">
+    
+
+    <div class="custom-logo-site-title">
+      <a href="/" class="brand" rel="start">
+        <span class="logo-line-before"><i></i></span>
+        <span class="site-title">Gzy's Blog</span>
+        <span class="logo-line-after"><i></i></span>
+      </a>
+    </div>
+      
+        <p class="site-subtitle"></p>
+      
+  </div>
+
+  <div class="site-nav-toggle">
+    <button>
+      <span class="btn-bar"></span>
+      <span class="btn-bar"></span>
+      <span class="btn-bar"></span>
+    </button>
+  </div>
+</div>
+
+<nav class="site-nav">
+  
+
+  
+    <ul id="menu" class="menu">
+      
+        
+        <li class="menu-item menu-item-home">
+          <a href="/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-home"></i> <br>
+            
+            首页
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-about">
+          <a href="/about/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-user"></i> <br>
+            
+            关于
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-tags">
+          <a href="/tags/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-tags"></i> <br>
+            
+            标签
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-categories">
+          <a href="/categories/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-th"></i> <br>
+            
+            分类
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-archives">
+          <a href="/archives/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-archive"></i> <br>
+            
+            归档
+          </a>
+        </li>
+      
+
+      
+        <li class="menu-item menu-item-search">
+          
+            <a href="javascript:;" class="popup-trigger">
+          
+            
+              <i class="menu-item-icon fa fa-search fa-fw"></i> <br>
+            
+            搜索
+          </a>
+        </li>
+      
+    </ul>
+  
+
+  
+    <div class="site-search">
+      
+  <div class="popup search-popup local-search-popup">
+  <div class="local-search-header clearfix">
+    <span class="search-icon">
+      <i class="fa fa-search"></i>
+    </span>
+    <span class="popup-btn-close">
+      <i class="fa fa-times-circle"></i>
+    </span>
+    <div class="local-search-input-wrapper">
+      <input autocomplete="off" placeholder="搜索..." spellcheck="false" type="text" id="local-search-input">
+    </div>
+  </div>
+  <div id="local-search-result"></div>
+</div>
+
+
+
+    </div>
+  
+</nav>
+
+
+
+ </div>
+    </header>
+
+    <main id="main" class="main">
+      <div class="main-inner">
+        <div class="content-wrap">
+          <div id="content" class="content">
+            
+
+  <div id="posts" class="posts-expand">
+    
+
+  
+
+  
+  
+  
+
+  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
+  
+  
+  
+  <div class="post-block">
+    <link itemprop="mainEntityOfPage" href="http://glooo.fun/js/43-jsBaseT/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="Gzy">
+      <meta itemprop="description" content>
+      <meta itemprop="image" content="/images/avatar.png">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="Gzy's Blog">
+    </span>
+
+    
+      <header class="post-header">
+
+        
+        
+          <h1 class="post-title" itemprop="name headline">43道检验基础的JavaScript面试题</h1>
+        
+
+        <div class="post-meta">
+          
+          <span class="post-time">
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">发表于</span>
+              
+              <time title="创建于" itemprop="dateCreated datePublished" datetime="2019-09-18T11:32:55+08:00">
+                2019-09-18
+              </time>
+            
+
+            
+
+            
+          </span>
+
+          
+            <span class="post-category">
+            
+              <span class="post-meta-divider">|</span>
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-folder-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">分类于</span>
+              
+              
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/categories/js/" itemprop="url" rel="index">
+                    <span itemprop="name">js</span>
+                  </a>
+                </span>
+
+                
+                
+              
+            </span>
+          
+
+          
+            
+          
+
+          
+          
+
+          
+            <span class="post-meta-divider">|</span>
+            <span class="page-pv"><i class="fa fa-eye"></i>
+            <span class="busuanzi-value" id="busuanzi_value_page_pv"></span>
+            </span>
+          
+
+          
+            <div class="post-wordcount">
+              
+                
+                <span class="post-meta-item-icon">
+                  <i class="fa fa-file-word-o"></i>
+                </span>
+                
+                  <span class="post-meta-item-text">字数统计&#58;</span>
+                
+                <span title="字数统计">
+                  5.5k
+                </span>
+              
+
+              
+                <span class="post-meta-divider">|</span>
+              
+
+              
+                <span class="post-meta-item-icon">
+                  <i class="fa fa-clock-o"></i>
+                </span>
+                
+                  <span class="post-meta-item-text">阅读时长 &asymp;</span>
+                
+                <span title="阅读时长">
+                  22
+                </span>
+              
+            </div>
+          
+
+          
+
+        </div>
+      </header>
+    
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        <ol>
+<li>下面代码的输出是什么？<br>function sayHi() {<br>console.log(name);<br>console.log(age);<br>var name = “Lydia”;<br>let age = 21;<br>}</li>
+</ol>
+<p>A: Lydia 和 undefined<br>B: Lydia 和 ReferenceError<br>C: ReferenceError 和 21<br>D: undefined 和 ReferenceError<br>答案: D<br>在函数中，我们首先使用var关键字声明了name变量。 这意味着变量在创建阶段会被提升（JavaScript会在创建变量创建阶段为其分配内存空间），默认值为undefined，直到我们实际执行到使用该变量的行。 我们还没有为name变量赋值，所以它仍然保持undefined的值。</p>
+<p>使用let关键字（和const）声明的变量也会存在变量提升，但与var不同，初始化没有被提升。 在我们声明（初始化）它们之前，它们是不可访问的。 这被称为“暂时死区”。 当我们在声明变量之前尝试访问变量时，JavaScript会抛出一个ReferenceError。</p>
+<p>译者注：</p>
+<p>关于let的是否存在变量提升，我们何以用下面的例子来验证：</p>
+<p>let name = ‘ConardLi’<br>{<br>  console.log(name) // Uncaught ReferenceError: name is not defined<br>  let name = ‘code秘密花园’<br>}<br>let变量如果不存在变量提升，console.log(name)就会输出ConardLi，结果却抛出了ReferenceError，那么这很好的说明了，let也存在变量提升，但是它存在一个“暂时死区”，在变量未初始化或赋值前不允许访问。</p>
+<p>变量的赋值可以分为三个阶段：</p>
+<p>创建变量，在内存中开辟空间<br>初始化变量，将变量初始化为undefined<br>真正赋值<br>关于let、var和function：</p>
+<p>let 的「创建」过程被提升了，但是初始化没有提升。<br>var 的「创建」和「初始化」都被提升了。<br>function 的「创建」「初始化」和「赋值」都被提升了。</p>
+<a id="more"></a>
+<ol start="2">
+<li>下面代码的输出是什么?<br>for (var i = 0; i &lt; 3; i++) {<br>setTimeout(() =&gt; console.log(i), 1);<br>}</li>
+</ol>
+<p>for (let i = 0; i &lt; 3; i++) {<br>  setTimeout(() =&gt; console.log(i), 1);<br>}<br>A: 0 1 2 and 0 1 2<br>B: 0 1 2 and 3 3 3<br>C: 3 3 3 and 0 1 2<br>答案: C<br>由于JavaScript中的事件执行机制，setTimeout函数真正被执行时，循环已经走完。 由于第一个循环中的变量i是使用var关键字声明的，因此该值是全局的。 在循环期间，我们每次使用一元运算符++都会将i的值增加1。 因此在第一个例子中，当调用setTimeout函数时，i已经被赋值为3。</p>
+<p>在第二个循环中，使用let关键字声明变量i：使用let（和const）关键字声明的变量是具有块作用域的（块是{}之间的任何东西）。 在每次迭代期间，i将被创建为一个新值，并且每个值都会存在于循环内的块级作用域。</p>
+<ol start="3">
+<li>下面代码的输出是什么?<br>const shape = {<br>radius: 10,<br>diameter() {<br> return this.radius * 2;<br>},<br>perimeter: () =&gt; 2 * Math.PI * this.radius<br>};</li>
+</ol>
+<p>shape.diameter();<br>shape.perimeter();<br>A: 20 and 62.83185307179586<br>B: 20 and NaN<br>C: 20 and 63<br>D: NaN and 63<br>答案: B<br>请注意，diameter是普通函数，而perimeter是箭头函数。</p>
+<p>对于箭头函数，this关键字指向是它所在上下文（定义时的位置）的环境，与普通函数不同！ 这意味着当我们调用perimeter时，它不是指向shape对象，而是指其定义时的环境（window）。没有值radius属性，返回undefined。</p>
+<ol start="4">
+<li>下面代码的输出是什么?</li>
+</ol>
+<p>+true;<br>!”Lydia”;<br>A: 1 and false<br>B: false and NaN<br>C: false and false<br>答案: A<br>一元加号会尝试将boolean类型转换为数字类型。 true被转换为1，false被转换为0。</p>
+<p>字符串’Lydia’是一个真值。 我们实际上要问的是“这个真值是假的吗？”。 这会返回false。</p>
+<ol start="5">
+<li>哪个选项是不正确的?<br>const bird = {<br>size: “small”<br>};</li>
+</ol>
+<p>const mouse = {<br>  name: “Mickey”,<br>  small: true<br>};<br>A: mouse.bird.size<br>B: mouse[bird.size]<br>C: mouse[bird[“size”]]<br>D: All of them are valid<br>答案: A<br>在JavaScript中，所有对象键都是字符串（除了Symbol）。尽管有时我们可能不会给定字符串类型，但它们总是被转换为字符串。</p>
+<p>JavaScript解释语句。当我们使用方括号表示法时，它会看到第一个左括号[，然后继续，直到找到右括号]。只有在那个时候，它才会对这个语句求值。</p>
+<p>mouse [bird.size]：首先它会对bird.size求值，得到small。 mouse [“small”]返回true。</p>
+<p>但是，使用点表示法，这不会发生。 mouse没有名为bird的键，这意味着mouse.bird是undefined。 然后，我们使用点符号来询问size：mouse.bird.size。 由于mouse.bird是undefined，我们实际上是在询问undefined.size。 这是无效的，并将抛出Cannot read property “size” of undefined。</p>
+<ol start="6">
+<li>下面代码的输出是什么?<br>let c = { greeting: “Hey!” };<br>let d;</li>
+</ol>
+<p>d = c;<br>c.greeting = “Hello”;<br>console.log(d.greeting);<br>A: Hello<br>B: undefined<br>C: ReferenceError<br>D: TypeError<br>答案: A<br>在JavaScript中，当设置它们彼此相等时，所有对象都通过引用进行交互。</p>
+<p>首先，变量c为对象保存一个值。 之后，我们将d指定为c与对象相同的引用。</p>
+<p>更改一个对象时，可以更改所有对象。</p>
+<ol start="7">
+<li>下面代码的输出是什么?<br>let a = 3;<br>let b = new Number(3);<br>let c = 3;</li>
+</ol>
+<p>console.log(a == b);<br>console.log(a === b);<br>console.log(b === c);<br>A: truefalsetrue<br>B: falsefalsetrue<br>C: truefalsefalse<br>D: falsetruetrue<br>答案: C<br>new Number（）是一个内置的函数构造函数。 虽然它看起来像一个数字，但它并不是一个真正的数字：它有一堆额外的功能，是一个对象。</p>
+<p>当我们使用==运算符时，它只检查它是否具有相同的值。 他们都有3的值，所以它返回true。</p>
+<p>译者注：==会引发隐式类型转换，右侧的对象类型会自动拆箱为Number类型。<br>然而，当我们使用===操作符时，类型和值都需要相等，new Number()不是一个数字，是一个对象类型。两者都返回 false。</p>
+<ol start="8">
+<li><p>下面代码的输出是什么?<br>class Chameleon {<br>static colorChange(newColor) {<br> this.newColor = newColor;<br>}</p>
+<p>constructor({ newColor = “green” } = {}) {<br> this.newColor = newColor;<br>}<br>}</p>
+</li>
+</ol>
+<p>const freddie = new Chameleon({ newColor: “purple” });<br>freddie.colorChange(“orange”);<br>A: orange<br>B: purple<br>C: green<br>D: TypeError<br>答案: D<br>colorChange方法是静态的。 静态方法仅在创建它们的构造函数中存在，并且不能传递给任何子级。 由于freddie是一个子级对象，函数不会传递，所以在freddie实例上不存在freddie方法：抛出TypeError。</p>
+<ol start="9">
+<li>下面代码的输出是什么?<br>let greeting;<br>greetign = {}; // Typo!<br>console.log(greetign);<br>A: {}<br>B: ReferenceError: greetign is not defined<br>C: undefined<br>答案: A<br>控制台会输出空对象，因为我们刚刚在全局对象上创建了一个空对象！ 当我们错误地将greeting输入为greetign时，JS解释器实际上在浏览器中将其视为global.greetign = {}（或window.greetign = {}）。</li>
+</ol>
+<p>为了避免这种情况，我们可以使用“use strict”。 这可以确保在将变量赋值之前必须声明变量。</p>
+<ol start="10">
+<li>当我们这样做时会发生什么?<br>function bark() {<br>console.log(“Woof!”);<br>}</li>
+</ol>
+<p>bark.animal = “dog”;<br>A: Nothing, this is totally fine!<br>B: SyntaxError. You cannot add properties to a function this way.<br>C: undefined<br>D: ReferenceError<br>答案: A<br>这在JavaScript中是可能的，因为函数也是对象！（原始类型之外的所有东西都是对象）</p>
+<p>函数是一种特殊类型的对象。您自己编写的代码并不是实际的函数。 该函数是具有属性的对象，此属性是可调用的。</p>
+<ol start="11">
+<li>下面代码的输出是什么?<br>function Person(firstName, lastName) {<br>this.firstName = firstName;<br>this.lastName = lastName;<br>}</li>
+</ol>
+<p>const member = new Person(“Lydia”, “Hallie”);<br>Person.getFullName = () =&gt; this.firstName + this.lastName;</p>
+<p>console.log(member.getFullName());<br>A: TypeError<br>B: SyntaxError<br>C: Lydia Hallie<br>D: undefinedundefined<br>答案: A<br>您不能像使用常规对象那样向构造函数添加属性。 如果要一次向所有对象添加功能，则必须使用原型。 所以在这种情况下应该这样写：</p>
+<p>Person.prototype.getFullName = function () {<br>  return <code>${this.firstName} ${this.lastName}</code>;<br>}<br>这样会使member.getFullName()是可用的，为什么样做是对的？ 假设我们将此方法添加到构造函数本身。 也许不是每个Person实例都需要这种方法。这会浪费大量内存空间，因为它们仍然具有该属性，这占用了每个实例的内存空间。 相反，如果我们只将它添加到原型中，我们只需将它放在内存中的一个位置，但它们都可以访问它！</p>
+<ol start="12">
+<li>下面代码的输出是什么?<br>function Person(firstName, lastName) {<br>this.firstName = firstName;<br>this.lastName = lastName;<br>}</li>
+</ol>
+<p>const lydia = new Person(“Lydia”, “Hallie”);<br>const sarah = Person(“Sarah”, “Smith”);</p>
+<p>console.log(lydia);<br>console.log(sarah);<br>A: Person {firstName: “Lydia”, lastName: “Hallie”} and undefined<br>B: Person {firstName: “Lydia”, lastName: “Hallie”} and Person {firstName: “Sarah”, lastName: “Smith”}<br>C: Person {firstName: “Lydia”, lastName: “Hallie”} and {}<br>D:Person {firstName: “Lydia”, lastName: “Hallie”} and ReferenceError<br>答案: A<br>对于sarah，我们没有使用new关键字。 使用new时，它指的是我们创建的新空对象。 但是，如果你不添加new它指的是全局对象！</p>
+<p>我们指定了this.firstName等于’Sarah和this.lastName等于Smith。 我们实际做的是定义global.firstName =’Sarah’和global.lastName =’Smith。 sarah本身的返回值是undefined。</p>
+<ol start="12">
+<li>事件传播的三个阶段是什么？?<br>A: 目标 &gt; 捕获 &gt; 冒泡<br>B: 冒泡 &gt; 目标 &gt; 捕获<br>C: 目标 &gt; 冒泡 &gt; 捕获<br>D: 捕获 &gt; 目标 &gt; 冒泡<br>答案: D<br>在捕获阶段，事件通过父元素向下传递到目标元素。 然后它到达目标元素，冒泡开始。</li>
+</ol>
+<ol start="13">
+<li>所有对象都有原型.<br>A: 对<br>B: 错误<br>答案: B<br>除基础对象外，所有对象都有原型。 基础对象可以访问某些方法和属性，例如.toString。 这就是您可以使用内置JavaScript方法的原因！ 所有这些方法都可以在原型上找到。 虽然JavaScript无法直接在您的对象上找到它，但它会沿着原型链向下寻找并在那里找到它，这使您可以访问它。</li>
+</ol>
+<p>译者注：基础对象指原型链终点的对象。基础对象的原型是null。</p>
+<ol start="14">
+<li>下面代码的输出是什么?<br>function sum(a, b) {<br>return a + b;<br>}</li>
+</ol>
+<p>sum(1, “2”);<br>A: NaN<br>B: TypeError<br>C: “12”<br>D: 3<br>答案: C<br>JavaScript是一种动态类型语言：我们没有指定某些变量的类型。 在您不知情的情况下，值可以自动转换为另一种类型，称为隐式类型转换。 强制从一种类型转换为另一种类型。</p>
+<p>在此示例中，JavaScript将数字1转换为字符串，以使函数有意义并返回值。 在让数字类型（1）和字符串类型（’2’）相加时，该数字被视为字符串。 我们可以连接像“Hello”+“World”这样的字符串，所以这里发生的是“1”+“2”返回“12”。</p>
+<ol start="15">
+<li>下面代码的输出是什么?<br>let number = 0;<br>console.log(number++);<br>console.log(++number);<br>console.log(number);<br>A: 112<br>B: 122<br>C: 022<br>D: 012<br>答案: C<br>后缀一元运算符++：</li>
+</ol>
+<p>返回值（返回0）<br>增加值（数字现在是1）<br>前缀一元运算符++：</p>
+<p>增加值（数字现在是2）<br>返回值（返回2）<br>所以返回0 2 2。</p>
+<ol start="16">
+<li>下面代码的输出是什么?<br>function getPersonInfo(one, two, three) {<br>console.log(one);<br>console.log(two);<br>console.log(three);<br>}</li>
+</ol>
+<p>const person = “Lydia”;<br>const age = 21;</p>
+<p>getPersonInfo<code>${person} is ${age} years old</code>;<br>A: Lydia21[“”, “is”, “years old”]<br>B: [“”, “is”, “years old”]Lydia21<br>C: Lydia[“”, “is”, “years old”]21<br>答案: B<br>如果使用标记的模板字符串，则第一个参数的值始终是字符串值的数组。 其余参数获取传递到模板字符串中的表达式的值！</p>
+<ol start="17">
+<li>下面代码的输出是什么?<br>function checkAge(data) {<br>if (data === { age: 18 }) {<br>console.log(“You are an adult!”);<br>} else if (data == { age: 18 }) {<br>console.log(“You are still an adult.”);<br>} else {<br>console.log(<code>Hmm.. You don&#39;t have an age I guess</code>);<br>}<br>}</li>
+</ol>
+<p>checkAge({ age: 18 });<br>A: You are an adult!<br>B: You are still an adult.<br>C: Hmm.. You don’t have an age I guess<br>答案: C<br>在比较相等性，原始类型通过它们的值进行比较，而对象通过它们的引用进行比较。JavaScript检查对象是否具有对内存中相同位置的引用。</p>
+<p>我们作为参数传递的对象和我们用于检查相等性的对象在内存中位于不同位置，所以它们的引用是不同的。</p>
+<p>这就是为什么{ age: 18 } === { age: 18 }和 { age: 18 } == { age: 18 } 返回 false的原因。</p>
+<ol start="18">
+<li>下面代码的输出是什么?<br>function getAge(…args) {<br>console.log(typeof args);<br>}</li>
+</ol>
+<p>getAge(21);<br>A: “number”<br>B: “array”<br>C: “object”<br>D: “NaN”<br>答案: C<br>扩展运算符（… args）返回一个带参数的数组。 数组是一个对象，因此typeof args返回object。</p>
+<ol start="20">
+<li>下面代码的输出是什么?<br>function getAge() {<br>“use strict”;<br>age = 21;<br>console.log(age);<br>}</li>
+</ol>
+<p>getAge();<br>A: 21<br>B: undefined<br>C: ReferenceError<br>D: TypeError<br>答案: C<br>使用“use strict”，可以确保不会意外地声明全局变量。 我们从未声明变量age，因为我们使用`use strict’，它会引发一个ReferenceError。 如果我们不使用“use strict”，它就会起作用，因为属性age会被添加到全局对象中。</p>
+<ol start="21">
+<li><p>下面代码的输出是什么?<br>const sum = eval(“10<em>10+5”);<br>A: 105<br>B: “105”<br>C: TypeError<br>D: “10</em>10+5”<br>答案: A<br>eval会为字符串传递的代码求值。 如果它是一个表达式，就像在这种情况下一样，它会计算表达式。 表达式为10 * 10 + 5计算得到105。</p>
+</li>
+<li><p>cool_secret可以访问多长时间?<br>sessionStorage.setItem(“cool_secret”, 123);<br>A：永远，数据不会丢失。<br>B：用户关闭选项卡时。<br>C：当用户关闭整个浏览器时，不仅是选项卡。<br>D：用户关闭计算机时。<br>答案: B<br>关闭选项卡后，将删除存储在sessionStorage中的数据。</p>
+</li>
+</ol>
+<p>如果使用localStorage，数据将永远存在，除非例如调用localStorage.clear()。</p>
+<ol start="23">
+<li>下面代码的输出是什么?<br>var num = 8;<br>var num = 10;</li>
+</ol>
+<p>console.log(num);<br>A: 8<br>B: 10<br>C: SyntaxError<br>D: ReferenceError<br>答案: B<br>使用var关键字，您可以用相同的名称声明多个变量。然后变量将保存最新的值。</p>
+<p>您不能使用let或const来实现这一点，因为它们是块作用域的。</p>
+<ol start="24">
+<li>下面代码的输出是什么?<br>const obj = { 1: “a”, 2: “b”, 3: “c” };<br>const set = new Set([1, 2, 3, 4, 5]);</li>
+</ol>
+<p>obj.hasOwnProperty(“1”);<br>obj.hasOwnProperty(1);<br>set.has(“1”);<br>set.has(1);<br>A: falsetruefalsetrue<br>B: falsetruetruetrue<br>C: truetruefalsetrue<br>D: truetruetruetrue<br>答案: C<br>所有对象键（不包括Symbols）都会被存储为字符串，即使你没有给定字符串类型的键。 这就是为什么obj.hasOwnProperty（’1’）也返回true。</p>
+<p>上面的说法不适用于Set。 在我们的Set中没有“1”：set.has（’1’）返回false。 它有数字类型1，set.has（1）返回true。</p>
+<ol start="25">
+<li><p>下面代码的输出是什么?<br>const obj = { a: “one”, b: “two”, a: “three” };<br>console.log(obj);<br>A: { a: “one”, b: “two” }<br>B: { b: “two”, a: “three” }<br>C: { a: “three”, b: “two” }<br>D: SyntaxError<br>答案: C<br>如果对象有两个具有相同名称的键，则将替前面的键。它仍将处于第一个位置，但具有最后指定的值。</p>
+</li>
+<li><p>JavaScript全局执行上下文为你创建了两个东西:全局对象和this关键字.<br>A: 对<br>B: 错误<br>C: 视情况而定<br>答案: A<br>基本执行上下文是全局执行上下文:它是代码中随处可访问的内容。</p>
+</li>
+<li><p>下面代码的输出是什么?<br>for (let i = 1; i &lt; 5; i++) {<br>if (i === 3) continue;<br>console.log(i);<br>}<br>A: 12<br>B: 123<br>C: 124<br>D: 134<br>答案: C<br>如果某个条件返回true，则continue语句跳过迭代。</p>
+</li>
+<li><p>下面代码的输出是什么?<br>String.prototype.giveLydiaPizza = () =&gt; {<br>return “Just give Lydia pizza already!”;<br>};</p>
+</li>
+</ol>
+<p>const name = “Lydia”;</p>
+<p>name.giveLydiaPizza();<br>A: “Just give Lydia pizza already!”<br>B: TypeError: not a function<br>C: SyntaxError<br>D: undefined<br>答案: A<br>String是一个内置的构造函数，我们可以为它添加属性。 我刚给它的原型添加了一个方法。 原始类型的字符串自动转换为字符串对象，由字符串原型函数生成。 因此，所有字符串（字符串对象）都可以访问该方法！</p>
+<p>译者注：</p>
+<p>当使用基本类型的字符串调用giveLydiaPizza时，实际上发生了下面的过程：</p>
+<p>创建一个String的包装类型实例<br>在实例上调用substring方法<br>销毁实例</p>
+<ol start="29">
+<li>下面代码的输出是什么?<br>const a = {};<br>const b = { key: “b” };<br>const c = { key: “c” };</li>
+</ol>
+<p>a[b] = 123;<br>a[c] = 456;</p>
+<p>console.log(a[b]);<br>A: 123<br>B: 456<br>C: undefined<br>D: ReferenceError<br>答案: B<br>对象键自动转换为字符串。我们试图将一个对象设置为对象a的键，其值为123。</p>
+<p>但是，当对象自动转换为字符串化时，它变成了[Object object]。 所以我们在这里说的是a[“Object object”] = 123。 然后，我们可以尝试再次做同样的事情。 c对象同样会发生隐式类型转换。那么，a[“Object object”] = 456。</p>
+<p>然后，我们打印a[b]，它实际上是a[“Object object”]。 我们将其设置为456，因此返回456。</p>
+<ol start="30">
+<li>下面代码的输出是什么?<br>const foo = () =&gt; console.log(“First”);<br>const bar = () =&gt; setTimeout(() =&gt; console.log(“Second”));<br>const baz = () =&gt; console.log(“Third”);</li>
+</ol>
+<p>bar();<br>foo();<br>baz();<br>A: FirstSecondThird<br>B: FirstThirdSecond<br>C: SecondFirstThird<br>D: SecondThirdFirst<br>答案: B<br>我们有一个setTimeout函数并首先调用它。 然而却最后打印了它。</p>
+<p>这是因为在浏览器中，我们不只有运行时引擎，我们还有一个叫做WebAPI的东西。WebAPI为我们提供了setTimeout函数，例如DOM。</p>
+<p>将callback推送到WebAPI后，setTimeout函数本身（但不是回调！）从堆栈中弹出。</p>
+<p>现在，调用foo，并打印First。</p>
+<p>foo从堆栈弹出，baz被调用，并打印Third。</p>
+<p>WebAPI不能只是在准备就绪时将内容添加到堆栈中。 相反，它将回调函数推送到一个称为任务队列的东西。</p>
+<p>这是事件循环开始工作的地方。 事件循环查看堆栈和任务队列。 如果堆栈为空，则会占用队列中的第一个内容并将其推送到堆栈中。</p>
+<p>bar被调用，Second被打印，它从栈中弹出。</p>
+<ol start="31">
+<li><p>单击按钮时event.target是什么?</p>
+<div onclick="console.log('first div')">
+<div onclick="console.log('second div')">
+<button onclick="console.log('button')">
+  Click!
+</button>
+</div>
+</div>
+A: div外部
+B: div内部
+C: button
+D: 所有嵌套元素的数组.
+答案: C
+导致事件的最深嵌套元素是事件的目标。 你可以通过event.stopPropagation停止冒泡
+</li>
+<li><p>单击下面的html片段打印的内容是什么?</p>
+<div onclick="console.log('div')">
+<p onclick="console.log('p')">
+Click here!
+
+</p></div></li>
+</ol>
+
+A: pdiv
+B: divp
+C: p
+D: div
+答案: A
+如果我们单击p，我们会看到两个日志：p和div。在事件传播期间，有三个阶段：捕获，目标和冒泡。 默认情况下，事件处理程序在冒泡阶段执行（除非您将useCapture设置为true）。 它从最深的嵌套元素向外延伸。
+
+<ol start="33">
+<li>下面代码的输出是什么?<br>const person = { name: “Lydia” };</li>
+</ol>
+<p>function sayHi(age) {<br>  console.log(<code>${this.name} is ${age}</code>);<br>}</p>
+<p>sayHi.call(person, 21);<br>sayHi.bind(person, 21);<br>A: undefined is 21Lydia is 21<br>B: functionfunction<br>C: Lydia is 21Lydia is 21<br>D: Lydia is 21function<br>答案: D<br>使用两者，我们可以传递我们想要this关键字引用的对象。 但是，.call方法会立即执行！</p>
+<p>.bind方法会返回函数的拷贝值，但带有绑定的上下文！ 它不会立即执行。</p>
+<ol start="34">
+<li>下面代码的输出是什么?<br>function sayHi() {<br>return (() =&gt; 0)();<br>}</li>
+</ol>
+<p>typeof sayHi();<br>A: “object”<br>B: “number”<br>C: “function”<br>D: “undefined”<br>答案: B<br>sayHi函数返回立即调用的函数（IIFE）的返回值。 该函数返回0，类型为数字。</p>
+<p>仅供参考：只有7种内置类型：null，undefined，boolean，number，string，object和symbol。 function不是一个类型，因为函数是对象，它的类型是object。</p>
+<ol start="35">
+<li>下面这些值哪些是假值?<br>0;<br>new Number(0);<br>(“”);<br>(“ “);<br>new Boolean(false);<br>undefined;<br>A: 0, ‘’, undefined<br>B: 0, new Number(0), ‘’, new Boolean(false), undefined<br>C: 0, ‘’, new Boolean(false), undefined<br>D: 所有都是假值<br>答案: A<br>JavaScript中只有6个假值：</li>
+</ol>
+<p>undefined<br>null<br>NaN<br>0<br>‘’ (empty string)<br>false<br>函数构造函数，如new Number和new Boolean都是真值。</p>
+<ol start="36">
+<li><p>下面代码的输出是什么?<br>console.log(typeof typeof 1);<br>A: “number”<br>B: “string”<br>C: “object”<br>D: “undefined”<br>答案: B<br>typeof 1 返回 “number”.<br>typeof “number” 返回 “string”</p>
+</li>
+<li><p>下面代码的输出是什么?<br>const numbers = [1, 2, 3];<br>numbers[10] = 11;<br>console.log(numbers);<br>A: [1, 2, 3, 7 x null, 11]<br>B: [1, 2, 3, 11]<br>C: [1, 2, 3, 7 x empty, 11]<br>D: SyntaxError<br>答案: C<br>When you set a value to an element in an array that exceeds the length of the array, JavaScript creates something called “empty slots”. These actually have the value of undefined, but you will see something like:</p>
+</li>
+</ol>
+<p>当你为数组中的元素设置一个超过数组长度的值时，JavaScript会创建一个名为“空插槽”的东西。 这些位置的值实际上是undefined，但你会看到类似的东西：</p>
+<p>[1, 2, 3, 7 x empty, 11]</p>
+<p>这取决于你运行它的位置（每个浏览器有可能不同）。</p>
+<ol start="38">
+<li>下面代码的输出是什么?<br>(() =&gt; {<br>let x, y;<br>try {<br>throw new Error();<br>} catch (x) {<br>(x = 1), (y = 2);<br>console.log(x);<br>}<br>console.log(x);<br>console.log(y);<br>})();<br>A: 1undefined2<br>B: undefinedundefinedundefined<br>C: 112<br>D: 1undefinedundefined<br>答案: A<br>catch块接收参数x。当我们传递参数时，这与变量的x不同。这个变量x是属于catch作用域的。</li>
+</ol>
+<p>之后，我们将这个块级作用域的变量设置为1，并设置变量y的值。 现在，我们打印块级作用域的变量x，它等于1。</p>
+<p>在catch块之外，x仍然是undefined，而y是2。 当我们想在catch块之外的console.log(x)时，它返回undefined，而y返回2。</p>
+<ol start="39">
+<li>JavaScript中的所有内容都是…<br>A：原始或对象<br>B：函数或对象<br>C：技巧问题！只有对象<br>D：数字或对象<br>答案: A<br>JavaScript只有原始类型和对象。</li>
+</ol>
+<p>原始类型是boolean，null，undefined，bigint，number，string和symbol。</p>
+<ol start="40">
+<li>下面代码的输出是什么?<br>[[0, 1], [2, 3]].reduce(<br>(acc, cur) =&gt; {<br>return acc.concat(cur);<br>},<br>[1, 2]<br>);<br>A: [0, 1, 2, 3, 1, 2]<br>B: [6, 1, 2]<br>C: [1, 2, 0, 1, 2, 3]<br>D: [1, 2, 6]<br>答案: C<br>[1,2]是我们的初始值。 这是我们开始执行reduce函数的初始值，以及第一个acc的值。 在第一轮中，acc是[1,2]，cur是[0,1]。 我们将它们连接起来，结果是[1,2,0,1]。</li>
+</ol>
+<p>然后，acc的值为[1,2,0,1]，cur的值为[2,3]。 我们将它们连接起来，得到[1,2,0,1,2,3]。</p>
+<ol start="41">
+<li>下面代码的输出是什么?<br>!!null;<br>!!””;<br>!!1;<br>A: falsetruefalse<br>B: falsefalsetrue<br>C: falsetruetrue<br>D: truetruefalse<br>答案: B<br>null是假值。 !null返回true。 !true返回false。</li>
+</ol>
+<p>“”是假值。 !””返回true。 !true返回false。</p>
+<p>1是真值。 !1返回false。 !false返回true。</p>
+<ol start="42">
+<li><p><code>setInterval</code>方法的返回值什么?<br>setInterval(() =&gt; console.log(“Hi”), 1000);<br>A：一个唯一的id<br>B：指定的毫秒数<br>C：传递的函数<br>D：undefined<br>答案: A<br>它返回一个唯一的id。 此id可用于使用clearInterval()函数清除该定时器。</p>
+</li>
+<li><p>What does this return?</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">[...&quot;Lydia&quot;];</span><br><span class="line">A: [&quot;L&quot;, &quot;y&quot;, &quot;d&quot;, &quot;i&quot;, &quot;a&quot;]</span><br><span class="line">B: [&quot;Lydia&quot;]</span><br><span class="line">C: [[], &quot;Lydia&quot;]</span><br><span class="line">D: [[&quot;L&quot;, &quot;y&quot;, &quot;d&quot;, &quot;i&quot;, &quot;a&quot;]]</span><br></pre></td></tr></table></figure>
+
+</li>
+</ol>
+<p>答案: A<br>字符串是可迭代的。 扩展运算符将迭代的每个字符映射到一个元素。</p>
+<p>转载自<b>ben大叔</b>的知乎，原文链接<a href="https://zhuanlan.zhihu.com/p/75359676?utm_source=wechat_session&amp;utm_medium=social&amp;utm_oi=974558471802363904&amp;from=groupmessage&amp;isappinstalled=0&amp;wechatShare=2&amp;s_s_i=pDpHHRCYQt21%2FVdcK%2BBDyPnpxlGjyBulBdeKJkTilCY%3D&amp;s_r=0" target="_blank" rel="noopener">https://zhuanlan.zhihu.com/p/75359676?utm_source=wechat_session&amp;utm_medium=social&amp;utm_oi=974558471802363904&amp;from=groupmessage&amp;isappinstalled=0&amp;wechatShare=2&amp;s_s_i=pDpHHRCYQt21%2FVdcK%2BBDyPnpxlGjyBulBdeKJkTilCY%3D&amp;s_r=0</a></p>
+
+      
+    </div>
+    
+    
+    
+  <div>
+    
+      <div>
+    
+        <div style="text-align:center;color: #555;font-size:14px;">-------------The End-------------</div>
+    
+</div>
+    
+  </div>
+    
+
+    
+
+    
+      <div>
+        <ul class="post-copyright">
+  <li class="post-copyright-author">
+    <strong>本文作者：</strong>
+    Gzy
+  </li>
+  <li class="post-copyright-link">
+    <strong>本文链接：</strong>
+    <a href="http://glooo.fun/js/43-jsBaseT/" title="43道检验基础的JavaScript面试题">http://glooo.fun/js/43-jsBaseT/</a>
+  </li>
+  <li class="post-copyright-license">
+    <strong>版权声明： </strong>
+    本博客所有文章除特别声明外，均采用 <a href="https://creativecommons.org/licenses/by-nc-sa/3.0/" rel="external nofollow" target="_blank">CC BY-NC-SA 3.0</a> 许可协议。转载请注明出处！
+  </li>
+</ul>
+
+      </div>
+    
+
+    <footer class="post-footer">
+      
+        <div class="post-tags">
+          
+            <a href="/tags/js/" rel="tag"># js</a>
+          
+        </div>
+      
+
+      
+      
+      
+
+      
+        <div class="post-nav">
+          <div class="post-nav-next post-nav-item">
+            
+              <a href="/hexo/hexoLoadJs/" rel="next" title="Hexo next主题加载缓慢问题">
+                <i class="fa fa-chevron-left"></i> Hexo next主题加载缓慢问题
+              </a>
+            
+          </div>
+
+          <span class="post-nav-divider"></span>
+
+          <div class="post-nav-prev post-nav-item">
+            
+              <a href="/Git/git-del-br/" rel="prev" title="Git删除本地分支和删除远程分支">
+                Git删除本地分支和删除远程分支 <i class="fa fa-chevron-right"></i>
+              </a>
+            
+          </div>
+        </div>
+      
+
+      
+      
+    </footer>
+  </div>
+  
+  
+  
+
+  </article>
+
+
+
+    <div class="post-spread">
+      
+        <!-- JiaThis Button BEGIN -->
+<div class="jiathis_style">
+<span class="jiathis_txt">分享到：</span>
+<a class="jiathis_button_fav">收藏夹</a>
+<a class="jiathis_button_copy">复制网址</a>
+<a class="jiathis_button_email">邮件</a>
+<a class="jiathis_button_weixin">微信</a>
+<a class="jiathis_button_qzone">QQ空间</a>
+<a class="jiathis_button_tqq">腾讯微博</a>
+<a class="jiathis_button_douban">豆瓣</a>
+<a class="jiathis_button_share">一键分享</a>
+
+<a href="http://www.jiathis.com/share?uid=2140465" class="jiathis jiathis_txt jiathis_separator jtico jtico_jiathis" target="_blank">更多</a>
+<a class="jiathis_counter_style"></a>
+</div>
+<script type="text/javascript">
+var jiathis_config={
+  data_track_clickback:true,
+  summary:"",
+  shortUrl:false,
+  hideMore:false
+}
+</script>
+<script type="text/javascript" src="http://v3.jiathis.com/code/jia.js?uid=" charset="utf-8"></script>
+<!-- JiaThis Button END -->
+      
+    </div>
+  </div>
+
+
+          </div>
+          
+
+
+          
+
+  
+    <div id="gitalk-container"></div>
+
+  
+
+
+
+        </div>
+        
+          
+  
+  <div class="sidebar-toggle">
+    <div class="sidebar-toggle-line-wrap">
+      <span class="sidebar-toggle-line sidebar-toggle-line-first"></span>
+      <span class="sidebar-toggle-line sidebar-toggle-line-middle"></span>
+      <span class="sidebar-toggle-line sidebar-toggle-line-last"></span>
+    </div>
+  </div>
+
+  <aside id="sidebar" class="sidebar">
+    
+    <div class="sidebar-inner">
+
+      
+
+      
+
+      <section class="site-overview-wrap sidebar-panel sidebar-panel-active">
+        <div class="site-overview">
+          <div class="site-author motion-element" itemprop="author" itemscope itemtype="http://schema.org/Person">
+            
+              <img class="site-author-image" itemprop="image" src="/images/avatar.png" alt="Gzy">
+            
+              <p class="site-author-name" itemprop="name">Gzy</p>
+              <p class="site-description motion-element" itemprop="description">Slow Down & Deposit Oneself</p>
+          </div>
+
+          <nav class="site-state motion-element">
+
+            
+              <div class="site-state-item site-state-posts">
+              
+                <a href="/archives/">
+              
+                  <span class="site-state-item-count">101</span>
+                  <span class="site-state-item-name">日志</span>
+                </a>
+              </div>
+            
+
+            
+              
+              
+              <div class="site-state-item site-state-categories">
+                <a href="/categories/index.html">
+                  <span class="site-state-item-count">22</span>
+                  <span class="site-state-item-name">分类</span>
+                </a>
+              </div>
+            
+
+            
+              
+              
+              <div class="site-state-item site-state-tags">
+                <a href="/tags/index.html">
+                  <span class="site-state-item-count">58</span>
+                  <span class="site-state-item-name">标签</span>
+                </a>
+              </div>
+            
+
+          </nav>
+
+          
+            <div class="feed-link motion-element">
+              <a href="/atom.xml" rel="alternate">
+                <i class="fa fa-rss"></i>
+                RSS
+              </a>
+            </div>
+          
+
+          
+            <div class="links-of-author motion-element">
+                
+                  <span class="links-of-author-item">
+                    <a href="https://github.com/glooo" target="_blank" title="GitHub">
+                      
+                        <i class="fa fa-fw fa-github"></i>GitHub</a>
+                  </span>
+                
+                  <span class="links-of-author-item">
+                    <a href="mailto:894335788@qq.com" target="_blank" title="E-Mail">
+                      
+                        <i class="fa fa-fw fa-envelope"></i>E-Mail</a>
+                  </span>
+                
+            </div>
+          
+
+          
+          
+
+          
+          
+            <div class="links-of-blogroll motion-element links-of-blogroll-inline">
+              <div class="links-of-blogroll-title">
+                <i class="fa  fa-fw fa-link"></i>
+                Links
+              </div>
+              <ul class="links-of-blogroll-list">
+                
+                  <li class="links-of-blogroll-item">
+                    <a href="http://godlikemeteor.com" title="隔壁老王" target="_blank">隔壁老王</a>
+                  </li>
+                
+                  <li class="links-of-blogroll-item">
+                    <a href="https://hzpcactus.github.io" title="仙人掌上的刺猬" target="_blank">仙人掌上的刺猬</a>
+                  </li>
+                
+              </ul>
+            </div>
+          
+
+          
+
+        </div>
+      </section>
+
+      
+
+      
+        <div class="back-to-top">
+          <i class="fa fa-arrow-up"></i>
+          
+            <span id="scrollpercent"><span>0</span>%</span>
+          
+        </div>
+      
+
+    </div>
+  </aside>
+
+
+        
+      </div>
+    </main>
+
+    <footer id="footer" class="footer">
+      <div class="footer-inner">
+        
+<div class="copyright">&copy; 2017 &mdash; <span itemprop="copyrightYear">2020</span>
+  <span class="with-love">
+    <i class="fa fa-heart"></i>
+  </span>
+  <span class="author" itemprop="copyrightHolder">Gzy</span>
+
+  
+</div>
+
+
+  <div class="powered-by">由 <a class="theme-link" target="_blank" href="https://hexo.io">Hexo</a> 强力驱动</div>
+
+
+
+  <span class="post-meta-divider">|</span>
+
+
+
+  <div class="theme-info">主题 &mdash; <a class="theme-link" target="_blank" href="https://github.com/iissnan/hexo-theme-next">NexT.Gemini</a> v5.1.4</div>
+
+
+
+
+        
+<div class="busuanzi-count">
+  <!--<script async src="//busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js"></script>-->
+<script async src="/js/src/busuanzi.pure.mini.js"></script>
+
+
+  
+    <span class="site-uv">
+      <i class="fa fa-user"></i>
+      <span class="busuanzi-value" id="busuanzi_value_site_uv"></span>
+      
+    </span>
+  
+
+  
+    <span class="site-pv">
+      <i class="fa fa-eye"></i>
+      <span class="busuanzi-value" id="busuanzi_value_site_pv"></span>
+      
+    </span>
+  
+</div>
+
+
+
+
+
+
+
+
+        
+      </div>
+    </footer>
+
+    
+
+    
+
+  </div>
+
+  
+
+<script type="text/javascript">
+  if (Object.prototype.toString.call(window.Promise) !== '[object Function]') {
+    window.Promise = null;
+  }
+</script>
+
+
+
+
+
+
+
+
+
+  
+
+
+  
+
+
+
+
+
+
+
+
+
+
+
+  
+  
+    <script type="text/javascript" src="/lib/jquery/index.js?v=2.1.3"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="/lib/fastclick/lib/fastclick.min.js?v=1.0.6"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="/lib/jquery_lazyload/jquery.lazyload.js?v=1.9.7"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="/lib/velocity/velocity.min.js?v=1.2.1"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="/lib/velocity/velocity.ui.min.js?v=1.2.1"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="/lib/fancybox/source/jquery.fancybox.pack.js?v=2.1.5"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="/lib/canvas-nest/canvas-nest.min.js"></script>
+  
+
+
+  
+
+
+  <script type="text/javascript" src="/js/src/utils.js?v=5.1.4"></script>
+
+  <script type="text/javascript" src="/js/src/motion.js?v=5.1.4"></script>
+
+
+
+  
+  
+
+
+  <script type="text/javascript" src="/js/src/affix.js?v=5.1.4"></script>
+
+  <script type="text/javascript" src="/js/src/schemes/pisces.js?v=5.1.4"></script>
+
+
+
+  
+  <script type="text/javascript" src="/js/src/scrollspy.js?v=5.1.4"></script>
+<script type="text/javascript" src="/js/src/post-details.js?v=5.1.4"></script>
+
+
+
+  
+
+
+  <script type="text/javascript" src="/js/src/bootstrap.js?v=5.1.4"></script>
+
+
+
+  
+
+
+  
+
+
+
+
+	
+
+
+
+
+
+  
+
+
+
+
+
+  
+
+
+
+
+
+
+
+
+
+
+
+
+  <link rel="stylesheet" href="https://unpkg.com/gitalk/dist/gitalk.css">
+  <script src="https://unpkg.com/gitalk/dist/gitalk.min.js"></script>
+   <!--<script src="https://rawgit.com/qhh0205/78e9e0b1f3114db6737f3ed8cdd51d3a/raw/3894c5be5aa2378336b1f5ee0f296fa0b22d06e9/md5.min.js"></script>-->
+    <script src="/js/src/md5.min.js"></script>
+   <script type="text/javascript">
+        var gitalk = new Gitalk({
+          clientID: 'ce60894ee1c55f24da8a',
+          clientSecret: 'eed38978215012c51c78de5668d05722e9cdc256',
+          repo: 'glooo.github.io',
+          owner: 'glooo',
+          admin: ['glooo'],
+          id: md5(location.pathname),
+          distractionFreeMode: 'true'
+        })
+        gitalk.render('gitalk-container')           
+       </script>
+
+
+  
+
+  <script type="text/javascript">
+    // Popup Window;
+    var isfetched = false;
+    var isXml = true;
+    // Search DB path;
+    var search_path = "search.xml";
+    if (search_path.length === 0) {
+      search_path = "search.xml";
+    } else if (/json$/i.test(search_path)) {
+      isXml = false;
+    }
+    var path = "/" + search_path;
+    // monitor main search box;
+
+    var onPopupClose = function (e) {
+      $('.popup').hide();
+      $('#local-search-input').val('');
+      $('.search-result-list').remove();
+      $('#no-result').remove();
+      $(".local-search-pop-overlay").remove();
+      $('body').css('overflow', '');
+    }
+
+    function proceedsearch() {
+      $("body")
+        .append('<div class="search-popup-overlay local-search-pop-overlay"></div>')
+        .css('overflow', 'hidden');
+      $('.search-popup-overlay').click(onPopupClose);
+      $('.popup').toggle();
+      var $localSearchInput = $('#local-search-input');
+      $localSearchInput.attr("autocapitalize", "none");
+      $localSearchInput.attr("autocorrect", "off");
+      $localSearchInput.focus();
+    }
+
+    // search function;
+    var searchFunc = function(path, search_id, content_id) {
+      'use strict';
+
+      // start loading animation
+      $("body")
+        .append('<div class="search-popup-overlay local-search-pop-overlay">' +
+          '<div id="search-loading-icon">' +
+          '<i class="fa fa-spinner fa-pulse fa-5x fa-fw"></i>' +
+          '</div>' +
+          '</div>')
+        .css('overflow', 'hidden');
+      $("#search-loading-icon").css('margin', '20% auto 0 auto').css('text-align', 'center');
+
+      $.ajax({
+        url: path,
+        dataType: isXml ? "xml" : "json",
+        async: true,
+        success: function(res) {
+          // get the contents from search data
+          isfetched = true;
+          $('.popup').detach().appendTo('.header-inner');
+          var datas = isXml ? $("entry", res).map(function() {
+            return {
+              title: $("title", this).text(),
+              content: $("content",this).text(),
+              url: $("url" , this).text()
+            };
+          }).get() : res;
+          var input = document.getElementById(search_id);
+          var resultContent = document.getElementById(content_id);
+          var inputEventFunction = function() {
+            var searchText = input.value.trim().toLowerCase();
+            var keywords = searchText.split(/[\s\-]+/);
+            if (keywords.length > 1) {
+              keywords.push(searchText);
+            }
+            var resultItems = [];
+            if (searchText.length > 0) {
+              // perform local searching
+              datas.forEach(function(data) {
+                var isMatch = false;
+                var hitCount = 0;
+                var searchTextCount = 0;
+                var title = data.title.trim();
+                var titleInLowerCase = title.toLowerCase();
+                var content = data.content.trim().replace(/<[^>]+>/g,"");
+                var contentInLowerCase = content.toLowerCase();
+                var articleUrl = decodeURIComponent(data.url);
+                var indexOfTitle = [];
+                var indexOfContent = [];
+                // only match articles with not empty titles
+                if(title != '') {
+                  keywords.forEach(function(keyword) {
+                    function getIndexByWord(word, text, caseSensitive) {
+                      var wordLen = word.length;
+                      if (wordLen === 0) {
+                        return [];
+                      }
+                      var startPosition = 0, position = [], index = [];
+                      if (!caseSensitive) {
+                        text = text.toLowerCase();
+                        word = word.toLowerCase();
+                      }
+                      while ((position = text.indexOf(word, startPosition)) > -1) {
+                        index.push({position: position, word: word});
+                        startPosition = position + wordLen;
+                      }
+                      return index;
+                    }
+
+                    indexOfTitle = indexOfTitle.concat(getIndexByWord(keyword, titleInLowerCase, false));
+                    indexOfContent = indexOfContent.concat(getIndexByWord(keyword, contentInLowerCase, false));
+                  });
+                  if (indexOfTitle.length > 0 || indexOfContent.length > 0) {
+                    isMatch = true;
+                    hitCount = indexOfTitle.length + indexOfContent.length;
+                  }
+                }
+
+                // show search results
+
+                if (isMatch) {
+                  // sort index by position of keyword
+
+                  [indexOfTitle, indexOfContent].forEach(function (index) {
+                    index.sort(function (itemLeft, itemRight) {
+                      if (itemRight.position !== itemLeft.position) {
+                        return itemRight.position - itemLeft.position;
+                      } else {
+                        return itemLeft.word.length - itemRight.word.length;
+                      }
+                    });
+                  });
+
+                  // merge hits into slices
+
+                  function mergeIntoSlice(text, start, end, index) {
+                    var item = index[index.length - 1];
+                    var position = item.position;
+                    var word = item.word;
+                    var hits = [];
+                    var searchTextCountInSlice = 0;
+                    while (position + word.length <= end && index.length != 0) {
+                      if (word === searchText) {
+                        searchTextCountInSlice++;
+                      }
+                      hits.push({position: position, length: word.length});
+                      var wordEnd = position + word.length;
+
+                      // move to next position of hit
+
+                      index.pop();
+                      while (index.length != 0) {
+                        item = index[index.length - 1];
+                        position = item.position;
+                        word = item.word;
+                        if (wordEnd > position) {
+                          index.pop();
+                        } else {
+                          break;
+                        }
+                      }
+                    }
+                    searchTextCount += searchTextCountInSlice;
+                    return {
+                      hits: hits,
+                      start: start,
+                      end: end,
+                      searchTextCount: searchTextCountInSlice
+                    };
+                  }
+
+                  var slicesOfTitle = [];
+                  if (indexOfTitle.length != 0) {
+                    slicesOfTitle.push(mergeIntoSlice(title, 0, title.length, indexOfTitle));
+                  }
+
+                  var slicesOfContent = [];
+                  while (indexOfContent.length != 0) {
+                    var item = indexOfContent[indexOfContent.length - 1];
+                    var position = item.position;
+                    var word = item.word;
+                    // cut out 100 characters
+                    var start = position - 20;
+                    var end = position + 80;
+                    if(start < 0){
+                      start = 0;
+                    }
+                    if (end < position + word.length) {
+                      end = position + word.length;
+                    }
+                    if(end > content.length){
+                      end = content.length;
+                    }
+                    slicesOfContent.push(mergeIntoSlice(content, start, end, indexOfContent));
+                  }
+
+                  // sort slices in content by search text's count and hits' count
+
+                  slicesOfContent.sort(function (sliceLeft, sliceRight) {
+                    if (sliceLeft.searchTextCount !== sliceRight.searchTextCount) {
+                      return sliceRight.searchTextCount - sliceLeft.searchTextCount;
+                    } else if (sliceLeft.hits.length !== sliceRight.hits.length) {
+                      return sliceRight.hits.length - sliceLeft.hits.length;
+                    } else {
+                      return sliceLeft.start - sliceRight.start;
+                    }
+                  });
+
+                  // select top N slices in content
+
+                  var upperBound = parseInt('1');
+                  if (upperBound >= 0) {
+                    slicesOfContent = slicesOfContent.slice(0, upperBound);
+                  }
+
+                  // highlight title and content
+
+                  function highlightKeyword(text, slice) {
+                    var result = '';
+                    var prevEnd = slice.start;
+                    slice.hits.forEach(function (hit) {
+                      result += text.substring(prevEnd, hit.position);
+                      var end = hit.position + hit.length;
+                      result += '<b class="search-keyword">' + text.substring(hit.position, end) + '</b>';
+                      prevEnd = end;
+                    });
+                    result += text.substring(prevEnd, slice.end);
+                    return result;
+                  }
+
+                  var resultItem = '';
+
+                  if (slicesOfTitle.length != 0) {
+                    resultItem += "<li><a href='" + articleUrl + "' class='search-result-title'>" + highlightKeyword(title, slicesOfTitle[0]) + "</a>";
+                  } else {
+                    resultItem += "<li><a href='" + articleUrl + "' class='search-result-title'>" + title + "</a>";
+                  }
+
+                  slicesOfContent.forEach(function (slice) {
+                    resultItem += "<a href='" + articleUrl + "'>" +
+                      "<p class=\"search-result\">" + highlightKeyword(content, slice) +
+                      "...</p>" + "</a>";
+                  });
+
+                  resultItem += "</li>";
+                  resultItems.push({
+                    item: resultItem,
+                    searchTextCount: searchTextCount,
+                    hitCount: hitCount,
+                    id: resultItems.length
+                  });
+                }
+              })
+            };
+            if (keywords.length === 1 && keywords[0] === "") {
+              resultContent.innerHTML = '<div id="no-result"><i class="fa fa-search fa-5x" /></div>'
+            } else if (resultItems.length === 0) {
+              resultContent.innerHTML = '<div id="no-result"><i class="fa fa-frown-o fa-5x" /></div>'
+            } else {
+              resultItems.sort(function (resultLeft, resultRight) {
+                if (resultLeft.searchTextCount !== resultRight.searchTextCount) {
+                  return resultRight.searchTextCount - resultLeft.searchTextCount;
+                } else if (resultLeft.hitCount !== resultRight.hitCount) {
+                  return resultRight.hitCount - resultLeft.hitCount;
+                } else {
+                  return resultRight.id - resultLeft.id;
+                }
+              });
+              var searchResultList = '<ul class=\"search-result-list\">';
+              resultItems.forEach(function (result) {
+                searchResultList += result.item;
+              })
+              searchResultList += "</ul>";
+              resultContent.innerHTML = searchResultList;
+            }
+          }
+
+          if ('auto' === 'auto') {
+            input.addEventListener('input', inputEventFunction);
+          } else {
+            $('.search-icon').click(inputEventFunction);
+            input.addEventListener('keypress', function (event) {
+              if (event.keyCode === 13) {
+                inputEventFunction();
+              }
+            });
+          }
+
+          // remove loading animation
+          $(".local-search-pop-overlay").remove();
+          $('body').css('overflow', '');
+
+          proceedsearch();
+        }
+      });
+    }
+
+    // handle and trigger popup window;
+    $('.popup-trigger').click(function(e) {
+      e.stopPropagation();
+      if (isfetched === false) {
+        searchFunc(path, 'local-search-input', 'local-search-result');
+      } else {
+        proceedsearch();
+      };
+    });
+
+    $('.popup-btn-close').click(onPopupClose);
+    $('.popup').click(function(e){
+      e.stopPropagation();
+    });
+    $(document).on('keyup', function (event) {
+      var shouldDismissSearchPopup = event.which === 27 &&
+        $('.search-popup').is(':visible');
+      if (shouldDismissSearchPopup) {
+        onPopupClose();
+      }
+    });
+  </script>
+
+
+
+
+
+  
+
+  
+
+  
+
+  
+  
+
+  
+
+  
+
+  
+
+</body>
+</html>
+<!-- 页面点击小红心 -->
+<script type="text/javascript" src="/js/src/clicklove.js"></script>
+<!--崩溃欺骗-->
+<script type="text/javascript" src="/js/src/crash_cheat.js"></script>
+<script type="text/javascript" src="/js/src/hone_hone_clock.js"></script>
