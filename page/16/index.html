@@ -330,6 +330,227 @@
   
   
   <div class="post-block">
+    <link itemprop="mainEntityOfPage" href="http://glooo.fun/前端技术/vue-router/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="Gzy">
+      <meta itemprop="description" content>
+      <meta itemprop="image" content="/images/avatar.png">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="Gzy's Blog">
+    </span>
+
+    
+      <header class="post-header">
+
+        
+        
+          <h1 class="post-title" itemprop="name headline">
+                
+                <a class="post-title-link" href="/前端技术/vue-router/" itemprop="url">vue-router</a></h1>
+        
+
+        <div class="post-meta">
+          
+          <span class="post-time">
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">发表于</span>
+              
+              <time title="创建于" itemprop="dateCreated datePublished" datetime="2019-09-10T10:54:51+08:00">
+                2019-09-10
+              </time>
+            
+
+            
+
+            
+          </span>
+
+          
+            <span class="post-category">
+            
+              <span class="post-meta-divider">|</span>
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-folder-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">分类于</span>
+              
+              
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/categories/前端技术/" itemprop="url" rel="index">
+                    <span itemprop="name">前端技术</span>
+                  </a>
+                </span>
+
+                
+                
+              
+            </span>
+          
+
+          
+            
+          
+
+          
+          
+
+          
+
+          
+            <div class="post-wordcount">
+              
+                
+                <span class="post-meta-item-icon">
+                  <i class="fa fa-file-word-o"></i>
+                </span>
+                
+                  <span class="post-meta-item-text">字数统计&#58;</span>
+                
+                <span title="字数统计">
+                  847
+                </span>
+              
+
+              
+                <span class="post-meta-divider">|</span>
+              
+
+              
+                <span class="post-meta-item-icon">
+                  <i class="fa fa-clock-o"></i>
+                </span>
+                
+                  <span class="post-meta-item-text">阅读时长 &asymp;</span>
+                
+                <span title="阅读时长">
+                  3
+                </span>
+              
+            </div>
+          
+
+          
+
+        </div>
+      </header>
+    
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        
+          
+            <p>通过注入路由器，我们可以在任何组件内通过 this.$router 访问路由器，也可以通过 this.$route 访问当前路由。</p>
+<p>this.$router 和 router 使用起来完全一样。我们使用 this.$router 的原因是我们并不想在每个独立需要封装路由的组件中都导入路由。</p>
+<p>要注意，当 <code>&lt;router-link&gt;</code> 对应的路由匹配成功，将自动设置 class 属性值 <code>.router-link-active</code>。</p>
+<h1 id="动态路由匹配"><a href="#动态路由匹配" class="headerlink" title="动态路由匹配"></a>动态路由匹配</h1><p>动态路径参数 以冒号开头</p>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">const</span> User = &#123;</span><br><span class="line">  template: <span class="string">'&lt;div&gt;User&lt;/div&gt;'</span></span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="keyword">const</span> router = <span class="keyword">new</span> VueRouter(&#123;</span><br><span class="line">  routes: [</span><br><span class="line">    <span class="comment">// 动态路径参数 以冒号开头</span></span><br><span class="line">    &#123; <span class="attr">path</span>: <span class="string">'/user/:id'</span>, <span class="attr">component</span>: User &#125;</span><br><span class="line">  ]</span><br><span class="line">&#125;)</span><br></pre></td></tr></table></figure>
+
+<p>像 /user/foo 和 /user/bar 都将映射到相同的路由。<br>一个“路径参数”使用冒号 : 标记。当匹配到一个路由时，参数值会被设置到 this.$route.params，可以在每个组件内使用。于是，我们可以更新 User 的模板，输出当前用户的 ID：</p>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">const</span> User = &#123;</span><br><span class="line">  template: <span class="string">'&lt;div&gt;User &#123;&#123; $route.params.id &#125;&#125;&lt;/div&gt;'</span></span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<p>你可以在一个路由中设置多段“路径参数”，对应的值都会设置到 $route.params 中。例如：</p>
+<table>
+<thead>
+<tr>
+<th>模式</th>
+<th>匹配路径</th>
+<th>$route.params</th>
+</tr>
+</thead>
+<tbody><tr>
+<td>/user/:username</td>
+<td>/user/evan</td>
+<td>{ username: ‘evan’ }</td>
+</tr>
+<tr>
+<td>/user/:username/post/:post_id</td>
+<td>/user/evan/post/123</td>
+<td>{ username: ‘evan’, post_id: ‘123’ }</td>
+</tr>
+</tbody></table>
+<p>除了 $route.params 外，$route 对象还提供了其它有用的信息，例如，$route.query (如果 URL 中有查询参数)、$route.hash 等等。</p>
+<h2 id="响应路由参数的变化"><a href="#响应路由参数的变化" class="headerlink" title="响应路由参数的变化"></a>响应路由参数的变化</h2><p>提醒一下，当使用路由参数时，例如从 /user/foo 导航到 /user/bar，原来的组件实例会被复用。因为两个路由都渲染同个组件，比起销毁再创建，复用则显得更加高效。不过，这也意味着组件的生命周期钩子不会再被调用。<br>复用组件时，想对路由参数的变化作出响应的话，你可以简单地 watch (监测变化) $route 对象：</p>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">watch: &#123;</span><br><span class="line">  <span class="string">'$route'</span>(to,<span class="keyword">from</span>) &#123;</span><br><span class="line">    <span class="comment">// 对路由变化作出响应</span></span><br><span class="line">  &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<p>或者用导航守卫</p>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">const</span> User = &#123;</span><br><span class="line">  template: <span class="string">'...'</span>,</span><br><span class="line">  beforeRouteUpdate (to, <span class="keyword">from</span>, next) &#123;</span><br><span class="line">    <span class="comment">// react to route changes...路由改变时作出响应</span></span><br><span class="line">    <span class="comment">// don't forget to call next() 别忘了call next()</span></span><br><span class="line">  &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<h2 id="捕获所有路由或-404-Not-found-路由"><a href="#捕获所有路由或-404-Not-found-路由" class="headerlink" title="捕获所有路由或 404 Not found 路由"></a>捕获所有路由或 404 Not found 路由</h2><p>常规参数只会匹配被 / 分隔的 URL 片段中的字符。如果想匹配任意路径，我们可以使用通配符 (*)：</p>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line">&#123;</span><br><span class="line">  <span class="comment">// 会匹配所有路径</span></span><br><span class="line">  path: <span class="string">'*'</span></span><br><span class="line">&#125;</span><br><span class="line">&#123;</span><br><span class="line">  <span class="comment">// 会匹配以 `/user-` 开头的任意路径</span></span><br><span class="line">  path: <span class="string">'/user-*'</span></span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<p>当使用通配符路由时，请确保路由的顺序是正确的，也就是说含有通配符的路由应该放在最后。路由 { path: ‘*’ } 通常用于客户端 404 错误。如果你使用了History 模式，请确保正确配置你的服务器。</p>
+<p>当使用一个通配符时，$route.params 内会自动添加一个名为 pathMatch 参数。它包含了 URL 通过通配符被匹配的部分：</p>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">// 给出一个路由 &#123; path: '/user-*' &#125;</span></span><br><span class="line"><span class="keyword">this</span>.$router.push(<span class="string">'/user-admin'</span>)</span><br><span class="line"><span class="keyword">this</span>.$route.params.pathMatch <span class="comment">// 'admin'</span></span><br><span class="line"><span class="comment">// 给出一个路由 &#123; path: '*' &#125;</span></span><br><span class="line"><span class="keyword">this</span>.$router.push(<span class="string">'/non-existing'</span>)</span><br><span class="line"><span class="keyword">this</span>.$route.params.pathMatch <span class="comment">// '/non-existing'</span></span><br></pre></td></tr></table></figure>
+
+<h2 id="高级匹配模式"><a href="#高级匹配模式" class="headerlink" title="高级匹配模式"></a>高级匹配模式</h2><p>path-to-regexp<br><a href="https://github.com/pillarjs/path-to-regexp#parameters" target="_blank" rel="noopener">https://github.com/pillarjs/path-to-regexp#parameters</a></p>
+<h2 id="匹配优先级"><a href="#匹配优先级" class="headerlink" title="匹配优先级"></a>匹配优先级</h2><p>有时候，同一个路径可以匹配多个路由，此时，匹配的优先级就按照路由的定义顺序：谁先定义的，谁的优先级就最高。</p>
+<h1 id="嵌套路由"><a href="#嵌套路由" class="headerlink" title="嵌套路由"></a>嵌套路由</h1>
+          
+        
+      
+    </div>
+    
+    
+    
+  <div>
+    
+  </div>
+    
+
+    
+
+    
+
+    <footer class="post-footer">
+      
+
+      
+
+      
+
+      
+      
+        <div class="post-eof"></div>
+      
+    </footer>
+  </div>
+  
+  
+  
+
+  </article>
+
+
+    
+      
+
+  
+
+  
+  
+  
+
+  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
+  
+  
+  
+  <div class="post-block">
     <link itemprop="mainEntityOfPage" href="http://glooo.fun/uncategorized/typescript/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
@@ -673,171 +894,6 @@
 
 
     
-      
-
-  
-
-  
-  
-  
-
-  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
-  
-  
-  
-  <div class="post-block">
-    <link itemprop="mainEntityOfPage" href="http://glooo.fun/uncategorized/leetcode-17/">
-
-    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
-      <meta itemprop="name" content="Gzy">
-      <meta itemprop="description" content>
-      <meta itemprop="image" content="/images/avatar.png">
-    </span>
-
-    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
-      <meta itemprop="name" content="Gzy's Blog">
-    </span>
-
-    
-      <header class="post-header">
-
-        
-        
-          <h1 class="post-title" itemprop="name headline">
-                
-                <a class="post-title-link" href="/uncategorized/leetcode-17/" itemprop="url">leetcode-17 电话号码的字母组合</a></h1>
-        
-
-        <div class="post-meta">
-          
-          <span class="post-time">
-            
-              <span class="post-meta-item-icon">
-                <i class="fa fa-calendar-o"></i>
-              </span>
-              
-                <span class="post-meta-item-text">发表于</span>
-              
-              <time title="创建于" itemprop="dateCreated datePublished" datetime="2019-09-09T17:24:43+08:00">
-                2019-09-09
-              </time>
-            
-
-            
-
-            
-          </span>
-
-          
-
-          
-            
-          
-
-          
-          
-
-          
-
-          
-            <div class="post-wordcount">
-              
-                
-                <span class="post-meta-item-icon">
-                  <i class="fa fa-file-word-o"></i>
-                </span>
-                
-                  <span class="post-meta-item-text">字数统计&#58;</span>
-                
-                <span title="字数统计">
-                  458
-                </span>
-              
-
-              
-                <span class="post-meta-divider">|</span>
-              
-
-              
-                <span class="post-meta-item-icon">
-                  <i class="fa fa-clock-o"></i>
-                </span>
-                
-                  <span class="post-meta-item-text">阅读时长 &asymp;</span>
-                
-                <span title="阅读时长">
-                  2
-                </span>
-              
-            </div>
-          
-
-          
-
-        </div>
-      </header>
-    
-
-    
-    
-    
-    <div class="post-body" itemprop="articleBody">
-
-      
-      
-
-      
-        
-          
-            <p>给定一个仅包含数字 2-9 的字符串，返回所有它能表示的字母组合。</p>
-<p>给出数字到字母的映射如下（与电话按键相同）。注意 1 不对应任何字母。</p>
-
-<p>示例:</p>
-<p>&emsp;输入：<code>&quot;23&quot;</code><br>&emsp;输出：<code>[&quot;ad&quot;, &quot;ae&quot;, &quot;af&quot;, &quot;bd&quot;, &quot;be&quot;, &quot;bf&quot;, &quot;cd&quot;, &quot;ce&quot;, &quot;cf&quot;]</code></p>
-<p>说明:<br>&emsp;尽管上面的答案是按字典序排列的，但是你可以任意选择答案输出的顺序。</p>
-<p>难度：中等</p>
-<p>一开始要判断一下如果输入的<code>digit</code>为空时，返回一个空数组。<br>要注意递归函数的返回值，最后要返回两次，遇到最后一个(i === arr.length)时，else需要return，否则需要递归调用函数，并把拼接好的arr3数组传进去，而接收时要用另外的arr2数组接收，for循环arr2数组再给arr3数组赋值，返回的值每轮循环再给arr3，最后让返回总的arr3，在主函数<code>letterCombinations</code>中返回。</p>
-<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br><span class="line">51</span><br><span class="line">52</span><br><span class="line">53</span><br><span class="line">54</span><br><span class="line">55</span><br><span class="line">56</span><br><span class="line">57</span><br><span class="line">58</span><br><span class="line">59</span><br><span class="line">60</span><br><span class="line">61</span><br><span class="line">62</span><br><span class="line">63</span><br><span class="line">64</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">/**</span></span><br><span class="line"><span class="comment"> * <span class="doctag">@param <span class="type">&#123;string&#125;</span> <span class="variable">digits</span></span></span></span><br><span class="line"><span class="comment"> * <span class="doctag">@return <span class="type">&#123;string[]&#125;</span></span></span></span><br><span class="line"><span class="comment"> */</span></span><br><span class="line"><span class="keyword">var</span> letterCombinations = <span class="function"><span class="keyword">function</span>(<span class="params">digits</span>) </span>&#123;</span><br><span class="line">    <span class="keyword">if</span>(digits === <span class="string">""</span>)&#123;</span><br><span class="line">        <span class="keyword">return</span> []</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="keyword">let</span> arr = digits.split(<span class="string">''</span>)</span><br><span class="line">    <span class="keyword">return</span> res(arr,<span class="number">0</span>,[])</span><br><span class="line">&#125;;</span><br><span class="line">    </span><br><span class="line">  <span class="function"><span class="keyword">function</span> <span class="title">res</span>(<span class="params">arr,i,arr2</span>)</span>&#123;</span><br><span class="line">        <span class="keyword">let</span> arr1;</span><br><span class="line">        <span class="keyword">let</span> arr3 = []</span><br><span class="line">        <span class="keyword">switch</span>(arr[i])&#123;</span><br><span class="line">            <span class="keyword">case</span> <span class="string">`2`</span>:</span><br><span class="line">                arr1 = [<span class="string">`a`</span>,<span class="string">`b`</span>,<span class="string">`c`</span>]</span><br><span class="line">                <span class="keyword">break</span>;</span><br><span class="line">            <span class="keyword">case</span> <span class="string">`3`</span>:</span><br><span class="line">                arr1 = [<span class="string">`d`</span>,<span class="string">`e`</span>,<span class="string">`f`</span>]</span><br><span class="line">                <span class="keyword">break</span>;</span><br><span class="line">            <span class="keyword">case</span> <span class="string">`4`</span>:</span><br><span class="line">                arr1 = [<span class="string">`g`</span>,<span class="string">`h`</span>,<span class="string">`i`</span>]</span><br><span class="line">                <span class="keyword">break</span>;</span><br><span class="line">            <span class="keyword">case</span> <span class="string">`5`</span>:</span><br><span class="line">                arr1 = [<span class="string">`j`</span>,<span class="string">`k`</span>,<span class="string">`l`</span>]</span><br><span class="line">                <span class="keyword">break</span>;</span><br><span class="line">            <span class="keyword">case</span> <span class="string">`6`</span>:</span><br><span class="line">                arr1 = [<span class="string">`m`</span>,<span class="string">`n`</span>,<span class="string">`o`</span>]</span><br><span class="line">                <span class="keyword">break</span>;</span><br><span class="line">            <span class="keyword">case</span> <span class="string">`7`</span>:</span><br><span class="line">                arr1 = [<span class="string">`p`</span>,<span class="string">`q`</span>,<span class="string">`r`</span>,<span class="string">`s`</span>]</span><br><span class="line">                <span class="keyword">break</span>;</span><br><span class="line">            <span class="keyword">case</span> <span class="string">`8`</span>:</span><br><span class="line">                arr1 = [<span class="string">`t`</span>,<span class="string">`u`</span>,<span class="string">`v`</span>]</span><br><span class="line">                <span class="keyword">break</span>;</span><br><span class="line">            <span class="keyword">case</span> <span class="string">`9`</span>:</span><br><span class="line">                arr1 = [<span class="string">`w`</span>,<span class="string">`x`</span>,<span class="string">`y`</span>,<span class="string">`z`</span>]</span><br><span class="line">                <span class="keyword">break</span>;</span><br><span class="line">            <span class="keyword">default</span>:</span><br><span class="line">                arr1 = [arr[i]]</span><br><span class="line">        &#125;</span><br><span class="line">        <span class="keyword">if</span>(i === <span class="number">0</span>)&#123;</span><br><span class="line">         <span class="keyword">for</span>(<span class="keyword">let</span> j = <span class="number">0</span>;j&lt;arr1.length;j++)&#123;</span><br><span class="line">                arr3.push(arr1[j])</span><br><span class="line">            &#125;</span><br><span class="line">        &#125;</span><br><span class="line">        <span class="keyword">else</span>&#123;</span><br><span class="line">            <span class="keyword">for</span>(<span class="keyword">let</span> k = <span class="number">0</span>;k&lt;arr2.length;k++)&#123;</span><br><span class="line">                <span class="keyword">for</span>(<span class="keyword">let</span> j = <span class="number">0</span>;j&lt;arr1.length;j++)&#123;</span><br><span class="line">                    arr3.push(arr2[k]+<span class="string">``</span>+arr1[j])</span><br><span class="line">                &#125;</span><br><span class="line">            &#125;</span><br><span class="line">        &#125;</span><br><span class="line">        i++</span><br><span class="line">        <span class="keyword">if</span>(i&lt;arr.length)&#123;</span><br><span class="line">            arr3 = res(arr,i,arr3)</span><br><span class="line">        &#125;</span><br><span class="line">        <span class="keyword">else</span>&#123;</span><br><span class="line">            <span class="keyword">return</span> arr3</span><br><span class="line">        &#125;</span><br><span class="line">        <span class="keyword">return</span> arr3</span><br><span class="line">    &#125;</span><br></pre></td></tr></table></figure>
-
-<p>来源：力扣（LeetCode）<br>链接：<a href="https://leetcode-cn.com/problems/letter-combinations-of-a-phone-number" target="_blank" rel="noopener">https://leetcode-cn.com/problems/letter-combinations-of-a-phone-number</a></p>
-
-          
-        
-      
-    </div>
-    
-    
-    
-  <div>
-    
-  </div>
-    
-
-    
-
-    
-
-    <footer class="post-footer">
-      
-
-      
-
-      
-
-      
-      
-        <div class="post-eof"></div>
-      
-    </footer>
-  </div>
-  
-  
-  
-
-  </article>
-
-
-    
   </section>
 
   
@@ -890,7 +946,7 @@
               
                 <a href="/archives/">
               
-                  <span class="site-state-item-count">101</span>
+                  <span class="site-state-item-count">102</span>
                   <span class="site-state-item-name">日志</span>
                 </a>
               </div>

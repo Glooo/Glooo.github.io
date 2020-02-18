@@ -330,6 +330,204 @@
   
   
   <div class="post-block">
+    <link itemprop="mainEntityOfPage" href="http://glooo.fun/Git/git-br-co/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="Gzy">
+      <meta itemprop="description" content>
+      <meta itemprop="image" content="/images/avatar.png">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="Gzy's Blog">
+    </span>
+
+    
+      <header class="post-header">
+
+        
+        
+          <h1 class="post-title" itemprop="name headline">
+                
+                <a class="post-title-link" href="/Git/git-br-co/" itemprop="url">Git branch && Git checkout常见用法</a></h1>
+        
+
+        <div class="post-meta">
+          
+          <span class="post-time">
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">发表于</span>
+              
+              <time title="创建于" itemprop="dateCreated datePublished" datetime="2019-09-19T18:07:37+08:00">
+                2019-09-19
+              </time>
+            
+
+            
+
+            
+          </span>
+
+          
+            <span class="post-category">
+            
+              <span class="post-meta-divider">|</span>
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-folder-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">分类于</span>
+              
+              
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/categories/Git/" itemprop="url" rel="index">
+                    <span itemprop="name">Git</span>
+                  </a>
+                </span>
+
+                
+                
+              
+            </span>
+          
+
+          
+            
+          
+
+          
+          
+
+          
+
+          
+            <div class="post-wordcount">
+              
+                
+                <span class="post-meta-item-icon">
+                  <i class="fa fa-file-word-o"></i>
+                </span>
+                
+                  <span class="post-meta-item-text">字数统计&#58;</span>
+                
+                <span title="字数统计">
+                  334
+                </span>
+              
+
+              
+                <span class="post-meta-divider">|</span>
+              
+
+              
+                <span class="post-meta-item-icon">
+                  <i class="fa fa-clock-o"></i>
+                </span>
+                
+                  <span class="post-meta-item-text">阅读时长 &asymp;</span>
+                
+                <span title="阅读时长">
+                  1
+                </span>
+              
+            </div>
+          
+
+          
+
+        </div>
+      </header>
+    
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        
+          <ul>
+<li><p><strong>Git branch</strong></p>
+<p>  一般用于分支的操作，比如创建分支，查看分支等等，</p>
+<ul>
+<li><code>git branch</code><br>　　不带参数：列出本地已经存在的分支，并且在当前分支的前面用”*”标记</li>
+<li><code>git branch -r</code><br>　　查看远程版本库分支列表</li>
+<li><code>git branch -a</code><br>　　查看所有分支列表，包括本地和远程</li>
+<li><code>git branch dev</code><br>　　创建名为dev的分支，创建分支时需要是最新的环境，创建分支但依然停留在当前分支</li>
+<li><code>git branch -d dev</code><br>　　删除dev分支，如果在分支中有一些未merge的提交，那么会删除分支失败，此时可以使用 git branch -D dev：强制删除dev分支，</li>
+<li><code>git branch -vv</code><br>　　可以查看本地分支对应的远程分支</li>
+<li><code>git branch -m oldName newName</code><br>　　给分支重命名</li>
+</ul>
+</li>
+<li><p><strong>Git checkout</strong></p>
+<ul>
+<li>操作文件<br><code>git checkout filename</code> 放弃单个文件的修改<br><code>git checkout .</code> 放弃当前目录下的修改</li>
+<li>操作分支<br><code>git checkout master</code> 将分支切换到master<br><code>git checkout -b master</code> 如果分支存在则只切换分支，若不存在则创建并切换到master分支，<code>repo start</code>是对<code>git checkout -b</code>这个命令的封装，将所有仓库的分支都切换到master，master是分支名，</li>
+<li>查看帮助<br><code>git checkout --help</code></li></ul></li></ul>
+          <!--noindex-->
+          <div class="post-button text-center">
+            <a class="btn" href="/Git/git-br-co/#more" rel="contents">
+              阅读全文 &raquo;
+            </a>
+          </div>
+          <!--/noindex-->
+        
+      
+    </div>
+    
+    
+    
+  <div>
+    
+  </div>
+    
+
+    
+
+    
+
+    <footer class="post-footer">
+      
+
+      
+
+      
+
+      
+      
+        <div class="post-eof"></div>
+      
+    </footer>
+  </div>
+  
+  
+  
+
+  </article>
+
+
+    
+      
+
+  
+
+  
+  
+  
+
+  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
+  
+  
+  
+  <div class="post-block">
     <link itemprop="mainEntityOfPage" href="http://glooo.fun/Git/git-del-br/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
@@ -706,210 +904,6 @@
 
 
     
-      
-
-  
-
-  
-  
-  
-
-  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
-  
-  
-  
-  <div class="post-block">
-    <link itemprop="mainEntityOfPage" href="http://glooo.fun/hexo/hexoLoadJs/">
-
-    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
-      <meta itemprop="name" content="Gzy">
-      <meta itemprop="description" content>
-      <meta itemprop="image" content="/images/avatar.png">
-    </span>
-
-    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
-      <meta itemprop="name" content="Gzy's Blog">
-    </span>
-
-    
-      <header class="post-header">
-
-        
-        
-          <h1 class="post-title" itemprop="name headline">
-                
-                <a class="post-title-link" href="/hexo/hexoLoadJs/" itemprop="url">Hexo next主题加载缓慢问题</a></h1>
-        
-
-        <div class="post-meta">
-          
-          <span class="post-time">
-            
-              <span class="post-meta-item-icon">
-                <i class="fa fa-calendar-o"></i>
-              </span>
-              
-                <span class="post-meta-item-text">发表于</span>
-              
-              <time title="创建于" itemprop="dateCreated datePublished" datetime="2019-09-18T10:09:47+08:00">
-                2019-09-18
-              </time>
-            
-
-            
-
-            
-          </span>
-
-          
-            <span class="post-category">
-            
-              <span class="post-meta-divider">|</span>
-            
-              <span class="post-meta-item-icon">
-                <i class="fa fa-folder-o"></i>
-              </span>
-              
-                <span class="post-meta-item-text">分类于</span>
-              
-              
-                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
-                  <a href="/categories/hexo/" itemprop="url" rel="index">
-                    <span itemprop="name">hexo</span>
-                  </a>
-                </span>
-
-                
-                
-              
-            </span>
-          
-
-          
-            
-          
-
-          
-          
-
-          
-
-          
-            <div class="post-wordcount">
-              
-                
-                <span class="post-meta-item-icon">
-                  <i class="fa fa-file-word-o"></i>
-                </span>
-                
-                  <span class="post-meta-item-text">字数统计&#58;</span>
-                
-                <span title="字数统计">
-                  2.4k
-                </span>
-              
-
-              
-                <span class="post-meta-divider">|</span>
-              
-
-              
-                <span class="post-meta-item-icon">
-                  <i class="fa fa-clock-o"></i>
-                </span>
-                
-                  <span class="post-meta-item-text">阅读时长 &asymp;</span>
-                
-                <span title="阅读时长">
-                  14
-                </span>
-              
-            </div>
-          
-
-          
-
-        </div>
-      </header>
-    
-
-    
-    
-    
-    <div class="post-body" itemprop="articleBody">
-
-      
-      
-
-      
-        
-          
-            <h1 id="站点"><a href="#站点" class="headerlink" title="站点"></a>站点</h1><p>可双线部署</p>
-<h1 id="字体"><a href="#字体" class="headerlink" title="字体"></a>字体</h1><p>默认是Google字体，加载比较慢<br>在next文件夹里的<code>_config.yml</code>里</p>
-<figure class="highlight yml"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment"># Uri of fonts host. E.g. //fonts.googleapis.com (Default)</span></span><br><span class="line"><span class="attr">host:</span></span><br></pre></td></tr></table></figure>
-
-<p>  改为：</p>
-<figure class="highlight yml"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment"># Uri of fonts host. E.g. //fonts.googleapis.com (Default)</span></span><br><span class="line"><span class="attr">host:</span> <span class="string">//fonts.lug.ustc.edu.cn</span> <span class="comment"># fonts.lug.ustc.edu.cn是中科大的源。</span></span><br></pre></td></tr></table></figure>
-
-<h1 id="Js脚本尽量后置"><a href="#Js脚本尽量后置" class="headerlink" title="Js脚本尽量后置"></a>Js脚本尽量后置</h1><p>建议尽量放在<code>&lt;/body&gt;</code>之前，且能异步加载的尽量异步加载。</p>
-<h1 id="配置主题自定义Js文件"><a href="#配置主题自定义Js文件" class="headerlink" title="配置主题自定义Js文件"></a>配置主题自定义Js文件</h1><h2 id="为什么要配置Hexo-next主题自定义Js文件呢？"><a href="#为什么要配置Hexo-next主题自定义Js文件呢？" class="headerlink" title="为什么要配置Hexo next主题自定义Js文件呢？"></a>为什么要配置Hexo next主题自定义Js文件呢？</h2><p>主要原因有两点：<br> 不可靠<br>  第三方站点的js依赖其站点的稳定性，如果第三方站点挂了或不维护了，那么加载地址就失效了。<br>  访问直接 404…比如最近就遇到 next 主题”不蒜子”文章<code>PV</code>统计功能用不了了，Chrome抓包发现 <a href="https://dn-lbstatics.qbox.me/busuanzi/2.3/busuanzi.pure.mini.js" target="_blank" rel="noopener">https://dn-lbstatics.qbox.me/busuanzi/2.3/busuanzi.pure.mini.js</a> 这个地址404了，看了”不蒜子”官方blog通知才发现原来换成了<a href="https://busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js" target="_blank" rel="noopener">https://busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js</a><br>  加载速度慢。<br>    比如gitalk功能用到的<a href="https://rawgit.com/qhh0205/78e9e0b1f3114db6737f3ed8cdd51d3a/raw/3894c5be5aa2378336b1f5ee0f296fa0b22d06e9/md5.min.js" target="_blank" rel="noopener">https://rawgit.com/qhh0205/78e9e0b1f3114db6737f3ed8cdd51d3a/raw/3894c5be5aa2378336b1f5ee0f296fa0b22d06e9/md5.min.js</a>文件嵌入到主题，发现每次打开blog网站都加载很慢，Chrome抓包发现是该文件加载缓慢，一直 pending很久(F12-&gt;Network-&gt;XHR)。</p>
-<p><strong>解决上述问题的方法就是把上述js文件下载放到next主题的<code>/source/js/src/</code>目录下，让hexo生成静态网站时，加载生成静态站点本身的js</strong></p>
-<h2 id="next主题gitalk评论功能加载自定义js"><a href="#next主题gitalk评论功能加载自定义js" class="headerlink" title="next主题gitalk评论功能加载自定义js"></a>next主题gitalk评论功能加载自定义js</h2><p>1.将 <a href="https://github.com/Glooo/shared/blob/master/md5.min.js" target="_blank" rel="noopener">https://github.com/Glooo/shared/blob/master/md5.min.js</a> 文件下载下来放到<code>themes/next/source/js/src/</code>路径下。</p>
-<p>2.修改 <code>themes/next/layout/_third-party/comments/gitalk.swig</code>，加载<code>md5.min.js</code> 改为 <code>&lt;script src=&quot;/js/src/md5.min.js&quot;&gt;&lt;/script&gt;</code></p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br></pre></td><td class="code"><pre><span class="line">&#123;% if page.comments &amp;&amp; theme.gitalk.enable %&#125;</span><br><span class="line">  &lt;link rel=&quot;stylesheet&quot; href=&quot;https://unpkg.com/gitalk/dist/gitalk.css&quot;&gt;</span><br><span class="line">  &lt;script src=&quot;https://unpkg.com/gitalk/dist/gitalk.min.js&quot;&gt;&lt;/script&gt;</span><br><span class="line">  //修改前</span><br><span class="line">  //&lt;script src=&quot;https://rawgit.com/qhh0205/78e9e0b1f3114db6737f3ed8cdd51d3a/raw/3894c5be5aa2378336b1f5ee0f296fa0b22d06e9/md5.min.js&quot;&gt;&lt;/script&gt;</span><br><span class="line">  //  修改后</span><br><span class="line">  &lt;script src=&quot;/js/src/md5.min.js&quot;&gt;&lt;/script&gt;</span><br><span class="line">  &lt;script type=&quot;text/javascript&quot;&gt;</span><br><span class="line">    var gitalk = new Gitalk(&#123;</span><br><span class="line">      clientID: &apos;&#123;&#123; theme.gitalk.ClientID &#125;&#125;&apos;,</span><br><span class="line">      clientSecret: &apos;&#123;&#123; theme.gitalk.ClientSecret &#125;&#125;&apos;,</span><br><span class="line">      repo: &apos;&#123;&#123; theme.gitalk.repo &#125;&#125;&apos;,</span><br><span class="line">      owner: &apos;&#123;&#123; theme.gitalk.githubID &#125;&#125;&apos;,</span><br><span class="line">      admin: [&apos;&#123;&#123; theme.gitalk.adminUser &#125;&#125;&apos;],</span><br><span class="line">      id: location.pathname,</span><br><span class="line">      distractionFreeMode: &apos;&#123;&#123; theme.gitalk.distractionFreeMode &#125;&#125;&apos;</span><br><span class="line">    &#125;)</span><br><span class="line">    gitalk.render(&apos;gitalk-container&apos;)           </span><br><span class="line">  &lt;/script&gt;</span><br><span class="line">&#123;% endif %&#125;</span><br></pre></td></tr></table></figure>
-
-<h2 id="next主题不蒜子PV统计功能记载自定义js"><a href="#next主题不蒜子PV统计功能记载自定义js" class="headerlink" title="next主题不蒜子PV统计功能记载自定义js"></a>next主题不蒜子PV统计功能记载自定义js</h2><ol>
-<li>将 <a href="https://github.com/Glooo/shared/blob/master/busuanzi.pure.mini.js" target="_blank" rel="noopener">https://github.com/Glooo/shared/blob/master/busuanzi.pure.mini.js</a> 下载下来放到<code>themes/next/source/js/src/</code>路径下。</li>
-</ol>
-<p>2.修改 <code>themes/next/layout/_third-party/analytics/busuanzi-counter.swig</code>，将原先 <code>&lt;script async src=&quot;//busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js&quot;&gt;&lt;/script&gt;</code> 改为 <code>&lt;script async src=&quot;/js/src/busuanzi.pure.mini.js&quot;&gt;&lt;/script&gt;</code></p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br></pre></td><td class="code"><pre><span class="line">&#123;% if theme.busuanzi_count.enable %&#125;</span><br><span class="line">&lt;div class=&quot;busuanzi-count&quot;&gt;</span><br><span class="line">// 修改前</span><br><span class="line">//&lt;script async src=&quot;//busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js&quot;&gt;&lt;/script&gt;</span><br><span class="line">//修改后</span><br><span class="line">&lt;script async src=&quot;/js/src/busuanzi.pure.mini.js&quot;&gt;&lt;/script&gt;</span><br><span class="line"></span><br><span class="line">&#123;% if theme.busuanzi_count.site_uv %&#125;</span><br><span class="line">&lt;span class=&quot;site-uv&quot;&gt;</span><br><span class="line">&#123;&#123; theme.busuanzi_count.site_uv_header &#125;&#125;</span><br><span class="line">&lt;span class=&quot;busuanzi-value&quot; id=&quot;busuanzi_value_site_uv&quot;&gt;&lt;/span&gt;</span><br><span class="line">&#123;&#123; theme.busuanzi_count.site_uv_footer &#125;&#125;</span><br><span class="line">&lt;/span&gt;</span><br><span class="line">&#123;% endif %&#125;</span><br><span class="line">&#123;% if theme.busuanzi_count.site_pv %&#125;</span><br><span class="line">&lt;span class=&quot;site-pv&quot;&gt;</span><br><span class="line">&#123;&#123; theme.busuanzi_count.site_pv_header &#125;&#125;</span><br><span class="line">&lt;span class=&quot;busuanzi-value&quot; id=&quot;busuanzi_value_site_pv&quot;&gt;&lt;/span&gt;</span><br><span class="line">&#123;&#123; theme.busuanzi_count.site_pv_footer &#125;&#125;</span><br><span class="line">&lt;/span&gt;</span><br><span class="line">&#123;% endif %&#125;</span><br><span class="line">&lt;/div&gt;</span><br><span class="line">&#123;% endif %&#125;</span><br></pre></td></tr></table></figure>
-
-<p>配置完成后需要<code>hexo clean &amp;&amp; hexo g &amp;&amp; hexo d</code>生效…</p>
-<h2 id="在此也备份一下两个站点js文件"><a href="#在此也备份一下两个站点js文件" class="headerlink" title="在此也备份一下两个站点js文件~"></a><strong>在此也备份一下两个站点js文件~</strong></h2><p><strong>md5.min.js</strong><br><a href="https://github.com/Glooo/shared/blob/master/md5.min.js" target="_blank" rel="noopener">https://github.com/Glooo/shared/blob/master/md5.min.js</a></p>
-<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">!<span class="function"><span class="keyword">function</span>(<span class="params">n</span>)</span>&#123;<span class="string">"use strict"</span>;<span class="function"><span class="keyword">function</span> <span class="title">d</span>(<span class="params">n,t</span>)</span>&#123;<span class="keyword">var</span> r=(<span class="number">65535</span>&amp;n)+(<span class="number">65535</span>&amp;t);<span class="keyword">return</span>(n&gt;&gt;<span class="number">16</span>)+(t&gt;&gt;<span class="number">16</span>)+(r&gt;&gt;<span class="number">16</span>)&lt;&lt;<span class="number">16</span>|<span class="number">65535</span>&amp;r&#125;<span class="function"><span class="keyword">function</span> <span class="title">f</span>(<span class="params">n,t,r,e,o,u</span>)</span>&#123;<span class="keyword">return</span> d(<span class="function"><span class="keyword">function</span>(<span class="params">n,t</span>)</span>&#123;<span class="keyword">return</span> n&lt;&lt;t|n&gt;&gt;&gt;<span class="number">32</span>-t&#125;(d(d(t,n),d(e,u)),o),r)&#125;<span class="function"><span class="keyword">function</span> <span class="title">l</span>(<span class="params">n,t,r,e,o,u,c</span>)</span>&#123;<span class="keyword">return</span> f(t&amp;r|~t&amp;e,n,t,o,u,c)&#125;<span class="function"><span class="keyword">function</span> <span class="title">g</span>(<span class="params">n,t,r,e,o,u,c</span>)</span>&#123;<span class="keyword">return</span> f(t&amp;e|r&amp;~e,n,t,o,u,c)&#125;<span class="function"><span class="keyword">function</span> <span class="title">v</span>(<span class="params">n,t,r,e,o,u,c</span>)</span>&#123;<span class="keyword">return</span> f(t^r^e,n,t,o,u,c)&#125;<span class="function"><span class="keyword">function</span> <span class="title">m</span>(<span class="params">n,t,r,e,o,u,c</span>)</span>&#123;<span class="keyword">return</span> f(r^(t|~e),n,t,o,u,c)&#125;<span class="function"><span class="keyword">function</span> <span class="title">i</span>(<span class="params">n,t</span>)</span>&#123;<span class="keyword">var</span> r,e,o,u,c;n[t&gt;&gt;<span class="number">5</span>]|=<span class="number">128</span>&lt;&lt;t%<span class="number">32</span>,n[<span class="number">14</span>+(t+<span class="number">64</span>&gt;&gt;&gt;<span class="number">9</span>&lt;&lt;<span class="number">4</span>)]=t;<span class="keyword">var</span> f=<span class="number">1732584193</span>,i=<span class="number">-271733879</span>,a=<span class="number">-1732584194</span>,h=<span class="number">271733878</span>;<span class="keyword">for</span>(r=<span class="number">0</span>;r&lt;n.length;r+=<span class="number">16</span>)i=m(i=m(i=m(i=m(i=v(i=v(i=v(i=v(i=g(i=g(i=g(i=g(i=l(i=l(i=l(i=l(o=i,a=l(u=a,h=l(c=h,f=l(e=f,i,a,h,n[r],<span class="number">7</span>,<span class="number">-680876936</span>),i,a,n[r+<span class="number">1</span>],<span class="number">12</span>,<span class="number">-389564586</span>),f,i,n[r+<span class="number">2</span>],<span class="number">17</span>,<span class="number">606105819</span>),h,f,n[r+<span class="number">3</span>],<span class="number">22</span>,<span class="number">-1044525330</span>),a=l(a,h=l(h,f=l(f,i,a,h,n[r+<span class="number">4</span>],<span class="number">7</span>,<span class="number">-176418897</span>),i,a,n[r+<span class="number">5</span>],<span class="number">12</span>,<span class="number">1200080426</span>),f,i,n[r+<span class="number">6</span>],<span class="number">17</span>,<span class="number">-1473231341</span>),h,f,n[r+<span class="number">7</span>],<span class="number">22</span>,<span class="number">-45705983</span>),a=l(a,h=l(h,f=l(f,i,a,h,n[r+<span class="number">8</span>],<span class="number">7</span>,<span class="number">1770035416</span>),i,a,n[r+<span class="number">9</span>],<span class="number">12</span>,<span class="number">-1958414417</span>),f,i,n[r+<span class="number">10</span>],<span class="number">17</span>,<span class="number">-42063</span>),h,f,n[r+<span class="number">11</span>],<span class="number">22</span>,<span class="number">-1990404162</span>),a=l(a,h=l(h,f=l(f,i,a,h,n[r+<span class="number">12</span>],<span class="number">7</span>,<span class="number">1804603682</span>),i,a,n[r+<span class="number">13</span>],<span class="number">12</span>,<span class="number">-40341101</span>),f,i,n[r+<span class="number">14</span>],<span class="number">17</span>,<span class="number">-1502002290</span>),h,f,n[r+<span class="number">15</span>],<span class="number">22</span>,<span class="number">1236535329</span>),a=g(a,h=g(h,f=g(f,i,a,h,n[r+<span class="number">1</span>],<span class="number">5</span>,<span class="number">-165796510</span>),i,a,n[r+<span class="number">6</span>],<span class="number">9</span>,<span class="number">-1069501632</span>),f,i,n[r+<span class="number">11</span>],<span class="number">14</span>,<span class="number">643717713</span>),h,f,n[r],<span class="number">20</span>,<span class="number">-373897302</span>),a=g(a,h=g(h,f=g(f,i,a,h,n[r+<span class="number">5</span>],<span class="number">5</span>,<span class="number">-701558691</span>),i,a,n[r+<span class="number">10</span>],<span class="number">9</span>,<span class="number">38016083</span>),f,i,n[r+<span class="number">15</span>],<span class="number">14</span>,<span class="number">-660478335</span>),h,f,n[r+<span class="number">4</span>],<span class="number">20</span>,<span class="number">-405537848</span>),a=g(a,h=g(h,f=g(f,i,a,h,n[r+<span class="number">9</span>],<span class="number">5</span>,<span class="number">568446438</span>),i,a,n[r+<span class="number">14</span>],<span class="number">9</span>,<span class="number">-1019803690</span>),f,i,n[r+<span class="number">3</span>],<span class="number">14</span>,<span class="number">-187363961</span>),h,f,n[r+<span class="number">8</span>],<span class="number">20</span>,<span class="number">1163531501</span>),a=g(a,h=g(h,f=g(f,i,a,h,n[r+<span class="number">13</span>],<span class="number">5</span>,<span class="number">-1444681467</span>),i,a,n[r+<span class="number">2</span>],<span class="number">9</span>,<span class="number">-51403784</span>),f,i,n[r+<span class="number">7</span>],<span class="number">14</span>,<span class="number">1735328473</span>),h,f,n[r+<span class="number">12</span>],<span class="number">20</span>,<span class="number">-1926607734</span>),a=v(a,h=v(h,f=v(f,i,a,h,n[r+<span class="number">5</span>],<span class="number">4</span>,<span class="number">-378558</span>),i,a,n[r+<span class="number">8</span>],<span class="number">11</span>,<span class="number">-2022574463</span>),f,i,n[r+<span class="number">11</span>],<span class="number">16</span>,<span class="number">1839030562</span>),h,f,n[r+<span class="number">14</span>],<span class="number">23</span>,<span class="number">-35309556</span>),a=v(a,h=v(h,f=v(f,i,a,h,n[r+<span class="number">1</span>],<span class="number">4</span>,<span class="number">-1530992060</span>),i,a,n[r+<span class="number">4</span>],<span class="number">11</span>,<span class="number">1272893353</span>),f,i,n[r+<span class="number">7</span>],<span class="number">16</span>,<span class="number">-155497632</span>),h,f,n[r+<span class="number">10</span>],<span class="number">23</span>,<span class="number">-1094730640</span>),a=v(a,h=v(h,f=v(f,i,a,h,n[r+<span class="number">13</span>],<span class="number">4</span>,<span class="number">681279174</span>),i,a,n[r],<span class="number">11</span>,<span class="number">-358537222</span>),f,i,n[r+<span class="number">3</span>],<span class="number">16</span>,<span class="number">-722521979</span>),h,f,n[r+<span class="number">6</span>],<span class="number">23</span>,<span class="number">76029189</span>),a=v(a,h=v(h,f=v(f,i,a,h,n[r+<span class="number">9</span>],<span class="number">4</span>,<span class="number">-640364487</span>),i,a,n[r+<span class="number">12</span>],<span class="number">11</span>,<span class="number">-421815835</span>),f,i,n[r+<span class="number">15</span>],<span class="number">16</span>,<span class="number">530742520</span>),h,f,n[r+<span class="number">2</span>],<span class="number">23</span>,<span class="number">-995338651</span>),a=m(a,h=m(h,f=m(f,i,a,h,n[r],<span class="number">6</span>,<span class="number">-198630844</span>),i,a,n[r+<span class="number">7</span>],<span class="number">10</span>,<span class="number">1126891415</span>),f,i,n[r+<span class="number">14</span>],<span class="number">15</span>,<span class="number">-1416354905</span>),h,f,n[r+<span class="number">5</span>],<span class="number">21</span>,<span class="number">-57434055</span>),a=m(a,h=m(h,f=m(f,i,a,h,n[r+<span class="number">12</span>],<span class="number">6</span>,<span class="number">1700485571</span>),i,a,n[r+<span class="number">3</span>],<span class="number">10</span>,<span class="number">-1894986606</span>),f,i,n[r+<span class="number">10</span>],<span class="number">15</span>,<span class="number">-1051523</span>),h,f,n[r+<span class="number">1</span>],<span class="number">21</span>,<span class="number">-2054922799</span>),a=m(a,h=m(h,f=m(f,i,a,h,n[r+<span class="number">8</span>],<span class="number">6</span>,<span class="number">1873313359</span>),i,a,n[r+<span class="number">15</span>],<span class="number">10</span>,<span class="number">-30611744</span>),f,i,n[r+<span class="number">6</span>],<span class="number">15</span>,<span class="number">-1560198380</span>),h,f,n[r+<span class="number">13</span>],<span class="number">21</span>,<span class="number">1309151649</span>),a=m(a,h=m(h,f=m(f,i,a,h,n[r+<span class="number">4</span>],<span class="number">6</span>,<span class="number">-145523070</span>),i,a,n[r+<span class="number">11</span>],<span class="number">10</span>,<span class="number">-1120210379</span>),f,i,n[r+<span class="number">2</span>],<span class="number">15</span>,<span class="number">718787259</span>),h,f,n[r+<span class="number">9</span>],<span class="number">21</span>,<span class="number">-343485551</span>),f=d(f,e),i=d(i,o),a=d(a,u),h=d(h,c);<span class="keyword">return</span>[f,i,a,h]&#125;<span class="function"><span class="keyword">function</span> <span class="title">a</span>(<span class="params">n</span>)</span>&#123;<span class="keyword">var</span> t,r=<span class="string">""</span>,e=<span class="number">32</span>*n.length;<span class="keyword">for</span>(t=<span class="number">0</span>;t&lt;e;t+=<span class="number">8</span>)r+=<span class="built_in">String</span>.fromCharCode(n[t&gt;&gt;<span class="number">5</span>]&gt;&gt;&gt;t%<span class="number">32</span>&amp;<span class="number">255</span>);<span class="keyword">return</span> r&#125;<span class="function"><span class="keyword">function</span> <span class="title">h</span>(<span class="params">n</span>)</span>&#123;<span class="keyword">var</span> t,r=[];<span class="keyword">for</span>(r[(n.length&gt;&gt;<span class="number">2</span>)<span class="number">-1</span>]=<span class="keyword">void</span> <span class="number">0</span>,t=<span class="number">0</span>;t&lt;r.length;t+=<span class="number">1</span>)r[t]=<span class="number">0</span>;<span class="keyword">var</span> e=<span class="number">8</span>*n.length;<span class="keyword">for</span>(t=<span class="number">0</span>;t&lt;e;t+=<span class="number">8</span>)r[t&gt;&gt;<span class="number">5</span>]|=(<span class="number">255</span>&amp;n.charCodeAt(t/<span class="number">8</span>))&lt;&lt;t%<span class="number">32</span>;<span class="keyword">return</span> r&#125;<span class="function"><span class="keyword">function</span> <span class="title">e</span>(<span class="params">n</span>)</span>&#123;<span class="keyword">var</span> t,r,e=<span class="string">"0123456789abcdef"</span>,o=<span class="string">""</span>;<span class="keyword">for</span>(r=<span class="number">0</span>;r&lt;n.length;r+=<span class="number">1</span>)t=n.charCodeAt(r),o+=e.charAt(t&gt;&gt;&gt;<span class="number">4</span>&amp;<span class="number">15</span>)+e.charAt(<span class="number">15</span>&amp;t);<span class="keyword">return</span> o&#125;<span class="function"><span class="keyword">function</span> <span class="title">r</span>(<span class="params">n</span>)</span>&#123;<span class="keyword">return</span> <span class="built_in">unescape</span>(<span class="built_in">encodeURIComponent</span>(n))&#125;<span class="function"><span class="keyword">function</span> <span class="title">o</span>(<span class="params">n</span>)</span>&#123;<span class="keyword">return</span> <span class="function"><span class="keyword">function</span>(<span class="params">n</span>)</span>&#123;<span class="keyword">return</span> a(i(h(n),<span class="number">8</span>*n.length))&#125;(r(n))&#125;<span class="function"><span class="keyword">function</span> <span class="title">u</span>(<span class="params">n,t</span>)</span>&#123;<span class="keyword">return</span> <span class="function"><span class="keyword">function</span>(<span class="params">n,t</span>)</span>&#123;<span class="keyword">var</span> r,e,o=h(n),u=[],c=[];<span class="keyword">for</span>(u[<span class="number">15</span>]=c[<span class="number">15</span>]=<span class="keyword">void</span> <span class="number">0</span>,<span class="number">16</span>&lt;o.length&amp;&amp;(o=i(o,<span class="number">8</span>*n.length)),r=<span class="number">0</span>;r&lt;<span class="number">16</span>;r+=<span class="number">1</span>)u[r]=<span class="number">909522486</span>^o[r],c[r]=<span class="number">1549556828</span>^o[r];<span class="keyword">return</span> e=i(u.concat(h(t)),<span class="number">512</span>+<span class="number">8</span>*t.length),a(i(c.concat(e),<span class="number">640</span>))&#125;(r(n),r(t))&#125;<span class="function"><span class="keyword">function</span> <span class="title">t</span>(<span class="params">n,t,r</span>)</span>&#123;<span class="keyword">return</span> t?r?u(t,n):<span class="function"><span class="keyword">function</span>(<span class="params">n,t</span>)</span>&#123;<span class="keyword">return</span> e(u(n,t))&#125;(t,n):r?o(n):<span class="function"><span class="keyword">function</span>(<span class="params">n</span>)</span>&#123;<span class="keyword">return</span> e(o(n))&#125;(n)&#125;<span class="string">"function"</span>==<span class="keyword">typeof</span> define&amp;&amp;define.amd?define(<span class="function"><span class="keyword">function</span>(<span class="params"></span>)</span>&#123;<span class="keyword">return</span> t&#125;):<span class="string">"object"</span>==<span class="keyword">typeof</span> <span class="built_in">module</span>&amp;&amp;<span class="built_in">module</span>.exports?<span class="built_in">module</span>.exports=t:n.md5=t&#125;(<span class="keyword">this</span>);</span><br><span class="line"><span class="comment">//# sourceMappingURL=md5.min.js.map</span></span><br></pre></td></tr></table></figure>
-
-<p><strong>busuanzi.pure.mini.js</strong><br><a href="https://github.com/Glooo/shared/blob/master/busuanzi.pure.mini.js" target="_blank" rel="noopener">https://github.com/Glooo/shared/blob/master/busuanzi.pure.mini.js</a></p>
-<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">var</span> bszCaller,bszTag;!<span class="function"><span class="keyword">function</span>(<span class="params"></span>)</span>&#123;<span class="keyword">var</span> c,d,e,a=!<span class="number">1</span>,b=[];ready=<span class="function"><span class="keyword">function</span>(<span class="params">c</span>)</span>&#123;<span class="keyword">return</span> a||<span class="string">"interactive"</span>===<span class="built_in">document</span>.readyState||<span class="string">"complete"</span>===<span class="built_in">document</span>.readyState?c.call(<span class="built_in">document</span>):b.push(<span class="function"><span class="keyword">function</span>(<span class="params"></span>)</span>&#123;<span class="keyword">return</span> c.call(<span class="keyword">this</span>)&#125;),<span class="keyword">this</span>&#125;,d=<span class="function"><span class="keyword">function</span>(<span class="params"></span>)</span>&#123;<span class="keyword">for</span>(<span class="keyword">var</span> a=<span class="number">0</span>,c=b.length;c&gt;a;a++)b[a].apply(<span class="built_in">document</span>);b=[]&#125;,e=<span class="function"><span class="keyword">function</span>(<span class="params"></span>)</span>&#123;a||(a=!<span class="number">0</span>,d.call(<span class="built_in">window</span>),<span class="built_in">document</span>.removeEventListener?<span class="built_in">document</span>.removeEventListener(<span class="string">"DOMContentLoaded"</span>,e,!<span class="number">1</span>):<span class="built_in">document</span>.attachEvent&amp;&amp;(<span class="built_in">document</span>.detachEvent(<span class="string">"onreadystatechange"</span>,e),<span class="built_in">window</span>==<span class="built_in">window</span>.top&amp;&amp;(clearInterval(c),c=<span class="literal">null</span>)))&#125;,<span class="built_in">document</span>.addEventListener?<span class="built_in">document</span>.addEventListener(<span class="string">"DOMContentLoaded"</span>,e,!<span class="number">1</span>):<span class="built_in">document</span>.attachEvent&amp;&amp;(<span class="built_in">document</span>.attachEvent(<span class="string">"onreadystatechange"</span>,<span class="function"><span class="keyword">function</span>(<span class="params"></span>)</span>&#123;/loaded|complete/.test(<span class="built_in">document</span>.readyState)&amp;&amp;e()&#125;),<span class="built_in">window</span>==<span class="built_in">window</span>.top&amp;&amp;(c=setInterval(<span class="function"><span class="keyword">function</span>(<span class="params"></span>)</span>&#123;<span class="keyword">try</span>&#123;a||<span class="built_in">document</span>.documentElement.doScroll(<span class="string">"left"</span>)&#125;<span class="keyword">catch</span>(b)&#123;<span class="keyword">return</span>&#125;e()&#125;,<span class="number">5</span>)))&#125;(),bszCaller=&#123;<span class="attr">fetch</span>:<span class="function"><span class="keyword">function</span>(<span class="params">a,b</span>)</span>&#123;<span class="keyword">var</span> c=<span class="string">"BusuanziCallback_"</span>+<span class="built_in">Math</span>.floor(<span class="number">1099511627776</span>*<span class="built_in">Math</span>.random());<span class="built_in">window</span>[c]=<span class="keyword">this</span>.evalCall(b),a=a.replace(<span class="string">"=BusuanziCallback"</span>,<span class="string">"="</span>+c),scriptTag=<span class="built_in">document</span>.createElement(<span class="string">"SCRIPT"</span>),scriptTag.type=<span class="string">"text/javascript"</span>,scriptTag.defer=!<span class="number">0</span>,scriptTag.src=a,<span class="built_in">document</span>.getElementsByTagName(<span class="string">"HEAD"</span>)[<span class="number">0</span>].appendChild(scriptTag)&#125;,<span class="attr">evalCall</span>:<span class="function"><span class="keyword">function</span>(<span class="params">a</span>)</span>&#123;<span class="keyword">return</span> <span class="function"><span class="keyword">function</span>(<span class="params">b</span>)</span>&#123;ready(<span class="function"><span class="keyword">function</span>(<span class="params"></span>)</span>&#123;<span class="keyword">try</span>&#123;a(b),scriptTag.parentElement.removeChild(scriptTag)&#125;<span class="keyword">catch</span>(c)&#123;bszTag.hides()&#125;&#125;)&#125;&#125;&#125;,bszCaller.fetch(<span class="string">"//busuanzi.ibruce.info/busuanzi?jsonpCallback=BusuanziCallback"</span>,<span class="function"><span class="keyword">function</span>(<span class="params">a</span>)</span>&#123;bszTag.texts(a),bszTag.shows()&#125;),bszTag=&#123;<span class="attr">bszs</span>:[<span class="string">"site_pv"</span>,<span class="string">"page_pv"</span>,<span class="string">"site_uv"</span>],<span class="attr">texts</span>:<span class="function"><span class="keyword">function</span>(<span class="params">a</span>)</span>&#123;<span class="keyword">this</span>.bszs.map(<span class="function"><span class="keyword">function</span>(<span class="params">b</span>)</span>&#123;<span class="keyword">var</span> c=<span class="built_in">document</span>.getElementById(<span class="string">"busuanzi_value_"</span>+b);c&amp;&amp;(c.innerHTML=a[b])&#125;)&#125;,<span class="attr">hides</span>:<span class="function"><span class="keyword">function</span>(<span class="params"></span>)</span>&#123;<span class="keyword">this</span>.bszs.map(<span class="function"><span class="keyword">function</span>(<span class="params">a</span>)</span>&#123;<span class="keyword">var</span> b=<span class="built_in">document</span>.getElementById(<span class="string">"busuanzi_container_"</span>+a);b&amp;&amp;(b.style.display=<span class="string">"none"</span>)&#125;)&#125;,<span class="attr">shows</span>:<span class="function"><span class="keyword">function</span>(<span class="params"></span>)</span>&#123;<span class="keyword">this</span>.bszs.map(<span class="function"><span class="keyword">function</span>(<span class="params">a</span>)</span>&#123;<span class="keyword">var</span> b=<span class="built_in">document</span>.getElementById(<span class="string">"busuanzi_container_"</span>+a);b&amp;&amp;(b.style.display=<span class="string">"inline"</span>)&#125;)&#125;&#125;;</span><br></pre></td></tr></table></figure>
-
-<p>参考大佬<a href="https://blog.csdn.net/qianghaohao/article/details/90736310" target="_blank" rel="noopener">qhh0205</a>的文章</p>
-
-          
-        
-      
-    </div>
-    
-    
-    
-  <div>
-    
-  </div>
-    
-
-    
-
-    
-
-    <footer class="post-footer">
-      
-
-      
-
-      
-
-      
-      
-        <div class="post-eof"></div>
-      
-    </footer>
-  </div>
-  
-  
-  
-
-  </article>
-
-
-    
   </section>
 
   
@@ -962,7 +956,7 @@
               
                 <a href="/archives/">
               
-                  <span class="site-state-item-count">101</span>
+                  <span class="site-state-item-count">102</span>
                   <span class="site-state-item-name">日志</span>
                 </a>
               </div>

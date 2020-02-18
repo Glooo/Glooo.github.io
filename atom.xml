@@ -6,7 +6,7 @@
   <link href="/atom.xml" rel="self"/>
   
   <link href="http://glooo.fun/"/>
-  <updated>2019-12-23T09:17:10.000Z</updated>
+  <updated>2020-02-18T01:24:29.630Z</updated>
   <id>http://glooo.fun/</id>
   
   <author>
@@ -15,6 +15,31 @@
   </author>
   
   <generator uri="http://hexo.io/">Hexo</generator>
+  
+  <entry>
+    <title>为git操作起别名的方法 &amp; git fetch</title>
+    <link href="http://glooo.fun/git/git-alias/"/>
+    <id>http://glooo.fun/git/git-alias/</id>
+    <published>2020-02-18T00:52:04.000Z</published>
+    <updated>2020-02-18T01:24:29.630Z</updated>
+    
+    <content type="html"><![CDATA[<h1 id="起别名的原因"><a href="#起别名的原因" class="headerlink" title="起别名的原因"></a>起别名的原因</h1><p>如果有一定 git 的基础，<br>就知道通常 git 操作为<code>git status</code>、<code>git commit -m &#39;commit&#39;</code>等。<br>比较繁琐，<br>如果想简化写法，<br>比如：</p><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line">git st // 等价于git status</span><br><span class="line"></span><br><span class="line">git commit -m &apos;&apos; // 等价于git ci -m &apos;&apos;</span><br><span class="line"></span><br><span class="line">git checkout master // 等价于git co master</span><br><span class="line"></span><br><span class="line">and so on ...</span><br></pre></td></tr></table></figure><h1 id="语法"><a href="#语法" class="headerlink" title="语法"></a>语法</h1><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">git config --global alias.别名 原始命令</span><br></pre></td></tr></table></figure><p>命令行中设置：</p><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">git config --global alias.st status</span><br><span class="line"></span><br><span class="line">git config --global alias.co checkout</span><br><span class="line"></span><br><span class="line">git config --global alias.ci commit</span><br></pre></td></tr></table></figure><p>因为设置级别为<code>global</code>，即用户级别，windows 下 git 会将别名写入你<code>C盘/用户/&lt;你的用户名下&gt;/</code>的<code>.gitconfig</code>文件中，如果不加 global 条件，则默认写入你仓库的 <code>config</code> 中，只针对当前仓库有效。当然也可以手动在配置文件中按照格式要求写入别名。</p><h1 id="git-fetch-与-git-pull-的区别"><a href="#git-fetch-与-git-pull-的区别" class="headerlink" title="git fetch 与 git pull 的区别"></a>git fetch 与 git pull 的区别</h1><p>git fetch 拉取远程分支，不合并</p><p>git pull = git fetch + git merge<br>拉取远程分支，更新本地仓库，直接合并到工作区。</p><h1 id="git-cherry-pick-commitId-挑拣分支提交合并"><a href="#git-cherry-pick-commitId-挑拣分支提交合并" class="headerlink" title="git cherry-pick commitId 挑拣分支提交合并"></a>git cherry-pick commitId 挑拣分支提交合并</h1>]]></content>
+    
+    <summary type="html">
+    
+      
+      
+        &lt;h1 id=&quot;起别名的原因&quot;&gt;&lt;a href=&quot;#起别名的原因&quot; class=&quot;headerlink&quot; title=&quot;起别名的原因&quot;&gt;&lt;/a&gt;起别名的原因&lt;/h1&gt;&lt;p&gt;如果有一定 git 的基础，&lt;br&gt;就知道通常 git 操作为&lt;code&gt;git status&lt;/code&gt;
+      
+    
+    </summary>
+    
+      <category term="git" scheme="http://glooo.fun/categories/git/"/>
+    
+    
+      <category term="git" scheme="http://glooo.fun/tags/git/"/>
+    
+  </entry>
   
   <entry>
     <title>Typescript学习</title>
@@ -246,9 +271,9 @@
       <category term="elementUI" scheme="http://glooo.fun/categories/elementUI/"/>
     
     
-      <category term="elementUI" scheme="http://glooo.fun/tags/elementUI/"/>
-    
       <category term="vue" scheme="http://glooo.fun/tags/vue/"/>
+    
+      <category term="elementUI" scheme="http://glooo.fun/tags/elementUI/"/>
     
       <category term="el-input" scheme="http://glooo.fun/tags/el-input/"/>
     
@@ -536,30 +561,6 @@
     
     
       <category term="基于Http的视频流协议" scheme="http://glooo.fun/tags/%E5%9F%BA%E4%BA%8EHttp%E7%9A%84%E8%A7%86%E9%A2%91%E6%B5%81%E5%8D%8F%E8%AE%AE/"/>
-    
-  </entry>
-  
-  <entry>
-    <title>vue调用摄像头显示</title>
-    <link href="http://glooo.fun/uncategorized/capture-pic/"/>
-    <id>http://glooo.fun/uncategorized/capture-pic/</id>
-    <published>2019-11-22T03:52:05.000Z</published>
-    <updated>2019-11-22T06:48:20.000Z</updated>
-    
-    <content type="html"><![CDATA[<p>在<code>src/app.vue</code>中</p><figure class="highlight html"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br><span class="line">51</span><br><span class="line">52</span><br><span class="line">53</span><br><span class="line">54</span><br><span class="line">55</span><br><span class="line">56</span><br><span class="line">57</span><br><span class="line">58</span><br><span class="line">59</span><br><span class="line">60</span><br><span class="line">61</span><br><span class="line">62</span><br><span class="line">63</span><br></pre></td><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="name">template</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">div</span> <span class="attr">id</span>=<span class="string">"app"</span>&gt;</span></span><br><span class="line">        <span class="tag">&lt;<span class="name">div</span>&gt;</span><span class="tag">&lt;<span class="name">video</span> <span class="attr">ref</span>=<span class="string">"video"</span> <span class="attr">id</span>=<span class="string">"video"</span> <span class="attr">width</span>=<span class="string">"160"</span> <span class="attr">height</span>=<span class="string">"12"</span> <span class="attr">autoplay</span>&gt;</span><span class="tag">&lt;/<span class="name">video</span>&gt;</span><span class="tag">&lt;/<span class="name">div</span>&gt;</span></span><br><span class="line">        <span class="comment">&lt;!-- &lt;div&gt;&lt;video ref="video" id="video" width="640" height="480" autoplay&gt;&lt;/video&gt;&lt;/div&gt; --&gt;</span></span><br><span class="line">        <span class="tag">&lt;<span class="name">div</span>&gt;</span><span class="tag">&lt;<span class="name">button</span> <span class="attr">id</span>=<span class="string">"snap"</span> <span class="attr">v-on:click</span>=<span class="string">"capture()"</span>&gt;</span>Snap Photo<span class="tag">&lt;/<span class="name">button</span>&gt;</span><span class="tag">&lt;/<span class="name">div</span>&gt;</span></span><br><span class="line">        <span class="tag">&lt;<span class="name">canvas</span> <span class="attr">ref</span>=<span class="string">"canvas"</span> <span class="attr">id</span>=<span class="string">"canvas"</span> <span class="attr">width</span>=<span class="string">"640"</span> <span class="attr">height</span>=<span class="string">"480"</span>&gt;</span><span class="tag">&lt;/<span class="name">canvas</span>&gt;</span></span><br><span class="line">        <span class="tag">&lt;<span class="name">ul</span>&gt;</span></span><br><span class="line">            <span class="tag">&lt;<span class="name">li</span> <span class="attr">v-for</span>=<span class="string">"c in captures"</span> <span class="attr">:key</span>=<span class="string">"c"</span>&gt;</span></span><br><span class="line">                <span class="tag">&lt;<span class="name">img</span> <span class="attr">v-bind:src</span>=<span class="string">"c"</span> <span class="attr">height</span>=<span class="string">"50"</span> /&gt;</span></span><br><span class="line">            <span class="tag">&lt;/<span class="name">li</span>&gt;</span></span><br><span class="line">        <span class="tag">&lt;/<span class="name">ul</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;/<span class="name">div</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;/<span class="name">template</span>&gt;</span></span><br><span class="line"></span><br><span class="line"><span class="tag">&lt;<span class="name">script</span>&gt;</span></span><br><span class="line"><span class="javascript">    <span class="keyword">export</span> <span class="keyword">default</span> &#123;</span></span><br><span class="line"><span class="javascript">      name: <span class="string">'app'</span>,</span></span><br><span class="line">      data() &#123;</span><br><span class="line"><span class="javascript">          <span class="keyword">return</span> &#123;</span></span><br><span class="line">            video: &#123;&#125;,</span><br><span class="line">            canvas: &#123;&#125;,</span><br><span class="line">            captures: []</span><br><span class="line">          &#125;</span><br><span class="line">      &#125;,</span><br><span class="line">      mounted() &#123; </span><br><span class="line"><span class="javascript">        <span class="keyword">this</span>.video = <span class="keyword">this</span>.$refs.video;</span></span><br><span class="line">        if(navigator.mediaDevices &amp;&amp; navigator.mediaDevices.getUserMedia) &#123;</span><br><span class="line"><span class="javascript">            navigator.mediaDevices.getUserMedia(&#123; <span class="attr">video</span>: <span class="literal">true</span> &#125;).then(<span class="function"><span class="params">stream</span> =&gt;</span> &#123;</span></span><br><span class="line"><span class="javascript">                <span class="keyword">this</span>.video.srcObject = stream</span></span><br><span class="line"><span class="javascript">                <span class="keyword">this</span>.video.play();</span></span><br><span class="line">            &#125;);</span><br><span class="line">        &#125;</span><br><span class="line">      &#125;,</span><br><span class="line">      methods: &#123; </span><br><span class="line">        capture() &#123;</span><br><span class="line"><span class="javascript">          <span class="keyword">this</span>.canvas = <span class="keyword">this</span>.$refs.canvas;</span></span><br><span class="line"><span class="javascript">          <span class="keyword">var</span> context = <span class="keyword">this</span>.canvas.getContext(<span class="string">"2d"</span>).drawImage(<span class="keyword">this</span>.video, <span class="number">0</span>, <span class="number">0</span>, <span class="number">640</span>, <span class="number">480</span>);</span></span><br><span class="line"><span class="javascript">          <span class="keyword">this</span>.captures.push(canvas.toDataURL(<span class="string">"image/png"</span>));</span></span><br><span class="line">        &#125;</span><br><span class="line">      &#125;</span><br><span class="line">    &#125;</span><br><span class="line"><span class="tag">&lt;/<span class="name">script</span>&gt;</span></span><br><span class="line"></span><br><span class="line"><span class="tag">&lt;<span class="name">style</span>&gt;</span></span><br><span class="line">  body&#123;</span><br><span class="line"><span class="css">      <span class="selector-tag">background-color</span>: <span class="selector-id">#F0F0F0</span>;</span></span><br><span class="line">  &#125;</span><br><span class="line"><span class="css">  <span class="selector-id">#app</span> &#123;</span></span><br><span class="line">      text-align: center;</span><br><span class="line"><span class="css">      <span class="selector-tag">color</span>: <span class="selector-id">#2c3e50</span>;</span></span><br><span class="line">      margin-top: 60px;</span><br><span class="line">  &#125;</span><br><span class="line"><span class="css">  <span class="selector-id">#video</span> &#123;</span></span><br><span class="line"><span class="css">      <span class="selector-tag">background-color</span>: <span class="selector-id">#000000</span>;</span></span><br><span class="line">  &#125;</span><br><span class="line"><span class="css">  <span class="selector-id">#canvas</span> &#123;</span></span><br><span class="line">      display: none;</span><br><span class="line">  &#125;</span><br><span class="line">  li &#123;</span><br><span class="line">      display: inline;</span><br><span class="line">      padding: 5px;</span><br><span class="line">  &#125;</span><br><span class="line"><span class="tag">&lt;/<span class="name">style</span>&gt;</span></span><br></pre></td></tr></table></figure><p><a href="https://www.cnblogs.com/GeniusLyzh/p/10589938.html" target="_blank" rel="noopener">原文链接:https://www.cnblogs.com/GeniusLyzh/p/10589938.html</a></p><p><strong>注：</strong>原文<code>this.video.src = window.URL.createObjectURL(stream);</code>会报错，<br>错误：<code>Failed to execute &#39;createObjectURL&#39; on &#39;URL&#39;</code><br>原因：Chrome升级后，新版本的Chrome不再支持该用法。其他主流浏览器也是如此。<br>改成<code>this.video.srcObject = stream</code>就好了。<br>一个兼容的写法：</p><figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">try</span> &#123;</span><br><span class="line">  <span class="keyword">this</span>.srcObject = stream;</span><br><span class="line">&#125;</span><br><span class="line"><span class="keyword">catch</span> (error) &#123;</span><br><span class="line">  <span class="keyword">this</span>.src = <span class="built_in">window</span>.URL.createObjectURL(stream);</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>]]></content>
-    
-    <summary type="html">
-    
-      
-      
-        &lt;p&gt;在&lt;code&gt;src/app.vue&lt;/code&gt;中&lt;/p&gt;
-&lt;figure class=&quot;highlight html&quot;&gt;&lt;table&gt;&lt;tr&gt;&lt;td class=&quot;gutter&quot;&gt;&lt;pre&gt;&lt;span class=&quot;line&quot;&gt;1&lt;/span&gt;&lt;br&gt;&lt;span cla
-      
-    
-    </summary>
-    
-    
-      <category term="vue" scheme="http://glooo.fun/tags/vue/"/>
     
   </entry>
   

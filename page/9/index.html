@@ -330,6 +330,207 @@
   
   
   <div class="post-block">
+    <link itemprop="mainEntityOfPage" href="http://glooo.fun/css/css-function/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="Gzy">
+      <meta itemprop="description" content>
+      <meta itemprop="image" content="/images/avatar.png">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="Gzy's Blog">
+    </span>
+
+    
+      <header class="post-header">
+
+        
+        
+          <h1 class="post-title" itemprop="name headline">
+                
+                <a class="post-title-link" href="/css/css-function/" itemprop="url">CSS 函数Function</a></h1>
+        
+
+        <div class="post-meta">
+          
+          <span class="post-time">
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">发表于</span>
+              
+              <time title="创建于" itemprop="dateCreated datePublished" datetime="2019-11-09T14:29:26+08:00">
+                2019-11-09
+              </time>
+            
+
+            
+
+            
+          </span>
+
+          
+            <span class="post-category">
+            
+              <span class="post-meta-divider">|</span>
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-folder-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">分类于</span>
+              
+              
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/categories/css/" itemprop="url" rel="index">
+                    <span itemprop="name">css</span>
+                  </a>
+                </span>
+
+                
+                
+              
+            </span>
+          
+
+          
+            
+          
+
+          
+          
+
+          
+
+          
+            <div class="post-wordcount">
+              
+                
+                <span class="post-meta-item-icon">
+                  <i class="fa fa-file-word-o"></i>
+                </span>
+                
+                  <span class="post-meta-item-text">字数统计&#58;</span>
+                
+                <span title="字数统计">
+                  628
+                </span>
+              
+
+              
+                <span class="post-meta-divider">|</span>
+              
+
+              
+                <span class="post-meta-item-icon">
+                  <i class="fa fa-clock-o"></i>
+                </span>
+                
+                  <span class="post-meta-item-text">阅读时长 &asymp;</span>
+                
+                <span title="阅读时长">
+                  2
+                </span>
+              
+            </div>
+          
+
+          
+
+        </div>
+      </header>
+    
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        
+          
+            <h1 id="CSS函数"><a href="#CSS函数" class="headerlink" title="CSS函数"></a>CSS函数</h1><h2 id="calc"><a href="#calc" class="headerlink" title="calc()"></a>calc()</h2><ul>
+<li>支持CSS3</li>
+<li>任何长度值都可用calc()函数进行计算</li>
+<li>支持 “+”、“-”、“*”、“/” 运算</li>
+<li>使用标准的数学运算优先级规则</li>
+<li><strong>运算符前后都需要保留一个空格</strong>，例如width: calc(100%-10px)</li>
+</ul>
+<h2 id="attr"><a href="#attr" class="headerlink" title="attr()"></a>attr()</h2><p>  返回选择元素的属性值<br>  在css2.1中attr()返回一个字符串；而在CSS3中attr()可以返回多种不同的类型。<br>例如：</p>
+<figure class="highlight html"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">&lt;!DOCTYPE <span class="meta-keyword">html</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="name">html</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="name">head</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="name">meta</span> <span class="attr">charset</span>=<span class="string">"utf-8"</span>&gt;</span> </span><br><span class="line"><span class="tag">&lt;<span class="name">style</span>&gt;</span></span><br><span class="line"><span class="css">  <span class="selector-tag">a</span><span class="selector-pseudo">:after</span> &#123;<span class="attribute">content</span>: <span class="string">" ("</span> <span class="built_in">attr</span>(href) <span class="string">")"</span>;&#125;</span></span><br><span class="line"><span class="tag">&lt;/<span class="name">style</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;/<span class="name">head</span>&gt;</span></span><br><span class="line"></span><br><span class="line"><span class="tag">&lt;<span class="name">body</span>&gt;</span></span><br><span class="line">  <span class="tag">&lt;<span class="name">p</span>&gt;</span><span class="tag">&lt;<span class="name">a</span> <span class="attr">href</span>=<span class="string">"https://github.com/Glooo"</span>&gt;</span>Github<span class="tag">&lt;/<span class="name">a</span>&gt;</span><span class="tag">&lt;/<span class="name">p</span>&gt;</span></span><br><span class="line">  <span class="tag">&lt;<span class="name">p</span>&gt;</span><span class="tag">&lt;<span class="name">a</span> <span class="attr">href</span>=<span class="string">"http://glooo.fun/"</span>&gt;</span>我的博客<span class="tag">&lt;/<span class="name">a</span>&gt;</span><span class="tag">&lt;/<span class="name">p</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;/<span class="name">body</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;/<span class="name">html</span>&gt;</span></span><br></pre></td></tr></table></figure>
+
+<p>以上例子在每个链接后面插入内容</p>
+
+
+<h2 id="linear-gradient"><a href="#linear-gradient" class="headerlink" title="linear-gradient()"></a>linear-gradient()</h2><ul>
+<li><p>该函数用于创建一个线性渐变的“图像”。</p>
+</li>
+<li><p>为了创建一个线性渐变，你需要设置一个起始点和一个方向（指定为一个角度）的渐变效果。你还要定义终止色。终止色就是你想让Gecko去平滑的过渡，并且你必须指定至少两种，当然也会可以指定更多的颜色去创建更复杂的渐变效果。</p>
+</li>
+<li><p>CSS3</p>
+<p>语法：background: linear-gradient(direction,color-stop1,color-stop2,…);<br><code>direction</code> 方向或角度（默认从上到下或180deg）。<br>to right (从左开始，到右)<br>to bottom right （从左上角到右下角）<br>90deg （顺时针为正）<br>0deg = to top<br>180deg = 不填方向（默认值）<br><code>color</code>可以是white等单词，也可以是<code>rgba()</code></p>
+</li>
+</ul>
+<h2 id="CSS-radial-gradient-函数"><a href="#CSS-radial-gradient-函数" class="headerlink" title="CSS radial-gradient() 函数"></a>CSS radial-gradient() 函数</h2><p>  CSS3<br>  径向渐变<br>  必需设置两个终止色</p>
+<p>  语法：<code>background: radial-gradient(shape size at position, start-color, ..., last-color);</code><br>    <code>shape</code> ellipse(默认)，椭圆<br>            circle 圆形<br>    <code>size</code>定义渐变的大小，可能值：<br>      farthest-corner (默认) : 指定径向渐变的半径长度为从圆心到离圆心最远的角<br>      closest-side ：指定径向渐变的半径长度为从圆心到离圆心最近的边<br>      closest-corner ： 指定径向渐变的半径长度为从圆心到离圆心最近的角<br>      farthest-side ：指定径向渐变的半径长度为从圆心到离圆心最远的边<br>    <code>position</code>定义渐变的位置。可能值：<br>      center（默认）：设置中间为径向渐变圆心的纵坐标值。<br>      top：设置顶部为径向渐变圆心的纵坐标值。<br>      bottom：设置底部为径向渐变圆心的纵坐标值。</p>
+<h2 id="CSS-repeating-linear-gradient-函数"><a href="#CSS-repeating-linear-gradient-函数" class="headerlink" title="CSS repeating-linear-gradient() 函数"></a>CSS repeating-linear-gradient() 函数</h2><p>  CSS3<br>  多一个百分比（位置，100%为div高度或宽度）<br>  <code>background: repeating-linear-gradient(red, yellow 10%, green 20%);</code></p>
+
+          
+        
+      
+    </div>
+    
+    
+    
+  <div>
+    
+  </div>
+    
+
+    
+
+    
+
+    <footer class="post-footer">
+      
+
+      
+
+      
+
+      
+      
+        <div class="post-eof"></div>
+      
+    </footer>
+  </div>
+  
+  
+  
+
+  </article>
+
+
+    
+      
+
+  
+
+  
+  
+  
+
+  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
+  
+  
+  
+  <div class="post-block">
     <link itemprop="mainEntityOfPage" href="http://glooo.fun/vue/vuePro-init/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
@@ -835,197 +1036,6 @@
 
 
     
-      
-
-  
-
-  
-  
-  
-
-  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
-  
-  
-  
-  <div class="post-block">
-    <link itemprop="mainEntityOfPage" href="http://glooo.fun/GitHub/github-newfolder/">
-
-    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
-      <meta itemprop="name" content="Gzy">
-      <meta itemprop="description" content>
-      <meta itemprop="image" content="/images/avatar.png">
-    </span>
-
-    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
-      <meta itemprop="name" content="Gzy's Blog">
-    </span>
-
-    
-      <header class="post-header">
-
-        
-        
-          <h1 class="post-title" itemprop="name headline">
-                
-                <a class="post-title-link" href="/GitHub/github-newfolder/" itemprop="url">在Github仓库中创建文件夹</a></h1>
-        
-
-        <div class="post-meta">
-          
-          <span class="post-time">
-            
-              <span class="post-meta-item-icon">
-                <i class="fa fa-calendar-o"></i>
-              </span>
-              
-                <span class="post-meta-item-text">发表于</span>
-              
-              <time title="创建于" itemprop="dateCreated datePublished" datetime="2019-10-16T17:31:10+08:00">
-                2019-10-16
-              </time>
-            
-
-            
-
-            
-          </span>
-
-          
-            <span class="post-category">
-            
-              <span class="post-meta-divider">|</span>
-            
-              <span class="post-meta-item-icon">
-                <i class="fa fa-folder-o"></i>
-              </span>
-              
-                <span class="post-meta-item-text">分类于</span>
-              
-              
-                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
-                  <a href="/categories/GitHub/" itemprop="url" rel="index">
-                    <span itemprop="name">GitHub</span>
-                  </a>
-                </span>
-
-                
-                
-              
-            </span>
-          
-
-          
-            
-          
-
-          
-          
-
-          
-
-          
-            <div class="post-wordcount">
-              
-                
-                <span class="post-meta-item-icon">
-                  <i class="fa fa-file-word-o"></i>
-                </span>
-                
-                  <span class="post-meta-item-text">字数统计&#58;</span>
-                
-                <span title="字数统计">
-                  220
-                </span>
-              
-
-              
-                <span class="post-meta-divider">|</span>
-              
-
-              
-                <span class="post-meta-item-icon">
-                  <i class="fa fa-clock-o"></i>
-                </span>
-                
-                  <span class="post-meta-item-text">阅读时长 &asymp;</span>
-                
-                <span title="阅读时长">
-                  1
-                </span>
-              
-            </div>
-          
-
-          
-
-        </div>
-      </header>
-    
-
-    
-    
-    
-    <div class="post-body" itemprop="articleBody">
-
-      
-      
-
-      
-        
-          
-            <p>很多时候，在GitHub仓库中创建文件夹都是在本地创建好，然后提交到GitHub仓库中，这里的操作很不方便而且还容易出错。<br>这里有一种方法直接用鼠标和<code>/</code>就可以在GitHub仓库创建文件夹啦。<br><strong>第一步：</strong><br>在创建好的仓库中点击<code>Create New File</code></p>
-
-<p><strong>第二步：</strong><br>在输入框中输入你的<strong>文件夹名</strong></p>
-
-<p><strong>在输入一个<code>/</code>，它自动就会为你生成一个文件夹。</strong></p>
-
-<p><strong><em>注意</em></strong>：由于GitHub不允许创建空文件夹，所以需要在创建的文件夹下创建一个文件。</p>
-
-<p><strong>第三步：</strong><br>拉到下面点击<code>Commit new file</code></p>
-
-<p>创建成功！</p>
-
-
-
-<p><strong><em>注意</em></strong>：如果删除了文件夹里的文件，文件夹也会消失（GitHub不允许存在空文件夹）。<br>这样是不是比命令行上传方便了很多^_^</p>
-
-          
-        
-      
-    </div>
-    
-    
-    
-  <div>
-    
-  </div>
-    
-
-    
-
-    
-
-    <footer class="post-footer">
-      
-
-      
-
-      
-
-      
-      
-        <div class="post-eof"></div>
-      
-    </footer>
-  </div>
-  
-  
-  
-
-  </article>
-
-
-    
   </section>
 
   
@@ -1078,7 +1088,7 @@
               
                 <a href="/archives/">
               
-                  <span class="site-state-item-count">101</span>
+                  <span class="site-state-item-count">102</span>
                   <span class="site-state-item-name">日志</span>
                 </a>
               </div>

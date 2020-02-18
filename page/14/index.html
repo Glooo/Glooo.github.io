@@ -330,6 +330,210 @@
   
   
   <div class="post-block">
+    <link itemprop="mainEntityOfPage" href="http://glooo.fun/hexo/hexoLoadJs/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="Gzy">
+      <meta itemprop="description" content>
+      <meta itemprop="image" content="/images/avatar.png">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="Gzy's Blog">
+    </span>
+
+    
+      <header class="post-header">
+
+        
+        
+          <h1 class="post-title" itemprop="name headline">
+                
+                <a class="post-title-link" href="/hexo/hexoLoadJs/" itemprop="url">Hexo next主题加载缓慢问题</a></h1>
+        
+
+        <div class="post-meta">
+          
+          <span class="post-time">
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">发表于</span>
+              
+              <time title="创建于" itemprop="dateCreated datePublished" datetime="2019-09-18T10:09:47+08:00">
+                2019-09-18
+              </time>
+            
+
+            
+
+            
+          </span>
+
+          
+            <span class="post-category">
+            
+              <span class="post-meta-divider">|</span>
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-folder-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">分类于</span>
+              
+              
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/categories/hexo/" itemprop="url" rel="index">
+                    <span itemprop="name">hexo</span>
+                  </a>
+                </span>
+
+                
+                
+              
+            </span>
+          
+
+          
+            
+          
+
+          
+          
+
+          
+
+          
+            <div class="post-wordcount">
+              
+                
+                <span class="post-meta-item-icon">
+                  <i class="fa fa-file-word-o"></i>
+                </span>
+                
+                  <span class="post-meta-item-text">字数统计&#58;</span>
+                
+                <span title="字数统计">
+                  2.4k
+                </span>
+              
+
+              
+                <span class="post-meta-divider">|</span>
+              
+
+              
+                <span class="post-meta-item-icon">
+                  <i class="fa fa-clock-o"></i>
+                </span>
+                
+                  <span class="post-meta-item-text">阅读时长 &asymp;</span>
+                
+                <span title="阅读时长">
+                  14
+                </span>
+              
+            </div>
+          
+
+          
+
+        </div>
+      </header>
+    
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        
+          
+            <h1 id="站点"><a href="#站点" class="headerlink" title="站点"></a>站点</h1><p>可双线部署</p>
+<h1 id="字体"><a href="#字体" class="headerlink" title="字体"></a>字体</h1><p>默认是Google字体，加载比较慢<br>在next文件夹里的<code>_config.yml</code>里</p>
+<figure class="highlight yml"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment"># Uri of fonts host. E.g. //fonts.googleapis.com (Default)</span></span><br><span class="line"><span class="attr">host:</span></span><br></pre></td></tr></table></figure>
+
+<p>  改为：</p>
+<figure class="highlight yml"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment"># Uri of fonts host. E.g. //fonts.googleapis.com (Default)</span></span><br><span class="line"><span class="attr">host:</span> <span class="string">//fonts.lug.ustc.edu.cn</span> <span class="comment"># fonts.lug.ustc.edu.cn是中科大的源。</span></span><br></pre></td></tr></table></figure>
+
+<h1 id="Js脚本尽量后置"><a href="#Js脚本尽量后置" class="headerlink" title="Js脚本尽量后置"></a>Js脚本尽量后置</h1><p>建议尽量放在<code>&lt;/body&gt;</code>之前，且能异步加载的尽量异步加载。</p>
+<h1 id="配置主题自定义Js文件"><a href="#配置主题自定义Js文件" class="headerlink" title="配置主题自定义Js文件"></a>配置主题自定义Js文件</h1><h2 id="为什么要配置Hexo-next主题自定义Js文件呢？"><a href="#为什么要配置Hexo-next主题自定义Js文件呢？" class="headerlink" title="为什么要配置Hexo next主题自定义Js文件呢？"></a>为什么要配置Hexo next主题自定义Js文件呢？</h2><p>主要原因有两点：<br> 不可靠<br>  第三方站点的js依赖其站点的稳定性，如果第三方站点挂了或不维护了，那么加载地址就失效了。<br>  访问直接 404…比如最近就遇到 next 主题”不蒜子”文章<code>PV</code>统计功能用不了了，Chrome抓包发现 <a href="https://dn-lbstatics.qbox.me/busuanzi/2.3/busuanzi.pure.mini.js" target="_blank" rel="noopener">https://dn-lbstatics.qbox.me/busuanzi/2.3/busuanzi.pure.mini.js</a> 这个地址404了，看了”不蒜子”官方blog通知才发现原来换成了<a href="https://busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js" target="_blank" rel="noopener">https://busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js</a><br>  加载速度慢。<br>    比如gitalk功能用到的<a href="https://rawgit.com/qhh0205/78e9e0b1f3114db6737f3ed8cdd51d3a/raw/3894c5be5aa2378336b1f5ee0f296fa0b22d06e9/md5.min.js" target="_blank" rel="noopener">https://rawgit.com/qhh0205/78e9e0b1f3114db6737f3ed8cdd51d3a/raw/3894c5be5aa2378336b1f5ee0f296fa0b22d06e9/md5.min.js</a>文件嵌入到主题，发现每次打开blog网站都加载很慢，Chrome抓包发现是该文件加载缓慢，一直 pending很久(F12-&gt;Network-&gt;XHR)。</p>
+<p><strong>解决上述问题的方法就是把上述js文件下载放到next主题的<code>/source/js/src/</code>目录下，让hexo生成静态网站时，加载生成静态站点本身的js</strong></p>
+<h2 id="next主题gitalk评论功能加载自定义js"><a href="#next主题gitalk评论功能加载自定义js" class="headerlink" title="next主题gitalk评论功能加载自定义js"></a>next主题gitalk评论功能加载自定义js</h2><p>1.将 <a href="https://github.com/Glooo/shared/blob/master/md5.min.js" target="_blank" rel="noopener">https://github.com/Glooo/shared/blob/master/md5.min.js</a> 文件下载下来放到<code>themes/next/source/js/src/</code>路径下。</p>
+<p>2.修改 <code>themes/next/layout/_third-party/comments/gitalk.swig</code>，加载<code>md5.min.js</code> 改为 <code>&lt;script src=&quot;/js/src/md5.min.js&quot;&gt;&lt;/script&gt;</code></p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br></pre></td><td class="code"><pre><span class="line">&#123;% if page.comments &amp;&amp; theme.gitalk.enable %&#125;</span><br><span class="line">  &lt;link rel=&quot;stylesheet&quot; href=&quot;https://unpkg.com/gitalk/dist/gitalk.css&quot;&gt;</span><br><span class="line">  &lt;script src=&quot;https://unpkg.com/gitalk/dist/gitalk.min.js&quot;&gt;&lt;/script&gt;</span><br><span class="line">  //修改前</span><br><span class="line">  //&lt;script src=&quot;https://rawgit.com/qhh0205/78e9e0b1f3114db6737f3ed8cdd51d3a/raw/3894c5be5aa2378336b1f5ee0f296fa0b22d06e9/md5.min.js&quot;&gt;&lt;/script&gt;</span><br><span class="line">  //  修改后</span><br><span class="line">  &lt;script src=&quot;/js/src/md5.min.js&quot;&gt;&lt;/script&gt;</span><br><span class="line">  &lt;script type=&quot;text/javascript&quot;&gt;</span><br><span class="line">    var gitalk = new Gitalk(&#123;</span><br><span class="line">      clientID: &apos;&#123;&#123; theme.gitalk.ClientID &#125;&#125;&apos;,</span><br><span class="line">      clientSecret: &apos;&#123;&#123; theme.gitalk.ClientSecret &#125;&#125;&apos;,</span><br><span class="line">      repo: &apos;&#123;&#123; theme.gitalk.repo &#125;&#125;&apos;,</span><br><span class="line">      owner: &apos;&#123;&#123; theme.gitalk.githubID &#125;&#125;&apos;,</span><br><span class="line">      admin: [&apos;&#123;&#123; theme.gitalk.adminUser &#125;&#125;&apos;],</span><br><span class="line">      id: location.pathname,</span><br><span class="line">      distractionFreeMode: &apos;&#123;&#123; theme.gitalk.distractionFreeMode &#125;&#125;&apos;</span><br><span class="line">    &#125;)</span><br><span class="line">    gitalk.render(&apos;gitalk-container&apos;)           </span><br><span class="line">  &lt;/script&gt;</span><br><span class="line">&#123;% endif %&#125;</span><br></pre></td></tr></table></figure>
+
+<h2 id="next主题不蒜子PV统计功能记载自定义js"><a href="#next主题不蒜子PV统计功能记载自定义js" class="headerlink" title="next主题不蒜子PV统计功能记载自定义js"></a>next主题不蒜子PV统计功能记载自定义js</h2><ol>
+<li>将 <a href="https://github.com/Glooo/shared/blob/master/busuanzi.pure.mini.js" target="_blank" rel="noopener">https://github.com/Glooo/shared/blob/master/busuanzi.pure.mini.js</a> 下载下来放到<code>themes/next/source/js/src/</code>路径下。</li>
+</ol>
+<p>2.修改 <code>themes/next/layout/_third-party/analytics/busuanzi-counter.swig</code>，将原先 <code>&lt;script async src=&quot;//busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js&quot;&gt;&lt;/script&gt;</code> 改为 <code>&lt;script async src=&quot;/js/src/busuanzi.pure.mini.js&quot;&gt;&lt;/script&gt;</code></p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br></pre></td><td class="code"><pre><span class="line">&#123;% if theme.busuanzi_count.enable %&#125;</span><br><span class="line">&lt;div class=&quot;busuanzi-count&quot;&gt;</span><br><span class="line">// 修改前</span><br><span class="line">//&lt;script async src=&quot;//busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js&quot;&gt;&lt;/script&gt;</span><br><span class="line">//修改后</span><br><span class="line">&lt;script async src=&quot;/js/src/busuanzi.pure.mini.js&quot;&gt;&lt;/script&gt;</span><br><span class="line"></span><br><span class="line">&#123;% if theme.busuanzi_count.site_uv %&#125;</span><br><span class="line">&lt;span class=&quot;site-uv&quot;&gt;</span><br><span class="line">&#123;&#123; theme.busuanzi_count.site_uv_header &#125;&#125;</span><br><span class="line">&lt;span class=&quot;busuanzi-value&quot; id=&quot;busuanzi_value_site_uv&quot;&gt;&lt;/span&gt;</span><br><span class="line">&#123;&#123; theme.busuanzi_count.site_uv_footer &#125;&#125;</span><br><span class="line">&lt;/span&gt;</span><br><span class="line">&#123;% endif %&#125;</span><br><span class="line">&#123;% if theme.busuanzi_count.site_pv %&#125;</span><br><span class="line">&lt;span class=&quot;site-pv&quot;&gt;</span><br><span class="line">&#123;&#123; theme.busuanzi_count.site_pv_header &#125;&#125;</span><br><span class="line">&lt;span class=&quot;busuanzi-value&quot; id=&quot;busuanzi_value_site_pv&quot;&gt;&lt;/span&gt;</span><br><span class="line">&#123;&#123; theme.busuanzi_count.site_pv_footer &#125;&#125;</span><br><span class="line">&lt;/span&gt;</span><br><span class="line">&#123;% endif %&#125;</span><br><span class="line">&lt;/div&gt;</span><br><span class="line">&#123;% endif %&#125;</span><br></pre></td></tr></table></figure>
+
+<p>配置完成后需要<code>hexo clean &amp;&amp; hexo g &amp;&amp; hexo d</code>生效…</p>
+<h2 id="在此也备份一下两个站点js文件"><a href="#在此也备份一下两个站点js文件" class="headerlink" title="在此也备份一下两个站点js文件~"></a><strong>在此也备份一下两个站点js文件~</strong></h2><p><strong>md5.min.js</strong><br><a href="https://github.com/Glooo/shared/blob/master/md5.min.js" target="_blank" rel="noopener">https://github.com/Glooo/shared/blob/master/md5.min.js</a></p>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">!<span class="function"><span class="keyword">function</span>(<span class="params">n</span>)</span>&#123;<span class="string">"use strict"</span>;<span class="function"><span class="keyword">function</span> <span class="title">d</span>(<span class="params">n,t</span>)</span>&#123;<span class="keyword">var</span> r=(<span class="number">65535</span>&amp;n)+(<span class="number">65535</span>&amp;t);<span class="keyword">return</span>(n&gt;&gt;<span class="number">16</span>)+(t&gt;&gt;<span class="number">16</span>)+(r&gt;&gt;<span class="number">16</span>)&lt;&lt;<span class="number">16</span>|<span class="number">65535</span>&amp;r&#125;<span class="function"><span class="keyword">function</span> <span class="title">f</span>(<span class="params">n,t,r,e,o,u</span>)</span>&#123;<span class="keyword">return</span> d(<span class="function"><span class="keyword">function</span>(<span class="params">n,t</span>)</span>&#123;<span class="keyword">return</span> n&lt;&lt;t|n&gt;&gt;&gt;<span class="number">32</span>-t&#125;(d(d(t,n),d(e,u)),o),r)&#125;<span class="function"><span class="keyword">function</span> <span class="title">l</span>(<span class="params">n,t,r,e,o,u,c</span>)</span>&#123;<span class="keyword">return</span> f(t&amp;r|~t&amp;e,n,t,o,u,c)&#125;<span class="function"><span class="keyword">function</span> <span class="title">g</span>(<span class="params">n,t,r,e,o,u,c</span>)</span>&#123;<span class="keyword">return</span> f(t&amp;e|r&amp;~e,n,t,o,u,c)&#125;<span class="function"><span class="keyword">function</span> <span class="title">v</span>(<span class="params">n,t,r,e,o,u,c</span>)</span>&#123;<span class="keyword">return</span> f(t^r^e,n,t,o,u,c)&#125;<span class="function"><span class="keyword">function</span> <span class="title">m</span>(<span class="params">n,t,r,e,o,u,c</span>)</span>&#123;<span class="keyword">return</span> f(r^(t|~e),n,t,o,u,c)&#125;<span class="function"><span class="keyword">function</span> <span class="title">i</span>(<span class="params">n,t</span>)</span>&#123;<span class="keyword">var</span> r,e,o,u,c;n[t&gt;&gt;<span class="number">5</span>]|=<span class="number">128</span>&lt;&lt;t%<span class="number">32</span>,n[<span class="number">14</span>+(t+<span class="number">64</span>&gt;&gt;&gt;<span class="number">9</span>&lt;&lt;<span class="number">4</span>)]=t;<span class="keyword">var</span> f=<span class="number">1732584193</span>,i=<span class="number">-271733879</span>,a=<span class="number">-1732584194</span>,h=<span class="number">271733878</span>;<span class="keyword">for</span>(r=<span class="number">0</span>;r&lt;n.length;r+=<span class="number">16</span>)i=m(i=m(i=m(i=m(i=v(i=v(i=v(i=v(i=g(i=g(i=g(i=g(i=l(i=l(i=l(i=l(o=i,a=l(u=a,h=l(c=h,f=l(e=f,i,a,h,n[r],<span class="number">7</span>,<span class="number">-680876936</span>),i,a,n[r+<span class="number">1</span>],<span class="number">12</span>,<span class="number">-389564586</span>),f,i,n[r+<span class="number">2</span>],<span class="number">17</span>,<span class="number">606105819</span>),h,f,n[r+<span class="number">3</span>],<span class="number">22</span>,<span class="number">-1044525330</span>),a=l(a,h=l(h,f=l(f,i,a,h,n[r+<span class="number">4</span>],<span class="number">7</span>,<span class="number">-176418897</span>),i,a,n[r+<span class="number">5</span>],<span class="number">12</span>,<span class="number">1200080426</span>),f,i,n[r+<span class="number">6</span>],<span class="number">17</span>,<span class="number">-1473231341</span>),h,f,n[r+<span class="number">7</span>],<span class="number">22</span>,<span class="number">-45705983</span>),a=l(a,h=l(h,f=l(f,i,a,h,n[r+<span class="number">8</span>],<span class="number">7</span>,<span class="number">1770035416</span>),i,a,n[r+<span class="number">9</span>],<span class="number">12</span>,<span class="number">-1958414417</span>),f,i,n[r+<span class="number">10</span>],<span class="number">17</span>,<span class="number">-42063</span>),h,f,n[r+<span class="number">11</span>],<span class="number">22</span>,<span class="number">-1990404162</span>),a=l(a,h=l(h,f=l(f,i,a,h,n[r+<span class="number">12</span>],<span class="number">7</span>,<span class="number">1804603682</span>),i,a,n[r+<span class="number">13</span>],<span class="number">12</span>,<span class="number">-40341101</span>),f,i,n[r+<span class="number">14</span>],<span class="number">17</span>,<span class="number">-1502002290</span>),h,f,n[r+<span class="number">15</span>],<span class="number">22</span>,<span class="number">1236535329</span>),a=g(a,h=g(h,f=g(f,i,a,h,n[r+<span class="number">1</span>],<span class="number">5</span>,<span class="number">-165796510</span>),i,a,n[r+<span class="number">6</span>],<span class="number">9</span>,<span class="number">-1069501632</span>),f,i,n[r+<span class="number">11</span>],<span class="number">14</span>,<span class="number">643717713</span>),h,f,n[r],<span class="number">20</span>,<span class="number">-373897302</span>),a=g(a,h=g(h,f=g(f,i,a,h,n[r+<span class="number">5</span>],<span class="number">5</span>,<span class="number">-701558691</span>),i,a,n[r+<span class="number">10</span>],<span class="number">9</span>,<span class="number">38016083</span>),f,i,n[r+<span class="number">15</span>],<span class="number">14</span>,<span class="number">-660478335</span>),h,f,n[r+<span class="number">4</span>],<span class="number">20</span>,<span class="number">-405537848</span>),a=g(a,h=g(h,f=g(f,i,a,h,n[r+<span class="number">9</span>],<span class="number">5</span>,<span class="number">568446438</span>),i,a,n[r+<span class="number">14</span>],<span class="number">9</span>,<span class="number">-1019803690</span>),f,i,n[r+<span class="number">3</span>],<span class="number">14</span>,<span class="number">-187363961</span>),h,f,n[r+<span class="number">8</span>],<span class="number">20</span>,<span class="number">1163531501</span>),a=g(a,h=g(h,f=g(f,i,a,h,n[r+<span class="number">13</span>],<span class="number">5</span>,<span class="number">-1444681467</span>),i,a,n[r+<span class="number">2</span>],<span class="number">9</span>,<span class="number">-51403784</span>),f,i,n[r+<span class="number">7</span>],<span class="number">14</span>,<span class="number">1735328473</span>),h,f,n[r+<span class="number">12</span>],<span class="number">20</span>,<span class="number">-1926607734</span>),a=v(a,h=v(h,f=v(f,i,a,h,n[r+<span class="number">5</span>],<span class="number">4</span>,<span class="number">-378558</span>),i,a,n[r+<span class="number">8</span>],<span class="number">11</span>,<span class="number">-2022574463</span>),f,i,n[r+<span class="number">11</span>],<span class="number">16</span>,<span class="number">1839030562</span>),h,f,n[r+<span class="number">14</span>],<span class="number">23</span>,<span class="number">-35309556</span>),a=v(a,h=v(h,f=v(f,i,a,h,n[r+<span class="number">1</span>],<span class="number">4</span>,<span class="number">-1530992060</span>),i,a,n[r+<span class="number">4</span>],<span class="number">11</span>,<span class="number">1272893353</span>),f,i,n[r+<span class="number">7</span>],<span class="number">16</span>,<span class="number">-155497632</span>),h,f,n[r+<span class="number">10</span>],<span class="number">23</span>,<span class="number">-1094730640</span>),a=v(a,h=v(h,f=v(f,i,a,h,n[r+<span class="number">13</span>],<span class="number">4</span>,<span class="number">681279174</span>),i,a,n[r],<span class="number">11</span>,<span class="number">-358537222</span>),f,i,n[r+<span class="number">3</span>],<span class="number">16</span>,<span class="number">-722521979</span>),h,f,n[r+<span class="number">6</span>],<span class="number">23</span>,<span class="number">76029189</span>),a=v(a,h=v(h,f=v(f,i,a,h,n[r+<span class="number">9</span>],<span class="number">4</span>,<span class="number">-640364487</span>),i,a,n[r+<span class="number">12</span>],<span class="number">11</span>,<span class="number">-421815835</span>),f,i,n[r+<span class="number">15</span>],<span class="number">16</span>,<span class="number">530742520</span>),h,f,n[r+<span class="number">2</span>],<span class="number">23</span>,<span class="number">-995338651</span>),a=m(a,h=m(h,f=m(f,i,a,h,n[r],<span class="number">6</span>,<span class="number">-198630844</span>),i,a,n[r+<span class="number">7</span>],<span class="number">10</span>,<span class="number">1126891415</span>),f,i,n[r+<span class="number">14</span>],<span class="number">15</span>,<span class="number">-1416354905</span>),h,f,n[r+<span class="number">5</span>],<span class="number">21</span>,<span class="number">-57434055</span>),a=m(a,h=m(h,f=m(f,i,a,h,n[r+<span class="number">12</span>],<span class="number">6</span>,<span class="number">1700485571</span>),i,a,n[r+<span class="number">3</span>],<span class="number">10</span>,<span class="number">-1894986606</span>),f,i,n[r+<span class="number">10</span>],<span class="number">15</span>,<span class="number">-1051523</span>),h,f,n[r+<span class="number">1</span>],<span class="number">21</span>,<span class="number">-2054922799</span>),a=m(a,h=m(h,f=m(f,i,a,h,n[r+<span class="number">8</span>],<span class="number">6</span>,<span class="number">1873313359</span>),i,a,n[r+<span class="number">15</span>],<span class="number">10</span>,<span class="number">-30611744</span>),f,i,n[r+<span class="number">6</span>],<span class="number">15</span>,<span class="number">-1560198380</span>),h,f,n[r+<span class="number">13</span>],<span class="number">21</span>,<span class="number">1309151649</span>),a=m(a,h=m(h,f=m(f,i,a,h,n[r+<span class="number">4</span>],<span class="number">6</span>,<span class="number">-145523070</span>),i,a,n[r+<span class="number">11</span>],<span class="number">10</span>,<span class="number">-1120210379</span>),f,i,n[r+<span class="number">2</span>],<span class="number">15</span>,<span class="number">718787259</span>),h,f,n[r+<span class="number">9</span>],<span class="number">21</span>,<span class="number">-343485551</span>),f=d(f,e),i=d(i,o),a=d(a,u),h=d(h,c);<span class="keyword">return</span>[f,i,a,h]&#125;<span class="function"><span class="keyword">function</span> <span class="title">a</span>(<span class="params">n</span>)</span>&#123;<span class="keyword">var</span> t,r=<span class="string">""</span>,e=<span class="number">32</span>*n.length;<span class="keyword">for</span>(t=<span class="number">0</span>;t&lt;e;t+=<span class="number">8</span>)r+=<span class="built_in">String</span>.fromCharCode(n[t&gt;&gt;<span class="number">5</span>]&gt;&gt;&gt;t%<span class="number">32</span>&amp;<span class="number">255</span>);<span class="keyword">return</span> r&#125;<span class="function"><span class="keyword">function</span> <span class="title">h</span>(<span class="params">n</span>)</span>&#123;<span class="keyword">var</span> t,r=[];<span class="keyword">for</span>(r[(n.length&gt;&gt;<span class="number">2</span>)<span class="number">-1</span>]=<span class="keyword">void</span> <span class="number">0</span>,t=<span class="number">0</span>;t&lt;r.length;t+=<span class="number">1</span>)r[t]=<span class="number">0</span>;<span class="keyword">var</span> e=<span class="number">8</span>*n.length;<span class="keyword">for</span>(t=<span class="number">0</span>;t&lt;e;t+=<span class="number">8</span>)r[t&gt;&gt;<span class="number">5</span>]|=(<span class="number">255</span>&amp;n.charCodeAt(t/<span class="number">8</span>))&lt;&lt;t%<span class="number">32</span>;<span class="keyword">return</span> r&#125;<span class="function"><span class="keyword">function</span> <span class="title">e</span>(<span class="params">n</span>)</span>&#123;<span class="keyword">var</span> t,r,e=<span class="string">"0123456789abcdef"</span>,o=<span class="string">""</span>;<span class="keyword">for</span>(r=<span class="number">0</span>;r&lt;n.length;r+=<span class="number">1</span>)t=n.charCodeAt(r),o+=e.charAt(t&gt;&gt;&gt;<span class="number">4</span>&amp;<span class="number">15</span>)+e.charAt(<span class="number">15</span>&amp;t);<span class="keyword">return</span> o&#125;<span class="function"><span class="keyword">function</span> <span class="title">r</span>(<span class="params">n</span>)</span>&#123;<span class="keyword">return</span> <span class="built_in">unescape</span>(<span class="built_in">encodeURIComponent</span>(n))&#125;<span class="function"><span class="keyword">function</span> <span class="title">o</span>(<span class="params">n</span>)</span>&#123;<span class="keyword">return</span> <span class="function"><span class="keyword">function</span>(<span class="params">n</span>)</span>&#123;<span class="keyword">return</span> a(i(h(n),<span class="number">8</span>*n.length))&#125;(r(n))&#125;<span class="function"><span class="keyword">function</span> <span class="title">u</span>(<span class="params">n,t</span>)</span>&#123;<span class="keyword">return</span> <span class="function"><span class="keyword">function</span>(<span class="params">n,t</span>)</span>&#123;<span class="keyword">var</span> r,e,o=h(n),u=[],c=[];<span class="keyword">for</span>(u[<span class="number">15</span>]=c[<span class="number">15</span>]=<span class="keyword">void</span> <span class="number">0</span>,<span class="number">16</span>&lt;o.length&amp;&amp;(o=i(o,<span class="number">8</span>*n.length)),r=<span class="number">0</span>;r&lt;<span class="number">16</span>;r+=<span class="number">1</span>)u[r]=<span class="number">909522486</span>^o[r],c[r]=<span class="number">1549556828</span>^o[r];<span class="keyword">return</span> e=i(u.concat(h(t)),<span class="number">512</span>+<span class="number">8</span>*t.length),a(i(c.concat(e),<span class="number">640</span>))&#125;(r(n),r(t))&#125;<span class="function"><span class="keyword">function</span> <span class="title">t</span>(<span class="params">n,t,r</span>)</span>&#123;<span class="keyword">return</span> t?r?u(t,n):<span class="function"><span class="keyword">function</span>(<span class="params">n,t</span>)</span>&#123;<span class="keyword">return</span> e(u(n,t))&#125;(t,n):r?o(n):<span class="function"><span class="keyword">function</span>(<span class="params">n</span>)</span>&#123;<span class="keyword">return</span> e(o(n))&#125;(n)&#125;<span class="string">"function"</span>==<span class="keyword">typeof</span> define&amp;&amp;define.amd?define(<span class="function"><span class="keyword">function</span>(<span class="params"></span>)</span>&#123;<span class="keyword">return</span> t&#125;):<span class="string">"object"</span>==<span class="keyword">typeof</span> <span class="built_in">module</span>&amp;&amp;<span class="built_in">module</span>.exports?<span class="built_in">module</span>.exports=t:n.md5=t&#125;(<span class="keyword">this</span>);</span><br><span class="line"><span class="comment">//# sourceMappingURL=md5.min.js.map</span></span><br></pre></td></tr></table></figure>
+
+<p><strong>busuanzi.pure.mini.js</strong><br><a href="https://github.com/Glooo/shared/blob/master/busuanzi.pure.mini.js" target="_blank" rel="noopener">https://github.com/Glooo/shared/blob/master/busuanzi.pure.mini.js</a></p>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">var</span> bszCaller,bszTag;!<span class="function"><span class="keyword">function</span>(<span class="params"></span>)</span>&#123;<span class="keyword">var</span> c,d,e,a=!<span class="number">1</span>,b=[];ready=<span class="function"><span class="keyword">function</span>(<span class="params">c</span>)</span>&#123;<span class="keyword">return</span> a||<span class="string">"interactive"</span>===<span class="built_in">document</span>.readyState||<span class="string">"complete"</span>===<span class="built_in">document</span>.readyState?c.call(<span class="built_in">document</span>):b.push(<span class="function"><span class="keyword">function</span>(<span class="params"></span>)</span>&#123;<span class="keyword">return</span> c.call(<span class="keyword">this</span>)&#125;),<span class="keyword">this</span>&#125;,d=<span class="function"><span class="keyword">function</span>(<span class="params"></span>)</span>&#123;<span class="keyword">for</span>(<span class="keyword">var</span> a=<span class="number">0</span>,c=b.length;c&gt;a;a++)b[a].apply(<span class="built_in">document</span>);b=[]&#125;,e=<span class="function"><span class="keyword">function</span>(<span class="params"></span>)</span>&#123;a||(a=!<span class="number">0</span>,d.call(<span class="built_in">window</span>),<span class="built_in">document</span>.removeEventListener?<span class="built_in">document</span>.removeEventListener(<span class="string">"DOMContentLoaded"</span>,e,!<span class="number">1</span>):<span class="built_in">document</span>.attachEvent&amp;&amp;(<span class="built_in">document</span>.detachEvent(<span class="string">"onreadystatechange"</span>,e),<span class="built_in">window</span>==<span class="built_in">window</span>.top&amp;&amp;(clearInterval(c),c=<span class="literal">null</span>)))&#125;,<span class="built_in">document</span>.addEventListener?<span class="built_in">document</span>.addEventListener(<span class="string">"DOMContentLoaded"</span>,e,!<span class="number">1</span>):<span class="built_in">document</span>.attachEvent&amp;&amp;(<span class="built_in">document</span>.attachEvent(<span class="string">"onreadystatechange"</span>,<span class="function"><span class="keyword">function</span>(<span class="params"></span>)</span>&#123;/loaded|complete/.test(<span class="built_in">document</span>.readyState)&amp;&amp;e()&#125;),<span class="built_in">window</span>==<span class="built_in">window</span>.top&amp;&amp;(c=setInterval(<span class="function"><span class="keyword">function</span>(<span class="params"></span>)</span>&#123;<span class="keyword">try</span>&#123;a||<span class="built_in">document</span>.documentElement.doScroll(<span class="string">"left"</span>)&#125;<span class="keyword">catch</span>(b)&#123;<span class="keyword">return</span>&#125;e()&#125;,<span class="number">5</span>)))&#125;(),bszCaller=&#123;<span class="attr">fetch</span>:<span class="function"><span class="keyword">function</span>(<span class="params">a,b</span>)</span>&#123;<span class="keyword">var</span> c=<span class="string">"BusuanziCallback_"</span>+<span class="built_in">Math</span>.floor(<span class="number">1099511627776</span>*<span class="built_in">Math</span>.random());<span class="built_in">window</span>[c]=<span class="keyword">this</span>.evalCall(b),a=a.replace(<span class="string">"=BusuanziCallback"</span>,<span class="string">"="</span>+c),scriptTag=<span class="built_in">document</span>.createElement(<span class="string">"SCRIPT"</span>),scriptTag.type=<span class="string">"text/javascript"</span>,scriptTag.defer=!<span class="number">0</span>,scriptTag.src=a,<span class="built_in">document</span>.getElementsByTagName(<span class="string">"HEAD"</span>)[<span class="number">0</span>].appendChild(scriptTag)&#125;,<span class="attr">evalCall</span>:<span class="function"><span class="keyword">function</span>(<span class="params">a</span>)</span>&#123;<span class="keyword">return</span> <span class="function"><span class="keyword">function</span>(<span class="params">b</span>)</span>&#123;ready(<span class="function"><span class="keyword">function</span>(<span class="params"></span>)</span>&#123;<span class="keyword">try</span>&#123;a(b),scriptTag.parentElement.removeChild(scriptTag)&#125;<span class="keyword">catch</span>(c)&#123;bszTag.hides()&#125;&#125;)&#125;&#125;&#125;,bszCaller.fetch(<span class="string">"//busuanzi.ibruce.info/busuanzi?jsonpCallback=BusuanziCallback"</span>,<span class="function"><span class="keyword">function</span>(<span class="params">a</span>)</span>&#123;bszTag.texts(a),bszTag.shows()&#125;),bszTag=&#123;<span class="attr">bszs</span>:[<span class="string">"site_pv"</span>,<span class="string">"page_pv"</span>,<span class="string">"site_uv"</span>],<span class="attr">texts</span>:<span class="function"><span class="keyword">function</span>(<span class="params">a</span>)</span>&#123;<span class="keyword">this</span>.bszs.map(<span class="function"><span class="keyword">function</span>(<span class="params">b</span>)</span>&#123;<span class="keyword">var</span> c=<span class="built_in">document</span>.getElementById(<span class="string">"busuanzi_value_"</span>+b);c&amp;&amp;(c.innerHTML=a[b])&#125;)&#125;,<span class="attr">hides</span>:<span class="function"><span class="keyword">function</span>(<span class="params"></span>)</span>&#123;<span class="keyword">this</span>.bszs.map(<span class="function"><span class="keyword">function</span>(<span class="params">a</span>)</span>&#123;<span class="keyword">var</span> b=<span class="built_in">document</span>.getElementById(<span class="string">"busuanzi_container_"</span>+a);b&amp;&amp;(b.style.display=<span class="string">"none"</span>)&#125;)&#125;,<span class="attr">shows</span>:<span class="function"><span class="keyword">function</span>(<span class="params"></span>)</span>&#123;<span class="keyword">this</span>.bszs.map(<span class="function"><span class="keyword">function</span>(<span class="params">a</span>)</span>&#123;<span class="keyword">var</span> b=<span class="built_in">document</span>.getElementById(<span class="string">"busuanzi_container_"</span>+a);b&amp;&amp;(b.style.display=<span class="string">"inline"</span>)&#125;)&#125;&#125;;</span><br></pre></td></tr></table></figure>
+
+<p>参考大佬<a href="https://blog.csdn.net/qianghaohao/article/details/90736310" target="_blank" rel="noopener">qhh0205</a>的文章</p>
+
+          
+        
+      
+    </div>
+    
+    
+    
+  <div>
+    
+  </div>
+    
+
+    
+
+    
+
+    <footer class="post-footer">
+      
+
+      
+
+      
+
+      
+      
+        <div class="post-eof"></div>
+      
+    </footer>
+  </div>
+  
+  
+  
+
+  </article>
+
+
+    
+      
+
+  
+
+  
+  
+  
+
+  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
+  
+  
+  
+  <div class="post-block">
     <link itemprop="mainEntityOfPage" href="http://glooo.fun/uncategorized/trim/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
@@ -707,328 +911,6 @@
 
 
     
-      
-
-  
-
-  
-  
-  
-
-  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
-  
-  
-  
-  <div class="post-block">
-    <link itemprop="mainEntityOfPage" href="http://glooo.fun/webpack/webpack/">
-
-    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
-      <meta itemprop="name" content="Gzy">
-      <meta itemprop="description" content>
-      <meta itemprop="image" content="/images/avatar.png">
-    </span>
-
-    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
-      <meta itemprop="name" content="Gzy's Blog">
-    </span>
-
-    
-      <header class="post-header">
-
-        
-        
-          <h1 class="post-title" itemprop="name headline">
-                
-                <a class="post-title-link" href="/webpack/webpack/" itemprop="url">提升“内涵”之webpack学习</a></h1>
-        
-
-        <div class="post-meta">
-          
-          <span class="post-time">
-            
-              <span class="post-meta-item-icon">
-                <i class="fa fa-calendar-o"></i>
-              </span>
-              
-                <span class="post-meta-item-text">发表于</span>
-              
-              <time title="创建于" itemprop="dateCreated datePublished" datetime="2019-09-11T15:26:43+08:00">
-                2019-09-11
-              </time>
-            
-
-            
-
-            
-          </span>
-
-          
-            <span class="post-category">
-            
-              <span class="post-meta-divider">|</span>
-            
-              <span class="post-meta-item-icon">
-                <i class="fa fa-folder-o"></i>
-              </span>
-              
-                <span class="post-meta-item-text">分类于</span>
-              
-              
-                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
-                  <a href="/categories/webpack/" itemprop="url" rel="index">
-                    <span itemprop="name">webpack</span>
-                  </a>
-                </span>
-
-                
-                
-              
-            </span>
-          
-
-          
-            
-          
-
-          
-          
-
-          
-
-          
-            <div class="post-wordcount">
-              
-                
-                <span class="post-meta-item-icon">
-                  <i class="fa fa-file-word-o"></i>
-                </span>
-                
-                  <span class="post-meta-item-text">字数统计&#58;</span>
-                
-                <span title="字数统计">
-                  3.4k
-                </span>
-              
-
-              
-                <span class="post-meta-divider">|</span>
-              
-
-              
-                <span class="post-meta-item-icon">
-                  <i class="fa fa-clock-o"></i>
-                </span>
-                
-                  <span class="post-meta-item-text">阅读时长 &asymp;</span>
-                
-                <span title="阅读时长">
-                  14
-                </span>
-              
-            </div>
-          
-
-          
-
-        </div>
-      </header>
-    
-
-    
-    
-    
-    <div class="post-body" itemprop="articleBody">
-
-      
-      
-
-      
-        
-          
-            <h1 id="安装"><a href="#安装" class="headerlink" title="安装"></a>安装</h1><p>webpack 安装前提<br>最新版nodejs，旧版本可能导致缺少webpack功能&amp;相关package包</p>
-<p>安装</p>
-<p><code>npm install --save-dev webpack</code>安装最新版本<br><code>npm install --save-dev webpack@&lt;version&gt;</code></p>
-<p>如果使用webpack 4+版本，请安装CLI<br><code>npm install --save-dev webpack-cli</code></p>
-<p>建议本地安装而不是全局安装，容易分别升级项目。<br>通常，webpack 通过运行一个或多个 npm scripts，会在本地 node_modules 目录中查找安装的 webpack：</p>
-<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="string">"scripts"</span>: &#123;</span><br><span class="line">    <span class="string">"start"</span>: <span class="string">"webpack --config webpack.config.js"</span></span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-
-<p><em>当你本地安装webpack时，你能够从node_modules/.bin/webpack访问它的bin版本。</em></p>
-<p>全局安装</p>
-<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">npm install --global webpack</span><br></pre></td></tr></table></figure>
-
-<p>不推荐全局安装 webpack。这会将你项目中的 webpack 锁定到指定版本，并且在使用不同的 webpack 版本的项目中，可能会导致构建失败。</p>
-<p>最新版本的webpack</p>
-<h1 id="起步"><a href="#起步" class="headerlink" title="起步"></a>起步</h1><p>webpack用于编译JavaScript模块。安装后可以通过CLI(命令行接口)和API与其配合交互。</p>
-<h2 id="为什么要使用webpack"><a href="#为什么要使用webpack" class="headerlink" title="为什么要使用webpack"></a>为什么要使用webpack</h2><p>webpack是一个现代的JavaScript应用程序的<em>静态模块打包器（module bundler）</em>。它会递归地构建一个依赖关系图(dependency graph)，其中包含应用程序需要的每个模块，然后将所有这些模块打包成一个或多个 bundle。</p>
-<h3 id="入口entry"><a href="#入口entry" class="headerlink" title="入口entry"></a>入口entry</h3><p>入口起点有一个或多个，指示webpack应该使用哪个模块，作为构建其内部依赖图的开始（找依赖）。每个依赖被处理输出到bundles的文件中。</p>
-<p>可以在webpack配置中配置entry属性，来指定入口起点。默认值为<code>./src</code>。<br>例子：<br>webpack.config.js</p>
-<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="built_in">module</span>.exports = &#123;</span><br><span class="line">  entry: <span class="string">'./path/to/my/entry/file.js'</span></span><br><span class="line">&#125;;</span><br></pre></td></tr></table></figure>
-
-<h3 id="输出output"><a href="#输出output" class="headerlink" title="输出output"></a>输出output</h3><p>告诉webpack在哪里输出它所创建的bundles，以及如何命名这些文件，默认值为<code>./dist</code>。基本上，整个应用程序结构，都会被编译到你指定的输出路径的文件夹中。<br>webpack.config.js</p>
-<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><span class="line"></span><br><span class="line"><span class="keyword">const</span> path = <span class="built_in">require</span>(<span class="string">'path'</span>);</span><br><span class="line"><span class="comment">// path是一个Node.js核心模块，用于操作文件路径</span></span><br><span class="line"><span class="built_in">module</span>.exports = &#123;</span><br><span class="line">  entry: <span class="string">'./path/to/my/entry/file.js'</span>,</span><br><span class="line">  output: &#123;</span><br><span class="line">    path: path.resolve(__dirname, <span class="string">'dist'</span>),</span><br><span class="line">    filename: <span class="string">'my-first-webpack.bundle.js'</span></span><br><span class="line">  &#125;</span><br><span class="line">&#125;;</span><br></pre></td></tr></table></figure>
-
-<h3 id="loader"><a href="#loader" class="headerlink" title="loader"></a>loader</h3><p>loader 让 webpack 能够去处理那些非 JavaScript 文件（webpack 自身只理解 JavaScript）。loader 可以将所有类型的文件转换为 webpack 能够处理的有效模块，然后你就可以利用 webpack 的打包能力，对它们进行处理。<br>本质上，webpack loader把所有类型的文件都转换成按依赖图可以直接引用的模块。</p>
-<p>loader是可以引入任何类型的模块的。</p>
-<p>Mostly，webpack有两个目标：</p>
-<ol>
-<li>test 属性，用于标识出 应该被对应的loader 进行转换成webpack能处理的 的某个或某些文件。</li>
-<li>use 属性，表示进行转换时，应该使用哪个loader。<br>webpack.config.js<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">const</span> path = <span class="built_in">require</span>(<span class="string">'path'</span>);</span><br><span class="line"></span><br><span class="line"><span class="keyword">const</span> config = &#123;</span><br><span class="line">  output: &#123;</span><br><span class="line">    filename: <span class="string">'my-first-webpack.bundle.js'</span></span><br><span class="line">  &#125;,</span><br><span class="line">  <span class="built_in">module</span>: &#123;</span><br><span class="line">    rules: [</span><br><span class="line">      &#123; <span class="attr">test</span>: <span class="regexp">/\.txt$/</span>, <span class="attr">use</span>: <span class="string">'raw-loader'</span> &#125;</span><br><span class="line">    ]</span><br><span class="line">  &#125;</span><br><span class="line">&#125;;</span><br><span class="line"></span><br><span class="line"><span class="built_in">module</span>.exports = config;</span><br></pre></td></tr></table></figure>
-
-</li>
-</ol>
-<p>以上配置中，对一个单独的 module 对象定义了 rules 属性，里面包含两个必须属性：test 和 use。这告诉 webpack 编译器(compiler) 如下信息：</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">“嘿，webpack 编译器，</span><br><span class="line">当你碰到「在 require()/import 语句中被解析为 &apos;.txt&apos; 的路径」时，</span><br><span class="line">在你对它打包之前，先使用 raw-loader 转换一下。”</span><br></pre></td></tr></table></figure>
-
-<p>在 webpack 配置中定义 loader 时，要定义在 module.rules 中，而不是 rules。<br>…</p>
-<h3 id="插件plugins"><a href="#插件plugins" class="headerlink" title="插件plugins"></a>插件plugins</h3><p>插件的范围包括，从打包优化和压缩，一直到重新定义环境中的变量。<br>使用时，require()它，然后把它添加到plugins数组中。</p>
-<p>可以在一个配置文件中因为不同目的而多次使用同一个插件，这时需要通过使用 new 操作符来创建它的一个实例。<br>webpack.config.js</p>
-<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">const</span> HtmlWebpackPlugin = <span class="built_in">require</span>(<span class="string">'html-webpack-plugin'</span>); <span class="comment">// 通过 npm 安装</span></span><br><span class="line"><span class="keyword">const</span> webpack = <span class="built_in">require</span>(<span class="string">'webpack'</span>); <span class="comment">// 用于访问内置插件</span></span><br><span class="line"></span><br><span class="line"><span class="keyword">const</span> config = &#123;</span><br><span class="line">  <span class="built_in">module</span>: &#123;</span><br><span class="line">    rules: [</span><br><span class="line">      &#123; <span class="attr">test</span>: <span class="regexp">/\.txt$/</span>, <span class="attr">use</span>: <span class="string">'raw-loader'</span> &#125;</span><br><span class="line">    ]</span><br><span class="line">  &#125;,</span><br><span class="line">  plugins: [</span><br><span class="line">    <span class="keyword">new</span> HtmlWebpackPlugin(&#123;<span class="attr">template</span>: <span class="string">'./src/index.html'</span>&#125;)</span><br><span class="line">  ]</span><br><span class="line">&#125;;</span><br><span class="line"></span><br><span class="line"><span class="built_in">module</span>.exports = config;</span><br></pre></td></tr></table></figure>
-
-<p>模式<br><code>mode: development/production</code><br>用于启用相应模式下的webpack内置的优化。</p>
-<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="built_in">module</span>.exports = &#123;</span><br><span class="line">  mode: <span class="string">'production'</span></span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-
-<h2 id="入口entry-1"><a href="#入口entry-1" class="headerlink" title="入口entry"></a>入口entry</h2><h3 id="单个入口语法"><a href="#单个入口语法" class="headerlink" title="单个入口语法"></a>单个入口语法</h3><p>用法:<code>entry: string|Array&lt;string&gt;</code><br><em>webpack.config.js</em></p>
-<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">const</span> config = &#123;</span><br><span class="line">  entry: <span class="string">'./path/to/my/entry/file.js'</span></span><br><span class="line">&#125;;</span><br><span class="line"></span><br><span class="line"><span class="built_in">module</span>.exports = config;</span><br></pre></td></tr></table></figure>
-
-<p>entry 属性的单个入口语法，是下面的简写：</p>
-<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">const</span> config = &#123;</span><br><span class="line">  entry: &#123;</span><br><span class="line">    main: <span class="string">'./path/to/my/entry/file.js'</span></span><br><span class="line">  &#125;</span><br><span class="line">&#125;;</span><br></pre></td></tr></table></figure>
-
-<p>如果传入的为数组(文件路径数组)，则创建多个主入口。<br>当你想要多个依赖文件一起注入，并且将它们的依赖导向到一个”chunk”时，传入数组的方式就很有用。</p>
-<p>当你正在寻找为「只有一个入口起点的应用程序或工具（即 library）」快速设置 webpack 配置的时候，这会是个很不错的选择。然而，使用此语法在扩展配置时有失灵活性。</p>
-<h3 id="对象语法"><a href="#对象语法" class="headerlink" title="对象语法"></a>对象语法</h3><p>用法:<br><code>entry: {[entryChunkName: string]: string|Array&lt;string&gt;}</code><br><em>webpack.config.js</em></p>
-<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">const</span> config = &#123;</span><br><span class="line">  entry: &#123;</span><br><span class="line">    app: <span class="string">'./src/app.js'</span>,</span><br><span class="line">    vendors: <span class="string">'./src/vendors.js'</span></span><br><span class="line">  &#125;</span><br><span class="line">&#125;;</span><br></pre></td></tr></table></figure>
-
-<p>对象语法会比较繁琐。然而，这是应用程序中定义入口的最可扩展的方式。</p>
-<p>“可扩展的webpack配置“是指，可重用也可以与其他配置组合使用。</p>
-<h3 id="常见场景"><a href="#常见场景" class="headerlink" title="常见场景"></a>常见场景</h3><h4 id="分离-应用程序-app-和-第三方库-vendor-入口"><a href="#分离-应用程序-app-和-第三方库-vendor-入口" class="headerlink" title="分离 应用程序(app) 和 第三方库(vendor) 入口"></a>分离 应用程序(app) 和 第三方库(vendor) 入口</h4><h4 id="多页面应用程序"><a href="#多页面应用程序" class="headerlink" title="多页面应用程序"></a>多页面应用程序</h4><h2 id="出口-output"><a href="#出口-output" class="headerlink" title="出口 output"></a>出口 output</h2><p>output 属性告诉 webpack 在哪里输出它所创建的 bundles，以及如何命名这些文件，默认值为 <code>./dist</code>。基本上，整个应用程序结构，都会被编译到你指定的输出路径的文件夹中。你可以通过在配置中指定一个 output 字段，来配置这些处理过程：<br>webpack.config.js</p>
-<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">const</span> path = <span class="built_in">require</span>(<span class="string">'path'</span>);</span><br><span class="line"></span><br><span class="line"><span class="built_in">module</span>.exports = &#123;</span><br><span class="line">  entry: <span class="string">'./path/to/my/entry/file.js'</span>,</span><br><span class="line">  output: &#123;</span><br><span class="line">    path: path.resolve(__dirname, <span class="string">'dist'</span>),</span><br><span class="line">    filename: <span class="string">'my-first-webpack.bundle.js'</span></span><br><span class="line">  &#125;</span><br><span class="line">&#125;;</span><br></pre></td></tr></table></figure>
-
-<p>在上面的示例中，我们通过 output.filename 和 output.path 属性，来告诉 webpack bundle 的名称，以及我们想要 bundle 生成(emit)到哪里。</p>
-<p><em>配置 output 选项可以控制 webpack 如何向硬盘写入编译文件。注意，即使可以存在多个入口起点，但只指定一个输出配置。</em></p>
-<h3 id="用法-Usage"><a href="#用法-Usage" class="headerlink" title="用法 Usage"></a>用法 Usage</h3><p>在 webpack 中配置 output 属性的最低要求是，将它的值设置为一个对象，包括以下两点：</p>
-<ol>
-<li><strong>filename</strong> 用于输出文件的文件名。</li>
-<li>目标输出目录 <strong>path</strong> 的绝对路径。<br>webpack.config.js<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">const</span> config = &#123;</span><br><span class="line">  output: &#123;</span><br><span class="line">    filename: <span class="string">'bundle.js'</span>,</span><br><span class="line">    path: <span class="string">'/home/proj/public/assets'</span></span><br><span class="line">  &#125;</span><br><span class="line">&#125;;</span><br><span class="line"></span><br><span class="line"><span class="built_in">module</span>.exports = config;</span><br></pre></td></tr></table></figure>
-
-</li>
-</ol>
-<p>此配置将一个单独的 bundle.js 文件输出到 /home/proj/public/assets 目录中。</p>
-<h3 id="多个入口起点"><a href="#多个入口起点" class="headerlink" title="多个入口起点"></a>多个入口起点</h3><p>如果配置创建了多个单独的 “chunk”（例如，使用多个入口起点或使用像 CommonsChunkPlugin 这样的插件），则应该使用占位符(substitutions)来确保每个文件具有唯一的名称。</p>
-<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br></pre></td><td class="code"><pre><span class="line">&#123;</span><br><span class="line">  entry: &#123;</span><br><span class="line">    app: <span class="string">'./src/app.js'</span>,</span><br><span class="line">    search: <span class="string">'./src/search.js'</span></span><br><span class="line">  &#125;,</span><br><span class="line">  output: &#123;</span><br><span class="line">    filename: <span class="string">'[name].js'</span>,</span><br><span class="line">    path: __dirname + <span class="string">'/dist'</span></span><br><span class="line">  &#125;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="comment">// 写入到硬盘：./dist/app.js, ./dist/search.js</span></span><br></pre></td></tr></table></figure>
-
-<h3 id="高级进阶"><a href="#高级进阶" class="headerlink" title="高级进阶"></a>高级进阶</h3><p>以下是使用 CDN 和资源 hash 的复杂示例：</p>
-<p>config.js</p>
-<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">output: &#123;</span><br><span class="line">  path: <span class="string">"/home/proj/cdn/assets/[hash]"</span>,</span><br><span class="line">  publicPath: <span class="string">"http://cdn.example.com/assets/[hash]/"</span></span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-
-<p>在编译时不知道最终输出文件的 publicPath 的情况下，publicPath 可以留空，并且在入口起点文件运行时动态设置。如果你在编译时不知道 publicPath，你可以先忽略它，并且在入口起点设置 <code>__webpack_public_path__</code>。</p>
-<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">__webpack_public_path__ = myRuntimePublicPath</span><br><span class="line"></span><br><span class="line"><span class="comment">// 剩余的应用程序入口</span></span><br></pre></td></tr></table></figure>
-
-<h2 id="模式-mode"><a href="#模式-mode" class="headerlink" title="模式 mode"></a>模式 mode</h2><p>提供mode配置选项，告知webpack使用相应模式的内置优化。<br>string</p>
-<h3 id="用法"><a href="#用法" class="headerlink" title="用法"></a>用法</h3><p>只在配置中提供mode选项：</p>
-<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="built_in">module</span>.exports = &#123;</span><br><span class="line">  mode: <span class="string">'production'</span></span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-
-<p>或者从CLI参数中传递：</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">webpack --mode=production</span><br></pre></td></tr></table></figure>
-
-<p>支持以下字符串值：<br><code>development</code>:会将 <code>process.env.NODE_ENV</code> 的值设为 <code>development</code>。启用 <code>NamedChunksPlugin</code> 和 <code>NamedModulesPlugin</code>。<br><code>production</code>(默认):会将 <code>process.env.NODE_ENV</code> 的值设为 <code>production</code>。启用 <code>FlagDependencyUsagePlugin</code>, <code>FlagIncludedChunksPlugin</code>, <code>ModuleConcatenationPlugin</code>, <code>NoEmitOnErrorsPlugin</code>, <code>OccurrenceOrderPlugin</code>, <code>SideEffectsFlagPlugin</code> 和 <code>UglifyJsPlugin</code>.</p>
-<p><em>记住，只设置 NODE_ENV，则不会自动设置 mode。</em><br><strong>mode: development</strong></p>
-<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">// webpack.development.config.js</span></span><br><span class="line"><span class="built_in">module</span>.exports = &#123;</span><br><span class="line">+ mode: <span class="string">'development'</span></span><br><span class="line">- plugins: [</span><br><span class="line">-   <span class="keyword">new</span> webpack.NamedModulesPlugin(),</span><br><span class="line">-   <span class="keyword">new</span> webpack.DefinePlugin(&#123; <span class="string">"process.env.NODE_ENV"</span>: <span class="built_in">JSON</span>.stringify(<span class="string">"development"</span>) &#125;),</span><br><span class="line">- ]</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-
-<p><strong>mode: production(默认)</strong></p>
-<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">// webpack.production.config.js</span></span><br><span class="line"><span class="built_in">module</span>.exports = &#123;</span><br><span class="line">+  mode: <span class="string">'production'</span>,</span><br><span class="line">-  plugins: [</span><br><span class="line">-    <span class="keyword">new</span> UglifyJsPlugin(<span class="comment">/* ... */</span>),</span><br><span class="line">-    <span class="keyword">new</span> webpack.DefinePlugin(&#123; <span class="string">"process.env.NODE_ENV"</span>: <span class="built_in">JSON</span>.stringify(<span class="string">"production"</span>) &#125;),</span><br><span class="line">-    <span class="keyword">new</span> webpack.optimize.ModuleConcatenationPlugin(),</span><br><span class="line">-    <span class="keyword">new</span> webpack.NoEmitOnErrorsPlugin()</span><br><span class="line">-  ]</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-
-<h2 id="loader-1"><a href="#loader-1" class="headerlink" title="loader"></a>loader</h2><h3 id="loader开始"><a href="#loader开始" class="headerlink" title="loader开始"></a>loader开始</h3><p>webpack自身只理解Javascript，所以loader让webpack能够处理那些非Javascript文件。<br>loader可以将所有类型的文件转换为webpack能够处理的有效模块，然后就可以利用webpack的打包能力，对它们进行处理。</p>
-<p>其实，loader把所有类型的文件，转换为应用程序的依赖图（和最终的bundle）可以直接引用的模块。</p>
-<p>注意，loader 能够 import 导入任何类型的模块（例如 .css 文件），这是 webpack 特有的功能，其他打包程序或任务执行器的可能并不支持。<br>loader 用于对模块的源代码进行转换。loader 可以使你在 import 或”加载”模块时预处理文件。loader 可以将文件从不同的语言（如 TypeScript）转换为 JavaScript，或将内联图像转换为 data URL。loader 甚至允许你直接在 JavaScript 模块中 import CSS文件！</p>
-<p>在更高层面，在 webpack 的配置中 loader 有两个目标：<br>1.test 属性，用于标识出应该被对应的 loader 进行转换的某个或某些文件。<br>2.use 属性，表示进行转换时，应该使用哪个 loader。</p>
-<p>webpack.config.js</p>
-<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">const</span> path = <span class="built_in">require</span>(<span class="string">'path'</span>);</span><br><span class="line"></span><br><span class="line"><span class="keyword">const</span> config = &#123;</span><br><span class="line">  output: &#123;</span><br><span class="line">    filename: <span class="string">'my-first-webpack.bundle.js'</span></span><br><span class="line">  &#125;,</span><br><span class="line">  <span class="built_in">module</span>: &#123;</span><br><span class="line">    rules: [</span><br><span class="line">      &#123; <span class="attr">test</span>: <span class="regexp">/\.txt$/</span>, <span class="attr">use</span>: <span class="string">'raw-loader'</span> &#125;</span><br><span class="line">    ]</span><br><span class="line">  &#125;</span><br><span class="line">&#125;;</span><br><span class="line"></span><br><span class="line"><span class="built_in">module</span>.exports = config;</span><br></pre></td></tr></table></figure>
-
-<p>以上配置中，对一个单独的 module 对象定义了 rules 属性，里面包含两个必须属性：test 和 use。这告诉 webpack 编译器(compiler) 如下信息：</p>
-<p>“嘿，webpack 编译器，当你碰到「在 require()/import 语句中被解析为 ‘.txt’ 的路径」时，在你对它打包之前，先使用 raw-loader 转换一下。”</p>
-<p>重要的是要记得，在 webpack 配置中定义 loader 时，要定义在 module.rules 中，而不是 rules。然而，在定义错误时 webpack 会给出严重的警告。为了使你受益于此，如果没有按照正确方式去做，webpack 会“给出严重的警告”。</p>
-<h3 id="示例"><a href="#示例" class="headerlink" title="示例"></a>示例</h3><p>例如，你可以使用 loader 告诉 webpack 加载 CSS 文件，或者将 TypeScript 转为 JavaScript。为此，首先安装相对应的 loader：</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">npm install --save-dev css-loader</span><br><span class="line">npm install --save-dev ts-loader</span><br></pre></td></tr></table></figure>
-
-<p>然后指示webpack对每个<code>.css</code>使用<code>css-loader</code>，以及对所有<code>.ts</code>文件使用<code>ts-loader</code><br>webpack.config.js</p>
-<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line"><span class="built_in">module</span>.exports = &#123;</span><br><span class="line">  <span class="built_in">module</span>: &#123;</span><br><span class="line">    rules: [</span><br><span class="line">      &#123; <span class="attr">test</span>: <span class="regexp">/\.css$/</span>, <span class="attr">use</span>: <span class="string">'css-loader'</span> &#125;,</span><br><span class="line">      &#123; <span class="attr">test</span>: <span class="regexp">/\.ts$/</span>, <span class="attr">use</span>: <span class="string">'ts-loader'</span> &#125;</span><br><span class="line">    ]</span><br><span class="line">  &#125;</span><br><span class="line">&#125;;</span><br></pre></td></tr></table></figure>
-
-<h3 id="使用loader"><a href="#使用loader" class="headerlink" title="使用loader"></a>使用loader</h3><p>在你的应用程序中，有三种使用loader的方式：</p>
-<ol>
-<li>配置(推荐):在<code>webpack.config.js</code>文件中指定loader；</li>
-<li>内联:在每个<code>import</code>语句中显示指定loader；</li>
-<li>CLI:在shell命令中指定他们。</li>
-</ol>
-<h3 id="配置"><a href="#配置" class="headerlink" title="配置"></a>配置</h3><p>module.rules 允许你在 webpack 配置中指定多个 loader。 这是展示 loader 的一种简明方式，并且有助于使代码变得简洁。同时让你对各个 loader 有个全局概览：</p>
-<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br></pre></td><td class="code"><pre><span class="line"><span class="built_in">module</span>: &#123;</span><br><span class="line">  rules: [</span><br><span class="line">    &#123;</span><br><span class="line">      test: <span class="regexp">/\.css$/</span>,</span><br><span class="line">      use: [</span><br><span class="line">        &#123; <span class="attr">loader</span>: <span class="string">'style-loader'</span> &#125;,</span><br><span class="line">        &#123;</span><br><span class="line">          loader: <span class="string">'css-loader'</span>,</span><br><span class="line">          options: &#123;</span><br><span class="line">            modules: <span class="literal">true</span></span><br><span class="line">          &#125;</span><br><span class="line">        &#125;</span><br><span class="line">      ]</span><br><span class="line">    &#125;</span><br><span class="line">  ]</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-
-<h3 id="内联"><a href="#内联" class="headerlink" title="内联"></a>内联</h3><p>可以在 import 语句或任何等效于 “import” 的方式中指定 loader。使用 ! 将资源中的 loader 分开。分开的每个部分都相对于当前目录解析。</p>
-<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">import</span> Styles <span class="keyword">from</span> <span class="string">'style-loader!css-loader?modules!./styles.css'</span>;</span><br></pre></td></tr></table></figure>
-
-<p>通过前置所有规则及使用 !，可以对应覆盖到配置中的任意 loader。</p>
-<p>选项可以传递查询参数，例如 <code>?key=value&amp;foo=bar</code>，或者一个 JSON 对象，例如 <code>?{&quot;key&quot;:&quot;value&quot;,&quot;foo&quot;:&quot;bar&quot;}</code>。</p>
-<p>尽可能使用 module.rules，因为这样可以减少源码中的代码量，并且可以在出错时，更快地调试和定位 loader 中的问题。</p>
-<h3 id="CLI"><a href="#CLI" class="headerlink" title="CLI"></a>CLI</h3><p>你也可以通过 CLI 使用 loader：</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">webpack --module-bind jade-loader --module-bind &apos;css=style-loader!css-loader&apos;</span><br></pre></td></tr></table></figure>
-
-<p>这会对 <code>.jade</code> 文件使用 <code>jade-loader</code>，对 <code>.css</code> 文件使用 <code>style-loader</code> 和 <code>css-loader</code>。</p>
-<h3 id="loader-特性"><a href="#loader-特性" class="headerlink" title="loader 特性"></a>loader 特性</h3><h3 id="解析-loader"><a href="#解析-loader" class="headerlink" title="解析 loader"></a>解析 loader</h3><ul>
-<li>loader支持链式传递。能够对资源使用流水线(pipeline)。一组链式的 loader 将按照相反的顺序执行。loader 链中的第一个 loader 返回值给下一个 loader。在最后一个 loader，返回 webpack 所预期的 JavaScript。</li>
-<li>loader可以是同步的，也可以是异步的。</li>
-<li>loader可以运行在Node.js中，并且能够执行任何可能的操作。</li>
-<li>loader接收查询参数。用于对loader传递配置。</li>
-<li>loader也能够使用options对象进行配置。</li>
-<li>除了使用 package.json 常见的 main 属性，还可以将普通的 npm 模块导出为 loader，做法是在 package.json 里定义一个 loader 字段。</li>
-<li>插件(plugin)可以为 loader 带来更多特性。</li>
-<li>loader 能够产生额外的任意文件。</li>
-</ul>
-<p>loader 通过loader预处理函数，为 JavaScript 生态系统提供了更多能力。 用户现在可以更加灵活地引入细粒度逻辑，例如压缩、打包、语言翻译和其他更多。</p>
-<h2 id="插件"><a href="#插件" class="headerlink" title="插件"></a>插件</h2><p>loader被用于转换某些类型的模块，而插件则可以执行范围更广的任务。<br>从打包优化和压缩，一直到重新定义环境中的变量。<br>使用插件，只要<code>require()</code>它，然后把它添加到<code>plugins</code>数组中。多数插件可以通过选项(option)自定义。你也可以在一个配置文件中因为不同目的而多次使用同一个插件，这时需要通过使用 new 操作符来创建它的一个实例。</p>
-<p>webpack.config.js</p>
-<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">const</span> HtmlWebpackPlugin = <span class="built_in">require</span>(<span class="string">'html-webpack-plugin'</span>); <span class="comment">// 通过 npm 安装</span></span><br><span class="line"><span class="keyword">const</span> webpack = <span class="built_in">require</span>(<span class="string">'webpack'</span>); <span class="comment">// 用于访问内置插件</span></span><br><span class="line"></span><br><span class="line"><span class="keyword">const</span> config = &#123;</span><br><span class="line">  <span class="built_in">module</span>: &#123;</span><br><span class="line">    rules: [</span><br><span class="line">      &#123; <span class="attr">test</span>: <span class="regexp">/\.txt$/</span>, <span class="attr">use</span>: <span class="string">'raw-loader'</span> &#125;</span><br><span class="line">    ]</span><br><span class="line">  &#125;,</span><br><span class="line">  plugins: [</span><br><span class="line">    <span class="keyword">new</span> HtmlWebpackPlugin(&#123;<span class="attr">template</span>: <span class="string">'./src/index.html'</span>&#125;)</span><br><span class="line">  ]</span><br><span class="line">&#125;;</span><br><span class="line"></span><br><span class="line"><span class="built_in">module</span>.exports = config;</span><br></pre></td></tr></table></figure>
-
-<p>插件目的在于解决loader无法实现的其他事。</p>
-<h3 id="剖析"><a href="#剖析" class="headerlink" title="剖析"></a>剖析</h3><p>webpack插件是一个具有apply属性的JavaScript对象。apply属性会被webpack compiler调用，并且compiler对象可在整个编译生命周期访问。<br>ConsoleLogOnBuildWebpackPlugin.js</p>
-<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">const</span> pluginName = <span class="string">'ConsoleLogOnBuildWebpackPlugin'</span>;</span><br><span class="line"></span><br><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">ConsoleLogOnBuildWebpackPlugin</span> </span>&#123;</span><br><span class="line">    apply(compiler) &#123;</span><br><span class="line">        compiler.hooks.run.tap(pluginName, compilation =&gt; &#123;</span><br><span class="line">            <span class="built_in">console</span>.log(<span class="string">"webpack 构建过程开始！"</span>);</span><br><span class="line">        &#125;);</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-
-
-          
-        
-      
-    </div>
-    
-    
-    
-  <div>
-    
-  </div>
-    
-
-    
-
-    
-
-    <footer class="post-footer">
-      
-
-      
-
-      
-
-      
-      
-        <div class="post-eof"></div>
-      
-    </footer>
-  </div>
-  
-  
-  
-
-  </article>
-
-
-    
   </section>
 
   
@@ -1081,7 +963,7 @@
               
                 <a href="/archives/">
               
-                  <span class="site-state-item-count">101</span>
+                  <span class="site-state-item-count">102</span>
                   <span class="site-state-item-name">日志</span>
                 </a>
               </div>
