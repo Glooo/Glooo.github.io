@@ -2,9 +2,23 @@
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
   
   <url>
+    <loc>http://glooo.fun/about/index.html</loc>
+    
+    <lastmod>2020-02-20T01:25:44.779Z</lastmod>
+    
+  </url>
+  
+  <url>
+    <loc>http://glooo.fun/uncategorized/express-multer/</loc>
+    
+    <lastmod>2020-02-20T01:23:50.843Z</lastmod>
+    
+  </url>
+  
+  <url>
     <loc>http://glooo.fun/git/git-alias/</loc>
     
-    <lastmod>2020-02-18T01:24:29.630Z</lastmod>
+    <lastmod>2020-02-18T01:26:12.507Z</lastmod>
     
   </url>
   
@@ -383,13 +397,6 @@
     <loc>http://glooo.fun/js/43-jsBaseT/</loc>
     
     <lastmod>2019-09-19T08:26:36.000Z</lastmod>
-    
-  </url>
-  
-  <url>
-    <loc>http://glooo.fun/about/index.html</loc>
-    
-    <lastmod>2019-09-18T08:23:26.000Z</lastmod>
     
   </url>
   

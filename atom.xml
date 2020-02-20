@@ -6,7 +6,7 @@
   <link href="/atom.xml" rel="self"/>
   
   <link href="http://glooo.fun/"/>
-  <updated>2020-02-18T01:24:29.630Z</updated>
+  <updated>2020-02-20T01:23:50.843Z</updated>
   <id>http://glooo.fun/</id>
   
   <author>
@@ -17,13 +17,27 @@
   <generator uri="http://hexo.io/">Hexo</generator>
   
   <entry>
+    <title>express-multer</title>
+    <link href="http://glooo.fun/uncategorized/express-multer/"/>
+    <id>http://glooo.fun/uncategorized/express-multer/</id>
+    <published>2020-02-20T01:23:50.000Z</published>
+    <updated>2020-02-20T01:23:50.843Z</updated>
+    
+    <summary type="html">
+    
+    </summary>
+    
+    
+  </entry>
+  
+  <entry>
     <title>为git操作起别名的方法 &amp; git fetch</title>
     <link href="http://glooo.fun/git/git-alias/"/>
     <id>http://glooo.fun/git/git-alias/</id>
     <published>2020-02-18T00:52:04.000Z</published>
-    <updated>2020-02-18T01:24:29.630Z</updated>
+    <updated>2020-02-18T01:26:12.507Z</updated>
     
-    <content type="html"><![CDATA[<h1 id="起别名的原因"><a href="#起别名的原因" class="headerlink" title="起别名的原因"></a>起别名的原因</h1><p>如果有一定 git 的基础，<br>就知道通常 git 操作为<code>git status</code>、<code>git commit -m &#39;commit&#39;</code>等。<br>比较繁琐，<br>如果想简化写法，<br>比如：</p><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line">git st // 等价于git status</span><br><span class="line"></span><br><span class="line">git commit -m &apos;&apos; // 等价于git ci -m &apos;&apos;</span><br><span class="line"></span><br><span class="line">git checkout master // 等价于git co master</span><br><span class="line"></span><br><span class="line">and so on ...</span><br></pre></td></tr></table></figure><h1 id="语法"><a href="#语法" class="headerlink" title="语法"></a>语法</h1><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">git config --global alias.别名 原始命令</span><br></pre></td></tr></table></figure><p>命令行中设置：</p><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">git config --global alias.st status</span><br><span class="line"></span><br><span class="line">git config --global alias.co checkout</span><br><span class="line"></span><br><span class="line">git config --global alias.ci commit</span><br></pre></td></tr></table></figure><p>因为设置级别为<code>global</code>，即用户级别，windows 下 git 会将别名写入你<code>C盘/用户/&lt;你的用户名下&gt;/</code>的<code>.gitconfig</code>文件中，如果不加 global 条件，则默认写入你仓库的 <code>config</code> 中，只针对当前仓库有效。当然也可以手动在配置文件中按照格式要求写入别名。</p><h1 id="git-fetch-与-git-pull-的区别"><a href="#git-fetch-与-git-pull-的区别" class="headerlink" title="git fetch 与 git pull 的区别"></a>git fetch 与 git pull 的区别</h1><p>git fetch 拉取远程分支，不合并</p><p>git pull = git fetch + git merge<br>拉取远程分支，更新本地仓库，直接合并到工作区。</p><h1 id="git-cherry-pick-commitId-挑拣分支提交合并"><a href="#git-cherry-pick-commitId-挑拣分支提交合并" class="headerlink" title="git cherry-pick commitId 挑拣分支提交合并"></a>git cherry-pick commitId 挑拣分支提交合并</h1>]]></content>
+    <content type="html"><![CDATA[<h1 id="起别名的原因"><a href="#起别名的原因" class="headerlink" title="起别名的原因"></a>起别名的原因</h1><p>如果有一定 git 的基础，<br>就知道通常 git 操作为<code>git status</code>、<code>git commit -m &#39;commit&#39;</code>等。<br>比较繁琐，<br>如果想简化写法，<br>比如：</p><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line">git st // 等价于git status</span><br><span class="line"></span><br><span class="line">git commit -m &apos;&apos; // 等价于git ci -m &apos;&apos;</span><br><span class="line"></span><br><span class="line">git checkout master // 等价于git co master</span><br><span class="line"></span><br><span class="line">and so on ...</span><br></pre></td></tr></table></figure><h1 id="语法"><a href="#语法" class="headerlink" title="语法"></a>语法</h1><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">git config --global alias.别名 原始命令</span><br></pre></td></tr></table></figure><p>命令行中设置：</p><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">git config --global alias.st status</span><br><span class="line"></span><br><span class="line">git config --global alias.co checkout</span><br><span class="line"></span><br><span class="line">git config --global alias.ci commit</span><br></pre></td></tr></table></figure><p>因为设置级别为<code>global</code>，即用户级别，windows 下 git 会将别名写入你<code>C盘/用户/&lt;你的用户名下&gt;/</code>的<code>.gitconfig</code>文件中，如果不加 global 条件，则默认写入你仓库的 <code>config</code> 中，只针对当前仓库有效。当然也可以手动在配置文件中按照格式要求写入别名。</p><h1 id="其他"><a href="#其他" class="headerlink" title="其他"></a>其他</h1><h2 id="git-fetch-与-git-pull-的区别"><a href="#git-fetch-与-git-pull-的区别" class="headerlink" title="git fetch 与 git pull 的区别"></a>git fetch 与 git pull 的区别</h2><p>git fetch 拉取远程分支，不合并</p><p>git pull = git fetch + git merge<br>拉取远程分支，更新本地仓库，直接合并到工作区。</p><h2 id="git-cherry-pick-commitId-挑拣分支提交合并"><a href="#git-cherry-pick-commitId-挑拣分支提交合并" class="headerlink" title="git cherry-pick commitId 挑拣分支提交合并"></a>git cherry-pick commitId 挑拣分支提交合并</h2>]]></content>
     
     <summary type="html">
     
@@ -271,9 +285,9 @@
       <category term="elementUI" scheme="http://glooo.fun/categories/elementUI/"/>
     
     
-      <category term="vue" scheme="http://glooo.fun/tags/vue/"/>
-    
       <category term="elementUI" scheme="http://glooo.fun/tags/elementUI/"/>
+    
+      <category term="vue" scheme="http://glooo.fun/tags/vue/"/>
     
       <category term="el-input" scheme="http://glooo.fun/tags/el-input/"/>
     
@@ -535,32 +549,6 @@
       <category term="webpack" scheme="http://glooo.fun/tags/webpack/"/>
     
       <category term="nodejs" scheme="http://glooo.fun/tags/nodejs/"/>
-    
-  </entry>
-  
-  <entry>
-    <title>HLS - 基于Http的视频流协议</title>
-    <link href="http://glooo.fun/hls/hls/"/>
-    <id>http://glooo.fun/hls/hls/</id>
-    <published>2019-11-22T07:02:13.000Z</published>
-    <updated>2019-11-22T07:15:02.000Z</updated>
-    
-    <content type="html"><![CDATA[<p>HLS（HTTP Live Streaming全称）是一个基于HTTP的视频流协议，由Apple公司实现，Mac OS上的QuickTime、Safari 以及iOS上的 Safari都能很好的支持 HLS，高版本 Android 也增加了对 HLS 的支持。</p><p>一些常见的客户端如：MPlayerX、VLC 也都支持HLS协议，如果需要在chrome上播放，需要使用 <a href="https://github.com/videojs/videojs-contrib-hls" target="_blank" rel="noopener">videojs-contrib-hls.js</a> 解析。</p><p>Server服务器<br>HLS的服务器组件负责获取的媒体输入流 , 然后Media编码后 MPEG-4（H.264 video 和 AAC audio）格式然后用硬件打包到 MPEG-2 (MPEG-2 transport stream)的传输流中。图中显示,传输流会经过stream segmenter, 这里的工作是MPEG-2传输流会被分散为小片段然后保存为一个或多个系列的 .ts 格式的媒体文件。这个过程需要借助编码工具来完成，比如 Apple stream segmenter。<br>(视频类是.ts文件,纯音频会被编码为一些音频小片段，通常为 ADTS头的AAC、MP3、或者 AC-3格式。)<br>服务端可以采用硬件编码和软件编码两种形式，其功能都是按照上文描述的规则对现有的媒体文件进行切片并使用索引文件进行管理。而软件切片通常会使用 Apple 公司提供的工具或者第三方的集成工具。</p><p>Distribution分配组件<br>同时上面提到的那个切片器（segmenter）也会创建一个索引文件，通常会包含这些媒体文件的一个列表，也能包含元数据。它一般都是一个个.M38U的列表。列表元素会关联一个 URL 用于客户端访问。然后按序去请求这些 URL。</p><p>主索引文件</p><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">#EXTM3U</span><br><span class="line">#EXT-X-STREAM-INF:PROGRAM-ID=1,BANDWIDTH=409037,RESOLUTION=416x234,CODECS=&quot;mp4a.40.2, avc1.42001e&quot;</span><br><span class="line">Gear1/prog_index.m3u8</span><br></pre></td></tr></table></figure><p>复制代码第一行：#EXTM3U<br>每个M3U文件第一行必须是这个tag，起标示作用<br>第二行：#EXT-X-STREAM-INF<br>标签的属性列表中直接指明当前流是VIDEO还是AUDIO</p><p>包含属性 :</p><ul><li>BANDWIDTH 指定码率</li><li>PROGRAM-ID 唯一ID (这个属性在后面的协议版本废除了)</li><li>CODECS 指定流的编码类型</li><li>RESOLUTION：分辨率</li></ul><p>子索引文件</p><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br></pre></td><td class="code"><pre><span class="line">#EXTM3U</span><br><span class="line">#EXT-X-TARGETDURATION:11</span><br><span class="line">#EXT-X-VERSION:3</span><br><span class="line">#EXT-X-MEDIA-SEQUENCE:0</span><br><span class="line">#EXT-X-PLAYLIST-TYPE:VOD</span><br><span class="line">#EXTINF:10.133333,</span><br><span class="line">fileSequence0.ts</span><br><span class="line">#EXTINF:10.000666,</span><br><span class="line">fileSequence1.ts</span><br><span class="line">#EXTINF:10.667334,</span><br><span class="line">fileSequence2.ts</span><br><span class="line">#EXTINF:9.686001,</span><br><span class="line">fileSequence3.ts</span><br><span class="line">#EXTINF:9.768665,</span><br><span class="line">fileSequence4.ts</span><br><span class="line">#EXTINF:10.000000,</span><br><span class="line">fileSequence5.ts</span><br><span class="line">#EXT-X-ENDLIST</span><br></pre></td></tr></table></figure><p>#EXTM3U m3u文件头，必须放在第一行。</p><p>#EXT-X-TARGETDURATION 每个分片TS的最大的时长。</p><p>#EXT-X-VERSION 用以标示协议版本。</p><p>#EXT-X-MEDIA-SEQUENCE TS分片的序列号。</p><p>#EXT-X-PLAYLIST-TYPE 提供关于PlayList的可变性的信息， 这个对整个PlayList文件有效，是可选的。</p><p>#EXTINF extra info，分片TS的信息，如时长，带宽等。<br>主索引文件与子索引文件的区别</p><p>主索引文件和子索引文件都是.M3U8的playlist<br>主索引文件只需下载一次，但对于直播节目子索引文件定期重新加载</p><p>client客户端<br>分配组件由标准的网络服务器。他们负责接受Client客户端请求并提供相关联的资源给客户端。<br>videojs-contrib-hls.js组件解析过程</p><p>HLS简单讲就是把整个流分成一个个小的片段，基于 HTTP 的文件来下载，每次只下载一小部分。<br>前面提到了用于 H5 播放直播视频时引入的一个 .m3u8 的文件，这个文件就是基于 HLS 协议，存放视频流元数据的文件。<br>每一个 .m3u8 文件，分别对应若干个 ts 文件，这些 ts 文件才是真正存放视频的数据，m3u8 文件只是存放了一些 ts 文件的配置信息和相关路径，当视频播放时，.m3u8 是动态改变的，再通过解析器（videojs-contrib-hls.js）解析这个文件，并找到对应的 ts 文件来播放，所以一般为了加快速度，.m3u8 放在 web 服务器上，ts 文件放在 cdn 上。</p><p>摘自<a href="https://juejin.im/post/5ab851b6f265da23826df601" target="_blank" rel="noopener">富途web开发团队https://juejin.im/post/5ab851b6f265da23826df601</a></p>]]></content>
-    
-    <summary type="html">
-    
-      
-      
-        &lt;p&gt;HLS（HTTP Live Streaming全称）是一个基于HTTP的视频流协议，由Apple公司实现，Mac OS上的QuickTime、Safari 以及iOS上的 Safari都能很好的支持 HLS，高版本 Android 也增加了对 HLS 的支持。&lt;/p&gt;
-&lt;p
-      
-    
-    </summary>
-    
-      <category term="hls" scheme="http://glooo.fun/categories/hls/"/>
-    
-    
-      <category term="基于Http的视频流协议" scheme="http://glooo.fun/tags/%E5%9F%BA%E4%BA%8EHttp%E7%9A%84%E8%A7%86%E9%A2%91%E6%B5%81%E5%8D%8F%E8%AE%AE/"/>
     
   </entry>
   

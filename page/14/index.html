@@ -330,6 +330,197 @@
   
   
   <div class="post-block">
+    <link itemprop="mainEntityOfPage" href="http://glooo.fun/js/43-jsBaseT/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="Gzy">
+      <meta itemprop="description" content>
+      <meta itemprop="image" content="/images/avatar.png">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="Gzy's Blog">
+    </span>
+
+    
+      <header class="post-header">
+
+        
+        
+          <h1 class="post-title" itemprop="name headline">
+                
+                <a class="post-title-link" href="/js/43-jsBaseT/" itemprop="url">43道检验基础的JavaScript面试题</a></h1>
+        
+
+        <div class="post-meta">
+          
+          <span class="post-time">
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">发表于</span>
+              
+              <time title="创建于" itemprop="dateCreated datePublished" datetime="2019-09-18T11:32:55+08:00">
+                2019-09-18
+              </time>
+            
+
+            
+
+            
+          </span>
+
+          
+            <span class="post-category">
+            
+              <span class="post-meta-divider">|</span>
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-folder-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">分类于</span>
+              
+              
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/categories/js/" itemprop="url" rel="index">
+                    <span itemprop="name">js</span>
+                  </a>
+                </span>
+
+                
+                
+              
+            </span>
+          
+
+          
+            
+          
+
+          
+          
+
+          
+
+          
+            <div class="post-wordcount">
+              
+                
+                <span class="post-meta-item-icon">
+                  <i class="fa fa-file-word-o"></i>
+                </span>
+                
+                  <span class="post-meta-item-text">字数统计&#58;</span>
+                
+                <span title="字数统计">
+                  5.5k
+                </span>
+              
+
+              
+                <span class="post-meta-divider">|</span>
+              
+
+              
+                <span class="post-meta-item-icon">
+                  <i class="fa fa-clock-o"></i>
+                </span>
+                
+                  <span class="post-meta-item-text">阅读时长 &asymp;</span>
+                
+                <span title="阅读时长">
+                  22
+                </span>
+              
+            </div>
+          
+
+          
+
+        </div>
+      </header>
+    
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        
+          <ol>
+<li>下面代码的输出是什么？<br>function sayHi() {<br>console.log(name);<br>console.log(age);<br>var name = “Lydia”;<br>let age = 21;<br>}</li>
+</ol>
+<p>A: Lydia 和 undefined<br>B: Lydia 和 ReferenceError<br>C: ReferenceError 和 21<br>D: undefined 和 ReferenceError<br>答案: D<br>在函数中，我们首先使用var关键字声明了name变量。 这意味着变量在创建阶段会被提升（JavaScript会在创建变量创建阶段为其分配内存空间），默认值为undefined，直到我们实际执行到使用该变量的行。 我们还没有为name变量赋值，所以它仍然保持undefined的值。</p>
+<p>使用let关键字（和const）声明的变量也会存在变量提升，但与var不同，初始化没有被提升。 在我们声明（初始化）它们之前，它们是不可访问的。 这被称为“暂时死区”。 当我们在声明变量之前尝试访问变量时，JavaScript会抛出一个ReferenceError。</p>
+<p>译者注：</p>
+<p>关于let的是否存在变量提升，我们何以用下面的例子来验证：</p>
+<p>let name = ‘ConardLi’<br>{<br>  console.log(name) // Uncaught ReferenceError: name is not defined<br>  let name = ‘code秘密花园’<br>}<br>let变量如果不存在变量提升，console.log(name)就会输出ConardLi，结果却抛出了ReferenceError，那么这很好的说明了，let也存在变量提升，但是它存在一个“暂时死区”，在变量未初始化或赋值前不允许访问。</p>
+<p>变量的赋值可以分为三个阶段：</p>
+<p>创建变量，在内存中开辟空间<br>初始化变量，将变量初始化为undefined<br>真正赋值<br>关于let、var和function：</p>
+<p>let 的「创建」过程被提升了，但是初始化没有提升。<br>var 的「创建」和「初始化」都被提升了。<br>function 的「创建」「初始化」和「赋值」都被提升了。</p>
+          <!--noindex-->
+          <div class="post-button text-center">
+            <a class="btn" href="/js/43-jsBaseT/#more" rel="contents">
+              阅读全文 &raquo;
+            </a>
+          </div>
+          <!--/noindex-->
+        
+      
+    </div>
+    
+    
+    
+  <div>
+    
+  </div>
+    
+
+    
+
+    
+
+    <footer class="post-footer">
+      
+
+      
+
+      
+
+      
+      
+        <div class="post-eof"></div>
+      
+    </footer>
+  </div>
+  
+  
+  
+
+  </article>
+
+
+    
+      
+
+  
+
+  
+  
+  
+
+  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
+  
+  
+  
+  <div class="post-block">
     <link itemprop="mainEntityOfPage" href="http://glooo.fun/hexo/hexoLoadJs/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
@@ -686,236 +877,11 @@
 
 
     
-      
-
-  
-
-  
-  
-  
-
-  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
-  
-  
-  
-  <div class="post-block">
-    <link itemprop="mainEntityOfPage" href="http://glooo.fun/前端技术/split-ce-slice/">
-
-    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
-      <meta itemprop="name" content="Gzy">
-      <meta itemprop="description" content>
-      <meta itemprop="image" content="/images/avatar.png">
-    </span>
-
-    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
-      <meta itemprop="name" content="Gzy's Blog">
-    </span>
-
-    
-      <header class="post-header">
-
-        
-        
-          <h1 class="post-title" itemprop="name headline">
-                
-                <a class="post-title-link" href="/前端技术/split-ce-slice/" itemprop="url">split,splice,slice与join</a></h1>
-        
-
-        <div class="post-meta">
-          
-          <span class="post-time">
-            
-              <span class="post-meta-item-icon">
-                <i class="fa fa-calendar-o"></i>
-              </span>
-              
-                <span class="post-meta-item-text">发表于</span>
-              
-              <time title="创建于" itemprop="dateCreated datePublished" datetime="2019-09-17T10:45:30+08:00">
-                2019-09-17
-              </time>
-            
-
-            
-
-            
-          </span>
-
-          
-            <span class="post-category">
-            
-              <span class="post-meta-divider">|</span>
-            
-              <span class="post-meta-item-icon">
-                <i class="fa fa-folder-o"></i>
-              </span>
-              
-                <span class="post-meta-item-text">分类于</span>
-              
-              
-                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
-                  <a href="/categories/前端技术/" itemprop="url" rel="index">
-                    <span itemprop="name">前端技术</span>
-                  </a>
-                </span>
-
-                
-                
-              
-            </span>
-          
-
-          
-            
-          
-
-          
-          
-
-          
-
-          
-            <div class="post-wordcount">
-              
-                
-                <span class="post-meta-item-icon">
-                  <i class="fa fa-file-word-o"></i>
-                </span>
-                
-                  <span class="post-meta-item-text">字数统计&#58;</span>
-                
-                <span title="字数统计">
-                  483
-                </span>
-              
-
-              
-                <span class="post-meta-divider">|</span>
-              
-
-              
-                <span class="post-meta-item-icon">
-                  <i class="fa fa-clock-o"></i>
-                </span>
-                
-                  <span class="post-meta-item-text">阅读时长 &asymp;</span>
-                
-                <span title="阅读时长">
-                  1
-                </span>
-              
-            </div>
-          
-
-          
-
-        </div>
-      </header>
-    
-
-    
-    
-    
-    <div class="post-body" itemprop="articleBody">
-
-      
-      
-
-      
-        
-          
-            <h1 id="splice"><a href="#splice" class="headerlink" title="splice()"></a>splice()</h1><p><strong>数组方法</strong></p>
-<p>splice(index,deleteNum,addItem1,…)<br>参数：</p>
-<ul>
-<li>index 必需，整数，规定添加/删除的位置，负数（“数组length + 负数”的index）</li>
-<li>deleteNum 必需，要删除的项目数量，0则不删除</li>
-<li>addItem 可选，添加的新项目</li>
-</ul>
-<blockquote>
-<p><font color="#1874CD"><strong>返回</strong>新数组（<strong>删除的item组成的新数组</strong>）</font><br><font color="#1874CD"><strong>会修改原始数组</strong></font></p>
-</blockquote>
-<p>数组对象用<code>splice()</code>删除后会导致原位置变为<code>undefined</code>，仍然存在与于数组中。</p>
-<!-- 解决方法见我的另一篇文章[splice删除对象的方法]() -->
-
-
-<h1 id="slice"><a href="#slice" class="headerlink" title="slice()"></a>slice()</h1><p><strong>数组方法</strong></p>
-<p>slice(start,end)<br>参数：</p>
-<ul>
-<li>start 必需，开始位置，负数则从数组尾部开始算起</li>
-<li>end 可选，结束的位置，负数则从数组尾部开始算起</li>
-</ul>
-<blockquote>
-<p>包含start而不包含end(左闭右开)<br><font color="#1874CD"><strong>返回</strong>一个新的数组，包含<strong>从 start 到 end （不包括该元素）的 arrayObject 中的元素</strong>。</font><br><font color="#1874CD">该方法并<strong>不会修改原始数组</strong></font>，而是返回一个子数组。<br>如果想删除数组中的一段元素，应该使用方法 Array.splice()。</p>
-</blockquote>
-<h1 id="split"><a href="#split" class="headerlink" title="split()"></a>split()</h1><p><strong>字符串方法</strong></p>
-<p>split(separator,howmany)<br>参数：</p>
-<ul>
-<li>separator 必需，从何处分割，<font color="#1874CD">字符串</font>或<font color="#1874CD">正则表达式</font></li>
-<li>howmany 可选，指定返回的数组的最大长度</li>
-</ul>
-<blockquote>
-<p>把一个字符串分割成字符串数组<br><font color="#1874CD"><strong>原字符串不改变</strong></font><br><font color="#1874CD"><strong>返回值</strong>是一个<strong>字符串数组</strong>。</font><strong>返回的数组中的字串不包括 separator(第一个参数) 自身。</strong><br><strong>但是，如果 separator 是包含子表达式的正则表达式，那么返回的数组中包括与这些子表达式匹配的字串（但不包括与整个正则表达式匹配的文本）。</strong></p>
-</blockquote>
-<p><font color="red" size="4"><strong>注意：</strong></font></p>
-
-<p><code>array.split()</code>和<code>array.split(&#39;&#39;)</code>的结果是不同的。</p>
-<p>与<code>Array.join()</code>操作相反</p>
-<h1 id="join"><a href="#join" class="headerlink" title="join()"></a>join()</h1><p><strong>数组方法</strong><br>join(separator)</p>
-<p>参数：</p>
-<ul>
-<li>separator 可选，分隔符，省略则使用逗号作分隔符。</li>
-</ul>
-<blockquote>
-<p><font color="#1874CD"><strong>原数组不变</strong></font><br><font color="#1874CD"><strong>返回</strong>一个字符串</font></p>
-</blockquote>
-<p><font color="red" size="4"><strong>注意：</strong></font></p>
-
-<p><code>array.join()</code>、<code>array.join(&#39;&#39;)</code>和<code>array.join(&#39;+&#39;)</code>结果不同。<br><code>array.join()</code> 等同于 <code>array.join(&#39;,&#39;)</code></p>
-<p><strong>不适用于对象数组:</strong></p>
-
-
-          
-        
-      
-    </div>
-    
-    
-    
-  <div>
-    
-  </div>
-    
-
-    
-
-    
-
-    <footer class="post-footer">
-      
-
-      
-
-      
-
-      
-      
-        <div class="post-eof"></div>
-      
-    </footer>
-  </div>
-  
-  
-  
-
-  </article>
-
-
-    
   </section>
 
   
   <nav class="pagination">
-    <a class="extend prev" rel="prev" href="/page/13/"><i class="fa fa-angle-left"></i></a><a class="page-number" href="/">1</a><span class="space">&hellip;</span><a class="page-number" href="/page/13/">13</a><span class="page-number current">14</span><a class="page-number" href="/page/15/">15</a><span class="space">&hellip;</span><a class="page-number" href="/page/34/">34</a><a class="extend next" rel="next" href="/page/15/"><i class="fa fa-angle-right"></i></a>
+    <a class="extend prev" rel="prev" href="/page/13/"><i class="fa fa-angle-left"></i></a><a class="page-number" href="/">1</a><span class="space">&hellip;</span><a class="page-number" href="/page/13/">13</a><span class="page-number current">14</span><a class="page-number" href="/page/15/">15</a><span class="space">&hellip;</span><a class="page-number" href="/page/35/">35</a><a class="extend next" rel="next" href="/page/15/"><i class="fa fa-angle-right"></i></a>
   </nav>
 
 
@@ -963,7 +929,7 @@
               
                 <a href="/archives/">
               
-                  <span class="site-state-item-count">102</span>
+                  <span class="site-state-item-count">103</span>
                   <span class="site-state-item-name">日志</span>
                 </a>
               </div>

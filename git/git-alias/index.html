@@ -96,7 +96,7 @@
 <meta property="og:site_name" content="Gzy&#39;s Blog">
 <meta property="og:description" content="起别名的原因如果有一定 git 的基础，就知道通常 git 操作为git status、git commit -m &amp;#39;commit&amp;#39;等。比较繁琐，如果想简化写法，比如： 1234567git st // 等价于git statusgit commit -m &amp;apos;&amp;apos; // 等价于git ci -m &amp;apos;&amp;apos;git checkout master //">
 <meta property="og:locale" content="zh-Hans">
-<meta property="og:updated_time" content="2020-02-18T01:24:29.630Z">
+<meta property="og:updated_time" content="2020-02-18T01:26:12.507Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="为git操作起别名的方法 &amp; git fetch">
 <meta name="twitter:description" content="起别名的原因如果有一定 git 的基础，就知道通常 git 操作为git status、git commit -m &amp;#39;commit&amp;#39;等。比较繁琐，如果想简化写法，比如： 1234567git st // 等价于git statusgit commit -m &amp;apos;&amp;apos; // 等价于git ci -m &amp;apos;&amp;apos;git checkout master //">
@@ -420,7 +420,7 @@
                   <span class="post-meta-item-text">字数统计&#58;</span>
                 
                 <span title="字数统计">
-                  257
+                  259
                 </span>
               
 
@@ -466,9 +466,9 @@
 <figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">git config --global alias.st status</span><br><span class="line"></span><br><span class="line">git config --global alias.co checkout</span><br><span class="line"></span><br><span class="line">git config --global alias.ci commit</span><br></pre></td></tr></table></figure>
 
 <p>因为设置级别为<code>global</code>，即用户级别，windows 下 git 会将别名写入你<code>C盘/用户/&lt;你的用户名下&gt;/</code>的<code>.gitconfig</code>文件中，如果不加 global 条件，则默认写入你仓库的 <code>config</code> 中，只针对当前仓库有效。当然也可以手动在配置文件中按照格式要求写入别名。</p>
-<h1 id="git-fetch-与-git-pull-的区别"><a href="#git-fetch-与-git-pull-的区别" class="headerlink" title="git fetch 与 git pull 的区别"></a>git fetch 与 git pull 的区别</h1><p>git fetch 拉取远程分支，不合并</p>
+<h1 id="其他"><a href="#其他" class="headerlink" title="其他"></a>其他</h1><h2 id="git-fetch-与-git-pull-的区别"><a href="#git-fetch-与-git-pull-的区别" class="headerlink" title="git fetch 与 git pull 的区别"></a>git fetch 与 git pull 的区别</h2><p>git fetch 拉取远程分支，不合并</p>
 <p>git pull = git fetch + git merge<br>拉取远程分支，更新本地仓库，直接合并到工作区。</p>
-<h1 id="git-cherry-pick-commitId-挑拣分支提交合并"><a href="#git-cherry-pick-commitId-挑拣分支提交合并" class="headerlink" title="git cherry-pick commitId 挑拣分支提交合并"></a>git cherry-pick commitId 挑拣分支提交合并</h1>
+<h2 id="git-cherry-pick-commitId-挑拣分支提交合并"><a href="#git-cherry-pick-commitId-挑拣分支提交合并" class="headerlink" title="git cherry-pick commitId 挑拣分支提交合并"></a>git cherry-pick commitId 挑拣分支提交合并</h2>
       
     </div>
     
@@ -533,6 +533,10 @@
           <span class="post-nav-divider"></span>
 
           <div class="post-nav-prev post-nav-item">
+            
+              <a href="/uncategorized/express-multer/" rel="prev" title="express-multer">
+                express-multer <i class="fa fa-chevron-right"></i>
+              </a>
             
           </div>
         </div>
@@ -641,7 +645,7 @@ var jiathis_config={
               
                 <a href="/archives/">
               
-                  <span class="site-state-item-count">102</span>
+                  <span class="site-state-item-count">103</span>
                   <span class="site-state-item-name">日志</span>
                 </a>
               </div>
@@ -737,7 +741,7 @@ var jiathis_config={
             
 
             
-              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#起别名的原因"><span class="nav-number">1.</span> <span class="nav-text">起别名的原因</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#语法"><span class="nav-number">2.</span> <span class="nav-text">语法</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#git-fetch-与-git-pull-的区别"><span class="nav-number">3.</span> <span class="nav-text">git fetch 与 git pull 的区别</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#git-cherry-pick-commitId-挑拣分支提交合并"><span class="nav-number">4.</span> <span class="nav-text">git cherry-pick commitId 挑拣分支提交合并</span></a></li></ol></div>
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#起别名的原因"><span class="nav-number">1.</span> <span class="nav-text">起别名的原因</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#语法"><span class="nav-number">2.</span> <span class="nav-text">语法</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#其他"><span class="nav-number">3.</span> <span class="nav-text">其他</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#git-fetch-与-git-pull-的区别"><span class="nav-number">3.1.</span> <span class="nav-text">git fetch 与 git pull 的区别</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#git-cherry-pick-commitId-挑拣分支提交合并"><span class="nav-number">3.2.</span> <span class="nav-text">git cherry-pick commitId 挑拣分支提交合并</span></a></li></ol></li></ol></div>
             
 
           </div>

@@ -330,6 +330,198 @@
   
   
   <div class="post-block">
+    <link itemprop="mainEntityOfPage" href="http://glooo.fun/前端技术/equal2-3/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="Gzy">
+      <meta itemprop="description" content>
+      <meta itemprop="image" content="/images/avatar.png">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="Gzy's Blog">
+    </span>
+
+    
+      <header class="post-header">
+
+        
+        
+          <h1 class="post-title" itemprop="name headline">
+                
+                <a class="post-title-link" href="/前端技术/equal2-3/" itemprop="url">“==”和“===”的恨(区别)与爱(类型转换)</a></h1>
+        
+
+        <div class="post-meta">
+          
+          <span class="post-time">
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">发表于</span>
+              
+              <time title="创建于" itemprop="dateCreated datePublished" datetime="2019-09-20T10:25:36+08:00">
+                2019-09-20
+              </time>
+            
+
+            
+
+            
+          </span>
+
+          
+            <span class="post-category">
+            
+              <span class="post-meta-divider">|</span>
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-folder-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">分类于</span>
+              
+              
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/categories/前端技术/" itemprop="url" rel="index">
+                    <span itemprop="name">前端技术</span>
+                  </a>
+                </span>
+
+                
+                
+              
+            </span>
+          
+
+          
+            
+          
+
+          
+          
+
+          
+
+          
+            <div class="post-wordcount">
+              
+                
+                <span class="post-meta-item-icon">
+                  <i class="fa fa-file-word-o"></i>
+                </span>
+                
+                  <span class="post-meta-item-text">字数统计&#58;</span>
+                
+                <span title="字数统计">
+                  637
+                </span>
+              
+
+              
+                <span class="post-meta-divider">|</span>
+              
+
+              
+                <span class="post-meta-item-icon">
+                  <i class="fa fa-clock-o"></i>
+                </span>
+                
+                  <span class="post-meta-item-text">阅读时长 &asymp;</span>
+                
+                <span title="阅读时长">
+                  2
+                </span>
+              
+            </div>
+          
+
+          
+
+        </div>
+      </header>
+    
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        
+          <h1 id><a href="#" class="headerlink" title="=="></a><code>==</code></h1><p><code>==</code>比较松散，进行类型转换之后判断。 <code>10 == &quot;10&quot;</code>，结果肯定是<code>true</code>，因为这个过程”10”会被转换为一个数字类型再与10进行判断，<code>null == undefined</code>  <code>&quot;&quot; == 0</code> 等等。<br>但是 <code>&quot;&quot; == null</code> 是false的  因为<code>&quot;&quot;</code>是一个空字符串基本类型， <code>null</code>代表空对象，<code>&quot;&quot;</code>空字符串是String类型，存放于栈中已经分配内存空间，内存空间里面的值是一个空字符串。null代表是一个空对象还没有分配内存空间。有空间也会存放于堆中，所以无论怎么转换也不会相等。</p>
+<h1 id="-1"><a href="#-1" class="headerlink" title="==="></a><code>===</code></h1><p><code>===</code> 是指严格等于，在判断时不会做任何类型转换。实际逻辑中建议使用严格等于，减少类型转换判断比较准确。 </p>
+<h1 id="强制类型转换-amp-隐式类型转换"><a href="#强制类型转换-amp-隐式类型转换" class="headerlink" title="强制类型转换 &amp; 隐式类型转换"></a>强制类型转换 &amp; 隐式类型转换</h1><p>所谓类型转换，分为强制类型转换和隐式类型转换：</p>
+<h2 id="强制类型转换"><a href="#强制类型转换" class="headerlink" title="强制类型转换"></a>强制类型转换</h2><p>强制类型转换也就是使用代码强制地把一种类型的数据转换成另一种类型的数据，比如<code>parseInt</code>,<code>parseFloat</code>,<code>Number()</code>,<code>String()</code>,<code>Boolean()</code>等等…</p>
+<h2 id="隐式类型转换"><a href="#隐式类型转换" class="headerlink" title="隐式类型转换"></a>隐式类型转换</h2><p>隐式类型转换也就是执行的时候解析器自己帮我们转换的</p>
+<p>if语句内的判断，逻辑运算符，比如 <code>10 &amp;&amp; 0</code> 就等于<code>0</code>，<code>&amp;&amp;</code>运算符两边要不是布尔型的就会将先两边转换为布尔型的值，只有都是真的返回前面的值，有一个为假就返回后面的值，<code>||</code>则不一样，有真的就返回真的，都是假就返回后面的，也就是判断下第一个值是真是假，为真就返回，不为真就返回后面的数，也会进行类型转换。<br><strong>小技巧</strong>：判断一个值强制转换为Boolean类型时是真是假，就用<code>!!</code>来判断即可。</p>
+<p><strong>一些类型转换的小用法</strong>：</p>
+<ol>
+<li>把一个数字转换为字符串类型，<code>100+&quot;&quot;</code>，让数字加上一个空字符串就会隐式转换为字符串。<code>parseInt</code>转换字符串时会在第一个不是数字的字符时停止将前面的字符串转换为数字，忽略后面的信息。</li>
+<li>将数字样式的字符串转换为数字类型，例：<code>&quot;100&quot; - 0</code>就可以完成转换。</li>
+</ol>
+<p>在if语句中，判断条件的值为 <code>0</code>,<code>&quot;&quot;</code>,<code>NaN</code>,<code>false</code>为假。</p>
+          <!--noindex-->
+          <div class="post-button text-center">
+            <a class="btn" href="/前端技术/equal2-3/#more" rel="contents">
+              阅读全文 &raquo;
+            </a>
+          </div>
+          <!--/noindex-->
+        
+      
+    </div>
+    
+    
+    
+  <div>
+    
+  </div>
+    
+
+    
+
+    
+
+    <footer class="post-footer">
+      
+
+      
+
+      
+
+      
+      
+        <div class="post-eof"></div>
+      
+    </footer>
+  </div>
+  
+  
+  
+
+  </article>
+
+
+    
+      
+
+  
+
+  
+  
+  
+
+  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
+  
+  
+  
+  <div class="post-block">
     <link itemprop="mainEntityOfPage" href="http://glooo.fun/Git/git-br-co/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
@@ -713,202 +905,11 @@
 
 
     
-      
-
-  
-
-  
-  
-  
-
-  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
-  
-  
-  
-  <div class="post-block">
-    <link itemprop="mainEntityOfPage" href="http://glooo.fun/js/43-jsBaseT/">
-
-    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
-      <meta itemprop="name" content="Gzy">
-      <meta itemprop="description" content>
-      <meta itemprop="image" content="/images/avatar.png">
-    </span>
-
-    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
-      <meta itemprop="name" content="Gzy's Blog">
-    </span>
-
-    
-      <header class="post-header">
-
-        
-        
-          <h1 class="post-title" itemprop="name headline">
-                
-                <a class="post-title-link" href="/js/43-jsBaseT/" itemprop="url">43道检验基础的JavaScript面试题</a></h1>
-        
-
-        <div class="post-meta">
-          
-          <span class="post-time">
-            
-              <span class="post-meta-item-icon">
-                <i class="fa fa-calendar-o"></i>
-              </span>
-              
-                <span class="post-meta-item-text">发表于</span>
-              
-              <time title="创建于" itemprop="dateCreated datePublished" datetime="2019-09-18T11:32:55+08:00">
-                2019-09-18
-              </time>
-            
-
-            
-
-            
-          </span>
-
-          
-            <span class="post-category">
-            
-              <span class="post-meta-divider">|</span>
-            
-              <span class="post-meta-item-icon">
-                <i class="fa fa-folder-o"></i>
-              </span>
-              
-                <span class="post-meta-item-text">分类于</span>
-              
-              
-                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
-                  <a href="/categories/js/" itemprop="url" rel="index">
-                    <span itemprop="name">js</span>
-                  </a>
-                </span>
-
-                
-                
-              
-            </span>
-          
-
-          
-            
-          
-
-          
-          
-
-          
-
-          
-            <div class="post-wordcount">
-              
-                
-                <span class="post-meta-item-icon">
-                  <i class="fa fa-file-word-o"></i>
-                </span>
-                
-                  <span class="post-meta-item-text">字数统计&#58;</span>
-                
-                <span title="字数统计">
-                  5.5k
-                </span>
-              
-
-              
-                <span class="post-meta-divider">|</span>
-              
-
-              
-                <span class="post-meta-item-icon">
-                  <i class="fa fa-clock-o"></i>
-                </span>
-                
-                  <span class="post-meta-item-text">阅读时长 &asymp;</span>
-                
-                <span title="阅读时长">
-                  22
-                </span>
-              
-            </div>
-          
-
-          
-
-        </div>
-      </header>
-    
-
-    
-    
-    
-    <div class="post-body" itemprop="articleBody">
-
-      
-      
-
-      
-        
-          <ol>
-<li>下面代码的输出是什么？<br>function sayHi() {<br>console.log(name);<br>console.log(age);<br>var name = “Lydia”;<br>let age = 21;<br>}</li>
-</ol>
-<p>A: Lydia 和 undefined<br>B: Lydia 和 ReferenceError<br>C: ReferenceError 和 21<br>D: undefined 和 ReferenceError<br>答案: D<br>在函数中，我们首先使用var关键字声明了name变量。 这意味着变量在创建阶段会被提升（JavaScript会在创建变量创建阶段为其分配内存空间），默认值为undefined，直到我们实际执行到使用该变量的行。 我们还没有为name变量赋值，所以它仍然保持undefined的值。</p>
-<p>使用let关键字（和const）声明的变量也会存在变量提升，但与var不同，初始化没有被提升。 在我们声明（初始化）它们之前，它们是不可访问的。 这被称为“暂时死区”。 当我们在声明变量之前尝试访问变量时，JavaScript会抛出一个ReferenceError。</p>
-<p>译者注：</p>
-<p>关于let的是否存在变量提升，我们何以用下面的例子来验证：</p>
-<p>let name = ‘ConardLi’<br>{<br>  console.log(name) // Uncaught ReferenceError: name is not defined<br>  let name = ‘code秘密花园’<br>}<br>let变量如果不存在变量提升，console.log(name)就会输出ConardLi，结果却抛出了ReferenceError，那么这很好的说明了，let也存在变量提升，但是它存在一个“暂时死区”，在变量未初始化或赋值前不允许访问。</p>
-<p>变量的赋值可以分为三个阶段：</p>
-<p>创建变量，在内存中开辟空间<br>初始化变量，将变量初始化为undefined<br>真正赋值<br>关于let、var和function：</p>
-<p>let 的「创建」过程被提升了，但是初始化没有提升。<br>var 的「创建」和「初始化」都被提升了。<br>function 的「创建」「初始化」和「赋值」都被提升了。</p>
-          <!--noindex-->
-          <div class="post-button text-center">
-            <a class="btn" href="/js/43-jsBaseT/#more" rel="contents">
-              阅读全文 &raquo;
-            </a>
-          </div>
-          <!--/noindex-->
-        
-      
-    </div>
-    
-    
-    
-  <div>
-    
-  </div>
-    
-
-    
-
-    
-
-    <footer class="post-footer">
-      
-
-      
-
-      
-
-      
-      
-        <div class="post-eof"></div>
-      
-    </footer>
-  </div>
-  
-  
-  
-
-  </article>
-
-
-    
   </section>
 
   
   <nav class="pagination">
-    <a class="extend prev" rel="prev" href="/page/12/"><i class="fa fa-angle-left"></i></a><a class="page-number" href="/">1</a><span class="space">&hellip;</span><a class="page-number" href="/page/12/">12</a><span class="page-number current">13</span><a class="page-number" href="/page/14/">14</a><span class="space">&hellip;</span><a class="page-number" href="/page/34/">34</a><a class="extend next" rel="next" href="/page/14/"><i class="fa fa-angle-right"></i></a>
+    <a class="extend prev" rel="prev" href="/page/12/"><i class="fa fa-angle-left"></i></a><a class="page-number" href="/">1</a><span class="space">&hellip;</span><a class="page-number" href="/page/12/">12</a><span class="page-number current">13</span><a class="page-number" href="/page/14/">14</a><span class="space">&hellip;</span><a class="page-number" href="/page/35/">35</a><a class="extend next" rel="next" href="/page/14/"><i class="fa fa-angle-right"></i></a>
   </nav>
 
 
@@ -956,7 +957,7 @@
               
                 <a href="/archives/">
               
-                  <span class="site-state-item-count">102</span>
+                  <span class="site-state-item-count">103</span>
                   <span class="site-state-item-name">日志</span>
                 </a>
               </div>
